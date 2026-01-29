@@ -37,6 +37,23 @@
   padding: 2em;
 }
 
-.read-the-docs {
+.read-the-book {
   color: #888;
+}
+
+.image-content {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 0.75rem;
+  color: #555;
 }
