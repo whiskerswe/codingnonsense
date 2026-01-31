@@ -1,39 +1,43 @@
 import { useState } from 'react'
-import drinkMe from '/tenniel/1book3.jpg'
-import longNeck from '/tenniel/1book4.jpg'
+import { chapters } from './data/chapters';
 import { ImageWithCredit } from './components/ImageWithCredit'
 import './App.css'
+import {joinSentences} from "./domain/chapterText.ts";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [image, setImage] = useState(drinkMe)
+  // @ts-ignore
+    const [count, setCount] = useState(0);
+  const drinkMeChapter = chapters[3];
+  const longNeckChapter = chapters[4];
+  const [chapter, setChapter] = useState(drinkMeChapter)
+    const text = joinSentences(chapter.sentences);
 
   function handleClick() {
       setCount((c) => {
           const next = c + 1;
-          setImage(next % 2 == 0 ? drinkMe : longNeck);
+          setChapter(next % 2 == 0 ? drinkMeChapter : longNeckChapter);
           return next;
           });
       }
   return (
     <>
-      <ImageWithCredit
-      src={drinkMe}
-      alt={"Illustration from Alice in Wonderland"}
-      credit="Illustration by John Tenniel, 1865. Public domain."
-      />
-      <h1>Drink me</h1>
+        <div className='image-content'>      <ImageWithCredit
+            src={`/tenniel/${chapter.image}`}
+            alt={"Illustration from Alice in Wonderland, chapter $chapter.id}"}
+            credit="Illustration by John Tenniel, 1865. Public domain."
+        /></div>
+        <p className="read-the-book">
+            {text || ' '}
+        </p>
       <div className="card">
         <button onClick={handleClick}>
           Click me
         </button>
-        <p>
-          Count is {count}
-        </p>
       </div>
-      <p className="read-the-book">
-        Paragraph of text to come
-      </p>
+        <footer>
+            <small>Build time: {import.meta.env.VITE_BUILD_TIME}</small>
+        </footer>
     </>
   )
 }
