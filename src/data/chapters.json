@@ -1,7 +1,7 @@
 [
   {
     "id": "1book0",
-    "image": "1book0.jpg",
+    "image": "1book0",
     "characters": ["queen", "king"],
     "sentences": {
       "observe": "Alice found herself standing before a King and a Queen, seated very still upon their throne.",
@@ -13,7 +13,7 @@
   },
   {
     "id": "1book1",
-    "image": "1book0.jpg",
+    "image": "1book0",
     "characters": ["white_rabbit"],
     "sentences": {
       "observe": "Alice noticed a Rabbit hurrying past her, clutching something small and important.",
@@ -25,7 +25,7 @@
   },
   {
     "id": "1book2",
-    "image": "1book2.jpg",
+    "image": "1book2",
     "characters": [],
     "sentences": {
       "observe": "Alice stood before a small door and held a key that seemed made for it.",
@@ -37,7 +37,7 @@
   },
   {
     "id": "start",
-    "image": "1book3.jpg",
+    "image": "1book3",
     "characters": [],
     "sentences": {
       "observe": "Alice noticed a small bottle placed where it could not easily be ignored.",
@@ -49,7 +49,7 @@
   },
   {
     "id": "1book4",
-    "image": "1book4.jpg",
+    "image": "1book4",
     "characters": [],
     "sentences": {
       "observe": "Alice felt her body stretch in a way that made the world seem even smaller.",
@@ -61,7 +61,7 @@
   },
   {
     "id": "1book5",
-    "image": "1book5.jpg",
+    "image": "1book5",
     "characters": ["white_rabbit"],
     "sentences": {
       "observe": "Alice watched the White Rabbit dart off, his coat flapping as though the wind were an accomplice.",
@@ -73,7 +73,7 @@
   },
   {
     "id": "1book6",
-    "image": "1book6.jpg",
+    "image": "1book6",
     "characters": [],
     "sentences": {
       "observe": "Alice found herself wading through water that tasted of salt and seemed to remember all her own mistakes.",
@@ -85,7 +85,7 @@
   },
   {
     "id": "1book7",
-    "image": "1book7.jpg",
+    "image": "1book7",
     "characters": ["mouse"],
     "sentences": {
       "observe": "Alice found herself surrounded by water that felt uncomfortably familiar.",
@@ -97,7 +97,7 @@
   },
   {
     "id": "1book8",
-    "image": "1book8.jpg",
+    "image": "1book8",
     "characters": ["birds"],
     "sentences": {
       "observe": "Alice found herself among a group of birds, all of whom appeared to be waiting.",
@@ -109,7 +109,7 @@
   },
   {
     "id": "1book9",
-    "image": "1book9.jpg",
+    "image": "1book9",
     "characters": ["mouse", "birds"],
     "sentences": {
       "observe": "",
@@ -121,7 +121,7 @@
   },
   {
     "id": "1book10",
-    "image": "1book10.jpg",
+    "image": "1book10",
     "characters": [],
     "sentences": {
       "observe": "Alice noticed that part of her no longer belonged where it was.",
@@ -133,7 +133,7 @@
   },
   {
     "id": "1book11",
-    "image": "1book11.jpg",
+    "image": "1book11",
     "characters": ["white_rabbit"],
     "sentences": {
       "observe": "Alice saw the Rabbit suddenly leave the ground.",
@@ -145,7 +145,7 @@
   },
   {
     "id": "1book12",
-    "image": "1book12.jpg",
+    "image": "1book12",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -157,7 +157,7 @@
   },
   {
     "id": "1book13",
-    "image": "1book13.jpg",
+    "image": "1book13",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -169,7 +169,7 @@
   },
   {
     "id": "1book14",
-    "image": "1book14.jpg",
+    "image": "1book14",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -181,7 +181,7 @@
   },
   {
     "id": "1book15",
-    "image": "1book15.jpg",
+    "image": "1book15",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -193,7 +193,7 @@
   },
   {
     "id": "1book16",
-    "image": "1book16.jpg",
+    "image": "1book16",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -205,7 +205,7 @@
   },
   {
     "id": "1book17",
-    "image": "1book17.jpg",
+    "image": "1book17",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -217,7 +217,7 @@
   },
   {
     "id": "1book18",
-    "image": "1book18.jpg",
+    "image": "1book18",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -229,7 +229,7 @@
   },
   {
     "id": "1book19",
-    "image": "1book19.jpg",
+    "image": "1book19",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -241,7 +241,7 @@
   },
   {
     "id": "1book20",
-    "image": "1book20.jpg",
+    "image": "1book20",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -253,7 +253,7 @@
   },
   {
     "id": "1book21",
-    "image": "1book21.jpg",
+    "image": "1book21",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -265,7 +265,7 @@
   },
   {
     "id": "cheshire_cat_exit",
-    "image": "1book22.jpg",
+    "image": "1book22",
     "characters": ["cheshire_cat"],
     "sentences": {
       "observe": "Alice saw the Cat suspended where the rest of the world appeared to be thinning.",
@@ -277,7 +277,7 @@
   },
   {
     "id": "cheshire_cat_nonsense",
-    "image": "1book23.jpg",
+    "image": "1book23",
     "characters": ["cheshire_cat"],
     "sentences": {
       "observe": "Only the Cat’s face remained, regarding nothing in particular.",
@@ -289,7 +289,7 @@
   },
   {
     "id": "1book24",
-    "image": "1book24.jpg",
+    "image": "1book24",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -301,7 +301,7 @@
   },
   {
     "id": "1book25",
-    "image": "1book25.jpg",
+    "image": "1book25",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -313,7 +313,7 @@
   },
   {
     "id": "1book26",
-    "image": "1book26.jpg",
+    "image": "1book26",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -325,7 +325,7 @@
   },
   {
     "id": "1book27",
-    "image": "1book27.jpg",
+    "image": "1book27",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -337,7 +337,7 @@
   },
   {
     "id": "1book28",
-    "image": "1book28.jpg",
+    "image": "1book28",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -349,7 +349,7 @@
   },
   {
     "id": "1book29",
-    "image": "1book29.jpg",
+    "image": "1book29",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -361,7 +361,7 @@
   },
   {
     "id": "1book30",
-    "image": "1book30.jpg",
+    "image": "1book30",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -373,7 +373,7 @@
   },
   {
     "id": "1book31",
-    "image": "1book31.jpg",
+    "image": "1book31",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -385,7 +385,7 @@
   },
   {
     "id": "1book32",
-    "image": "1book32.jpg",
+    "image": "1book32",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -397,7 +397,7 @@
   },
   {
     "id": "1book33",
-    "image": "1book33.jpg",
+    "image": "1book33",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -409,7 +409,7 @@
   },
   {
     "id": "1book34",
-    "image": "1book34.jpg",
+    "image": "1book34",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -421,7 +421,7 @@
   },
   {
     "id": "1book35",
-    "image": "1book35.jpg",
+    "image": "1book35",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -433,7 +433,7 @@
   },
   {
     "id": "1book36",
-    "image": "1book36.jpg",
+    "image": "1book36",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -445,7 +445,7 @@
   },
   {
     "id": "1book37",
-    "image": "1book37.jpg",
+    "image": "1book37",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -457,7 +457,7 @@
   },
   {
     "id": "1book38",
-    "image": "1book38.jpg",
+    "image": "1book38",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -469,7 +469,7 @@
   },
   {
     "id": "1book39",
-    "image": "1book39.jpg",
+    "image": "1book39",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -481,7 +481,7 @@
   },
   {
     "id": "1book40",
-    "image": "1book40.jpg",
+    "image": "1book40",
     "characters": [],
     "sentences": {
       "observe": "",
@@ -493,7 +493,7 @@
   },
   {
     "id": "1book41",
-    "image": "1book41.jpg",
+    "image": "1book41",
     "characters": [],
     "sentences": {
       "observe": "",

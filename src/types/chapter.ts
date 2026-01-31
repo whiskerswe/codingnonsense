@@ -1,4 +1,4 @@
-
+import { images } from '../assets/images';
 
 export type ChapterText = {
     observe: string;
@@ -10,7 +10,7 @@ export type ChapterText = {
 
 export type Chapter = {
     id: string;
-    image: string;
+    image?: keyof typeof images;
     characters: string[];
     sentences: ChapterText;
 };
