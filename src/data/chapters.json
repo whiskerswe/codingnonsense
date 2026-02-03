@@ -1,506 +1,536 @@
 [
   {
-    "id": "1book0",
-    "image": "1book0",
-    "characters": ["queen", "king"],
-    "sentences": {
-      "observe": "Alice found herself standing before a King and a Queen, seated very still upon their throne.",
-      "uncertainty": "They looked at her as though they were waiting for something she had already failed to do.",
-      "misreflection": "She assumed that sitting so quietly must require a great deal of authority.",
-      "response": "Neither of them moved to confirm or deny this.",
-      "exit": "Alice accepted a small cake that lay beside the throne and ate it."
-    }
+	"id": "1book0",
+	"image": "1book0",
+	"characters": [
+	  "queen",
+	  "king"
+	],
+	"sentences": {
+	  "observe": "Alice found herself standing before a King and a Queen, seated very still upon their throne.",
+	  "uncertainty": "They looked at her as though they were waiting for something she had already failed to do.",
+	  "misreflection": "She assumed that sitting so quietly must require a great deal of authority.",
+	  "response": "Neither of them moved to confirm or deny this.",
+	  "exit": "Alice accepted a small cake that lay beside the throne and ate it."
+	}
   },
   {
-    "id": "1book1",
-    "image": "1book0",
-    "characters": ["white_rabbit"],
-    "sentences": {
-      "observe": "Alice noticed a Rabbit hurrying past her, clutching something small and important.",
-      "uncertainty": "He spoke aloud to no one in particular and did not slow his pace.",
-      "misreflection": "She concluded that whatever he was late for must already be underway.",
-      "response": "This seemed only to make his hurry more urgent.",
-      "exit": "Alice drank from a bottle she had not noticed before."
-    }
+	"id": "1book1",
+	"image": "1book0",
+	"characters": [
+	  "white_rabbit"
+	],
+	"sentences": {
+	  "observe": "Alice noticed a Rabbit hurrying past her, clutching something small and important.",
+	  "uncertainty": "He spoke aloud to no one in particular and did not slow his pace.",
+	  "misreflection": "She concluded that whatever he was late for must already be underway.",
+	  "response": "This seemed only to make his hurry more urgent.",
+	  "exit": "Alice drank from a bottle she had not noticed before."
+	}
   },
   {
-    "id": "1book2",
-    "image": "1book2",
-    "characters": [],
-    "sentences": {
-      "observe": "Alice stood before a small door and held a key that seemed made for it.",
-      "uncertainty": "The door was locked, though it offered no explanation for being so.",
-      "misreflection": "She reasoned that possession of the key ought to be sufficient.",
-      "response": "The door remained closed, as if waiting for a different version of Alice.",
-      "exit": "Alice set the key down and drank from a bottle she found nearby."
-    }
+	"id": "1book2",
+	"image": "1book2",
+	"characters": [],
+	"sentences": {
+	  "observe": "Alice stood before a small door and held a key that seemed made for it.",
+	  "uncertainty": "The door was locked, though it offered no explanation for being so.",
+	  "misreflection": "She reasoned that possession of the key ought to be sufficient.",
+	  "response": "The door remained closed, as if waiting for a different version of Alice.",
+	  "exit": "Alice set the key down and drank from a bottle she found nearby."
+	}
   },
   {
-    "id": "start",
-    "image": "1book3",
-    "characters": [],
-    "sentences": {
-      "observe": "Alice noticed a small bottle placed where it could not easily be ignored.",
-      "uncertainty": "A label instructed her plainly, though it offered no reassurance.",
-      "misreflection": "She decided that careful reading was the same as being cautious.",
-      "response": "Nothing happened to contradict her reasoning.",
-      "exit": "Alice drank from the bottle."
-    }
+	"id": "start",
+	"image": "1book3",
+	"characters": [],
+	"sentences": {
+	  "observe": "Alice noticed a small bottle placed where it could not easily be ignored.",
+	  "uncertainty": "A label instructed her plainly, though it offered no reassurance.",
+	  "misreflection": "She decided that careful reading was the same as being cautious.",
+	  "response": "Nothing happened to contradict her reasoning.",
+	  "exit": "Alice drank from the bottle."
+	}
   },
   {
-    "id": "1book4",
-    "image": "1book4",
-    "characters": [],
-    "sentences": {
-      "observe": "Alice felt her body stretch in a way that made the world seem even smaller.",
-      "uncertainty": "She could not tell whether the change was happening to her or simply around her.",
-      "misreflection": "She assumed that holding still would make the sensation stop.",
-      "response": "Nothing about her situation responded to her assumption.",
-      "exit": "Alice turned her head and caught sight of something far off on the horizon."
-    }
+	"id": "1book4",
+	"image": "1book4",
+	"characters": [],
+	"sentences": {
+	  "observe": "Alice felt her body stretch in a way that made the world seem even smaller.",
+	  "uncertainty": "She could not tell whether the change was happening to her or simply around her.",
+	  "misreflection": "She assumed that holding still would make the sensation stop.",
+	  "response": "Nothing about her situation responded to her assumption.",
+	  "exit": "Alice turned her head and caught sight of something far off on the horizon."
+	}
   },
   {
-    "id": "1book5",
-    "image": "1book5",
-    "characters": ["white_rabbit"],
-    "sentences": {
-      "observe": "Alice watched the White Rabbit dart off, his coat flapping as though the wind were an accomplice.",
-      "uncertainty": "He did not glance back, though his pace suggested he expected her to follow.",
-      "misreflection": "She supposed that running after him would answer whatever question trailed behind him.",
-      "response": "Nothing about the Rabbit’s hurry explained itself to her.",
-      "exit": "Alice turned and scanned the horizon, wondering which direction he had vanished toward."
-    }
+	"id": "1book5",
+	"image": "1book5",
+	"characters": [
+	  "white_rabbit"
+	],
+	"sentences": {
+	  "observe": "Alice watched the White Rabbit dart off, his coat flapping as though the wind were an accomplice.",
+	  "uncertainty": "He did not glance back, though his pace suggested he expected her to follow.",
+	  "misreflection": "She supposed that running after him would answer whatever question trailed behind him.",
+	  "response": "Nothing about the Rabbit’s hurry explained itself to her.",
+	  "exit": "Alice turned and scanned the horizon, wondering which direction he had vanished toward."
+	}
   },
   {
-    "id": "1book6",
-    "image": "1book6",
-    "characters": [],
-    "sentences": {
-      "observe": "Alice found herself wading through water that tasted of salt and seemed to remember all her own mistakes.",
-      "uncertainty": "She did not know how she had become so wet, nor whether the water was moving her or she was moving in it.",
-      "misreflection": "She reasoned that if she simply kept going, she would soon be dry again.",
-      "response": "The water flowed around her feet as though it had its own agenda.",
-      "exit": "Alice turned her gaze toward a distant bank, where shapes gathered that made little sense and yet felt familiar."
-    }
+	"id": "1book6",
+	"image": "1book6",
+	"characters": [],
+	"sentences": {
+	  "observe": "Alice found herself wading through water that tasted of salt and seemed to remember all her own mistakes.",
+	  "uncertainty": "She did not know how she had become so wet, nor whether the water was moving her or she was moving in it.",
+	  "misreflection": "She reasoned that if she simply kept going, she would soon be dry again.",
+	  "response": "The water flowed around her feet as though it had its own agenda.",
+	  "exit": "Alice turned her gaze toward a distant bank, where shapes gathered that made little sense and yet felt familiar."
+	}
   },
   {
-    "id": "1book7",
-    "image": "1book7",
-    "characters": ["mouse"],
-    "sentences": {
-      "observe": "Alice found herself surrounded by water that felt uncomfortably familiar.",
-      "uncertainty": "A Mouse nearby regarded her with a seriousness she could not account for.",
-      "misreflection": "She supposed that an apology would be sufficient to improve matters.",
-      "response": "The Mouse listened as though she had said something else entirely.",
-      "exit": "Alice waded forward until the edge of the pool was no longer behind her."
-    }
+	"id": "1book7",
+	"image": "1book7",
+	"characters": [
+	  "mouse"
+	],
+	"sentences": {
+	  "observe": "Alice found herself surrounded by water that felt uncomfortably familiar.",
+	  "uncertainty": "A Mouse nearby regarded her with a seriousness she could not account for.",
+	  "misreflection": "She supposed that an apology would be sufficient to improve matters.",
+	  "response": "The Mouse listened as though she had said something else entirely.",
+	  "exit": "Alice waded forward until the edge of the pool was no longer behind her."
+	}
   },
   {
-    "id": "1book8",
-    "image": "1book8",
-    "characters": ["birds"],
-    "sentences": {
-      "observe": "Alice found herself among a group of birds, all of whom appeared to be waiting.",
-      "uncertainty": "They regarded her politely, but without curiosity.",
-      "misreflection": "She thought that if she remained still long enough, something would begin.",
-      "response": "Nothing among the birds suggested that this was the case.",
-      "exit": "Alice looked around, disappointed to find that no one seemed ready to move."
-    }
+	"id": "1book8",
+	"image": "1book8",
+	"characters": [
+	  "birds"
+	],
+	"sentences": {
+	  "observe": "Alice found herself among a group of birds, all of whom appeared to be waiting.",
+	  "uncertainty": "They regarded her politely, but without curiosity.",
+	  "misreflection": "She thought that if she remained still long enough, something would begin.",
+	  "response": "Nothing among the birds suggested that this was the case.",
+	  "exit": "Alice looked around, disappointed to find that no one seemed ready to move."
+	}
   },
   {
-    "id": "1book9",
-    "image": "1book9",
-    "characters": ["mouse", "birds"],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "mouse_explains",
+	"image": "1book9.jpg",
+	"characters": [
+	  "mouse",
+	  "birds"
+	],
+	"sentences": {
+	  "observe": "Alice listened as the Mouse addressed her and the other animals with great seriousness.",
+	  "uncertainty": "His explanation seemed to require a familiarity with events she could not recall.",
+	  "misreflection": "She assumed that careful attention would eventually make his meaning clear.",
+	  "response": "The words continued without becoming more helpful.",
+	  "exit": "Alice nodded politely, though she could not say what she had agreed to."
+	}
   },
   {
-    "id": "1book10",
-    "image": "1book10",
-    "characters": [],
-    "sentences": {
-      "observe": "Alice noticed that part of her no longer belonged where it was.",
-      "uncertainty": "The window offered no guidance as to how this had happened.",
-      "misreflection": "She assumed that withdrawing would be as simple as arriving had been.",
-      "response": "The room did not adjust itself to this assumption.",
-      "exit": "Alice waited, her hand unmoving, to see what the room would do next."
-    }
+	"id": "1book10",
+	"image": "1book10",
+	"characters": [],
+	"sentences": {
+	  "observe": "Alice noticed that part of her no longer belonged where it was.",
+	  "uncertainty": "The window offered no guidance as to how this had happened.",
+	  "misreflection": "She assumed that withdrawing would be as simple as arriving had been.",
+	  "response": "The room did not adjust itself to this assumption.",
+	  "exit": "Alice waited, her hand unmoving, to see what the room would do next."
+	}
   },
   {
-    "id": "1book11",
-    "image": "1book11",
-    "characters": ["white_rabbit"],
-    "sentences": {
-      "observe": "Alice saw the Rabbit suddenly leave the ground.",
-      "uncertainty": "A hand, not previously accounted for, had entered the scene.",
-      "misreflection": "She supposed that this must be part of some larger plan.",
-      "response": "The Rabbit disappeared without confirming this.",
-      "exit": "Alice remained where she was, uncertain whether anything else might be thrown."
-    }
+	"id": "1book11",
+	"image": "1book11",
+	"characters": [
+	  "white_rabbit"
+	],
+	"sentences": {
+	  "observe": "Alice saw the Rabbit suddenly leave the ground.",
+	  "uncertainty": "A hand, not previously accounted for, had entered the scene.",
+	  "misreflection": "She supposed that this must be part of some larger plan.",
+	  "response": "The Rabbit disappeared without confirming this.",
+	  "exit": "Alice remained where she was, uncertain whether anything else might be thrown."
+	}
   },
   {
-    "id": "1book12",
-    "image": "1book12",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "lizard_in_smoke",
+	"image": "1book12.jpg",
+	"characters": [
+	  "lizard"
+	],
+	"sentences": {
+	  "observe": "Alice saw a Lizard suddenly propelled from a chimney, trailing smoke behind it.",
+	  "uncertainty": "She could not tell whether this was intentional or merely overdue.",
+	  "misreflection": "She supposed that someone must have planned it that way.",
+	  "response": "No one appeared ready to take responsibility.",
+	  "exit": "Alice stepped aside to avoid the smoke as it drifted across the ground."
+	}
   },
   {
-    "id": "1book13",
-    "image": "1book13",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "frightened_puppy",
+	"image": "1book13.jpg",
+	"characters": [
+	  "dog"
+	],
+	"sentences": {
+	  "observe": "Alice found herself facing a small dog that appeared deeply alarmed by her presence.",
+	  "uncertainty": "Its trembling suggested danger, though she could not tell to whom.",
+	  "misreflection": "She assumed that moving more gently would make her less frightening.",
+	  "response": "The dog shrank back as if gentleness were beside the point.",
+	  "exit": "Alice stepped away, unsure which of them had been the greater threat."
+	}
   },
   {
-    "id": "1book14",
-    "image": "1book14",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "caterpillar_on_mushroom",
+	"image": "1book14.jpg",
+	"characters": [
+	  "caterpillar"
+	],
+	"sentences": {
+	  "observe": "Alice spoke to a figure seated calmly upon a mushroom, surrounded by drifting smoke.",
+	  "uncertainty": "He responded as though she had asked a different question.",
+	  "misreflection": "She concluded that she must first understand who she was before continuing.",
+	  "response": "The smoke thickened, offering no assistance.",
+	  "exit": "Alice waited for an answer that did not arrive."
+	}
   },
   {
-    "id": "1book15",
-    "image": "1book15",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book15",
+	"image": "1book15",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book16",
-    "image": "1book16",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book16",
+	"image": "1book16",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book17",
-    "image": "1book17",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book17",
+	"image": "1book17",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book18",
-    "image": "1book18",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book18",
+	"image": "1book18",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book19",
-    "image": "1book19",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "frogs_object",
+	"image": "1book19.jpg",
+	"characters": [
+	  "frogs"
+	],
+	"sentences": {
+	  "observe": "Alice encountered two finely dressed frogs who regarded her with visible disapproval.",
+	  "uncertainty": "One of them informed her that she was in Wonderland, and that this was most improper.",
+	  "misreflection": "She assumed that a misunderstanding could be resolved through explanation.",
+	  "response": "The frogs appeared more offended by her presence than by any explanation she offered.",
+	  "exit": "Alice waited to see whether their outrage would turn into action."
+	}
   },
   {
-    "id": "1book20",
-    "image": "1book20",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book20",
+	"image": "1book20",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book21",
-    "image": "1book21",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "alice_and_pig",
+	"image": "1book21.jpg",
+	"characters": [
+	  "pig"
+	],
+	"sentences": {
+	  "observe": "Alice held a pig in her arms and felt immediately unequal to the task.",
+	  "uncertainty": "It made no effort to cooperate, nor did it resist.",
+	  "misreflection": "She thought that responsibility must feel more purposeful than this.",
+	  "response": "The pig remained stubbornly itself.",
+	  "exit": "Alice loosened her grip, uncertain what she was expected to do next."
+	}
   },
   {
-    "id": "cheshire_cat_exit",
-    "image": "1book22",
-    "characters": ["cheshire_cat"],
-    "sentences": {
-      "observe": "Alice saw the Cat suspended where the rest of the world appeared to be thinning.",
-      "uncertainty": "He smiled at her as though she had already reached the end of something.",
-      "misreflection": "She assumed that there might still be a proper way to leave.",
-      "response": "The Cat did not offer one.",
-      "exit": "Alice found herself no longer inside the place she had been."
-    }
+	"id": "cheshire_cat_exit",
+	"image": "1book22",
+	"characters": [
+	  "cheshire_cat"
+	],
+	"sentences": {
+	  "observe": "Alice saw the Cat suspended where the rest of the world appeared to be thinning.",
+	  "uncertainty": "He smiled at her as though she had already reached the end of something.",
+	  "misreflection": "She assumed that there might still be a proper way to leave.",
+	  "response": "The Cat did not offer one.",
+	  "exit": "Alice found herself no longer inside the place she had been."
+	}
   },
   {
-    "id": "cheshire_cat_nonsense",
-    "image": "1book23",
-    "characters": ["cheshire_cat"],
-    "sentences": {
-      "observe": "Only the Cat’s face remained, regarding nothing in particular.",
-      "uncertainty": "He spoke as though explaining what had just occurred.",
-      "misreflection": "It sounded almost like advice.",
-      "response": "On closer listening, it failed to apply to anything at all.",
-      "exit": "The Cat smiled, satisfied that this was sufficient."
-    }
+	"id": "cheshire_cat_nonsense",
+	"image": "1book23",
+	"characters": [
+	  "cheshire_cat"
+	],
+	"sentences": {
+	  "observe": "Only the Cat’s face remained, regarding nothing in particular.",
+	  "uncertainty": "He spoke as though explaining what had just occurred.",
+	  "misreflection": "It sounded almost like advice.",
+	  "response": "On closer listening, it failed to apply to anything at all.",
+	  "exit": "The Cat smiled, satisfied that this was sufficient."
+	}
   },
   {
-    "id": "1book24",
-    "image": "1book24",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book24",
+	"image": "1book24",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book25",
-    "image": "1book25",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book25",
+	"image": "1book25",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book26",
-    "image": "1book26",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book26",
+	"image": "1book26",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book27",
-    "image": "1book27",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book27",
+	"image": "1book27",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book28",
-    "image": "1book28",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book28",
+	"image": "1book28",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book29",
-    "image": "1book29",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book29",
+	"image": "1book29",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book30",
-    "image": "1book30",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book30",
+	"image": "1book30",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book31",
-    "image": "1book31",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book31",
+	"image": "1book31",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book32",
-    "image": "1book32",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book32",
+	"image": "1book32",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book33",
-    "image": "1book33",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book33",
+	"image": "1book33",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book34",
-    "image": "1book34",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book34",
+	"image": "1book34",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book35",
-    "image": "1book35",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book35",
+	"image": "1book35",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book36",
-    "image": "1book36",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book36",
+	"image": "1book36",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book37",
-    "image": "1book37",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book37",
+	"image": "1book37",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book38",
-    "image": "1book38",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book38",
+	"image": "1book38",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book39",
-    "image": "1book39",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "table_overturned",
+	"image": "1book39.jpg",
+	"characters": [],
+	"sentences": {
+	  "observe": "Alice stood up, and in doing so upset a table that had been carefully arranged.",
+	  "uncertainty": "She could not tell whether the disturbance was noticed.",
+	  "misreflection": "She assumed that standing was a neutral action.",
+	  "response": "The table lay overturned, suggesting otherwise.",
+	  "exit": "Alice remained standing, waiting to see if this required an apology."
+	}
   },
   {
-    "id": "1book40",
-    "image": "1book40",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book40",
+	"image": "1book40",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   },
   {
-    "id": "1book41",
-    "image": "1book41",
-    "characters": [],
-    "sentences": {
-      "observe": "",
-      "uncertainty": "",
-      "misreflection": "",
-      "response": "",
-      "exit": ""
-    }
+	"id": "1book41",
+	"image": "1book41",
+	"characters": [],
+	"sentences": {
+	  "observe": "",
+	  "uncertainty": "",
+	  "misreflection": "",
+	  "response": "",
+	  "exit": ""
+	}
   }
 ]
