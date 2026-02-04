@@ -18,6 +18,6 @@ This site is deployed as a static site.
    --paths "/*"`
 
 ## Run local
-'npm run dev'
+`npm run dev`
 
 No backend. No server-side code.
