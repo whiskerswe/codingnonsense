@@ -15,6 +15,9 @@ function App() {
 	const [chapter, setChapter] = useState(drinkMeChapter);
 	const imageSource = chapter.image ? images[chapter.image] : undefined;
 	const text = joinSentences(chapter.sentences);
+	const buildTime = import.meta.env.VITE_BUILD_TIME
+		? new Date(import.meta.env.VITE_BUILD_TIME).toLocaleString()
+		: "2026";
 	
 	function handleClick() {
 		setCount(( c ) => {
@@ -40,7 +43,7 @@ function App() {
 				</button>
 			</div>
 			<footer>
-				<small>Build time: {import.meta.env.VITE_BUILD_TIME}</small>
+				<small>Built: {buildTime}</small>
 			</footer>
 		</>
 	)
