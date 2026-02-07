@@ -1,0 +1,43 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+@reference "tailwindcss";
+
+@layer components {
+	.page {
+		@apply min-h-screen bg-stone-50;
+	}
+	
+	.content {
+		@apply mx-auto max-w-prose px-6 py-10;
+	}
+	
+	.read-the-book {
+		@apply text-center p-8 mt-10;
+	}
+	
+	.image-content {
+		@apply my-8  text-center max-h-[400px];
+	}
+	
+	.image-content img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.button-row {
+		@apply flex justify-center my-8;
+	}
+	
+	.alice-button {
+		@apply inline-flex items-center
+		rounded-md
+		border-2 border-pink-800 border-dotted
+		bg-orange-500
+		px-4 py-2
+		text-sm text-gray-900
+		hover:bg-blue-500
+		focus:outline-none
+		focus:ring-2 focus:ring-cyan-950 focus:ring-offset-2;
+	}
+}
