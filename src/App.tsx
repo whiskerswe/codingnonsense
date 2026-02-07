@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { chapters } from './data/chapters';
 import { images } from './assets/images';
 import { ImageWithCredit } from './components/ImageWithCredit'
-import './App.css'
 import { joinSentences } from "./domain/chapterText.ts";
 import defaultImage from './assets/tenniel/1book3.jpg';
 
@@ -28,24 +27,39 @@ function App() {
 	}
 	
 	return (
-		<>
-			<div className='image-content'><ImageWithCredit
-				src={imageSource ?? defaultImage}
-				alt={"Illustration from Alice in Wonderland, chapter $chapter.id}"}
-				credit="Illustration by John Tenniel, 1865. Public domain."
-			/></div>
-			<p className="read-the-book">
-				{text || ' '}
-			</p>
-			<div className="card">
-				<button onClick={handleClick}>
-					Click me
-				</button>
-			</div>
-			<footer>
-				<small>Built: {buildTime}</small>
-			</footer>
-		</>
+		<div className="page">
+			<main className="content">
+				<div className="image-block">
+					<ImageWithCredit
+						src={imageSource ?? defaultImage}
+						alt={`Illustration from Alice in Wonderland, chapter ${chapter.id}`}
+						credit="Illustration by John Tenniel, 1865. Public domain."
+					/>
+				</div>
+				<div className="read-the-book">
+				<h1>Drink Me</h1>
+				<p>
+					{text}
+				</p>
+				</div>
+				<div className="button-row">
+					<button
+						onClick={handleClick}
+						className="inline-flex items-center
+                   border-2 rounded-sm outline-double
+                   border-pink-950
+                    px-2 py-1 mt-2 mb-6
+                   font-mono text-gray-900
+                   bg-pink-100 shadow-lg shadow-pink-950/50"
+					>
+						Click me
+					</button>
+				</div>
+				<footer className="button-row">
+					<small>Built: {buildTime}</small>
+				</footer>
+			</main>
+		</div>
 	)
 }
 

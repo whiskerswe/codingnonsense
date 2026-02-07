@@ -1,0 +1,43 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+@reference "tailwindcss";
+
+@layer components {
+	.page {
+		@apply min-h-screen bg-stone-50 flex justify-center;
+	}
+	
+	.content {
+		@apply max-w-prose w-full;
+	}
+	
+	.read-the-book {
+		@apply text-center p-8 m-10 h-40;
+	}
+	
+	.read-the-book h1 {
+		@apply mx-2 text-amber-950 underline decoration-2;
+	}
+	
+	.image-block {
+		@apply flex justify-center;
+	}
+	
+	.image-content {
+		@apply my-8 max-h-[400px];
+	}
+	
+	.image-content img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.fig-caption {
+		@apply mt-2 text-right text-xs italic text-gray-800;
+	}
+	
+	.button-row {
+		@apply flex justify-center my-8;
+	}
+	
+}

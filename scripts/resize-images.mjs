@@ -2,9 +2,9 @@ import fs from "fs";
 import path from "path";
 import sharp from "sharp";
 
-const INPUT_DIR = "./scripts/tenniel-original";
+const INPUT_DIR = "./scripts/tenniel-original/tenniel-original";
 const OUTPUT_DIR = "src/assets/tenniel";
-const MAX_WIDTH = 1600;
+const MAX_WIDTH = 650;
 const QUALITY = 65;
 
 if (!fs.existsSync(OUTPUT_DIR)) {
