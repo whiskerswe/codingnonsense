@@ -7,8 +7,8 @@ type ImageWithCreditProps = {
 export function ImageWithCredit({ src, alt, credit }: ImageWithCreditProps) {
     return (
         <figure>
-        <img src={src} alt={alt} className="block mx-auto h-[24rem]"/>
-        <figcaption className="mt-2 text-right text-xs italic text-gray-800">{credit}</figcaption>
+        <img src={src} alt={alt} className="image-content"/>
+        <figcaption className="fig-caption">{credit}</figcaption>
         </figure>
         );
     }

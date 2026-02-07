@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { chapters } from './data/chapters';
 import { images } from './assets/images';
 import { ImageWithCredit } from './components/ImageWithCredit'
-//import './App.css'
-//import "./styles/main.css";
 import { joinSentences } from "./domain/chapterText.ts";
 import defaultImage from './assets/tenniel/1book3.jpg';
 
@@ -29,34 +27,38 @@ function App() {
 	}
 	
 	return (
-		<div className="min-h-screen bg-stone-50 flex justify-center">
-			<main className="max-w-prose w-full">
-				<div className="flex justify-center text-right my-8">
+		<div className="page">
+			<main className="content">
+				<div className="image-block">
 					<ImageWithCredit
 						src={imageSource ?? defaultImage}
 						alt={`Illustration from Alice in Wonderland, chapter ${chapter.id}`}
 						credit="Illustration by John Tenniel, 1865. Public domain."
 					/>
 				</div>
-				<p className="text-center mt-10 h-30">
+				<div className="read-the-book">
+				<h1>Drink Me</h1>
+				<p>
 					{text}
 				</p>
-				
-				<div className="flex justify-center my-8">
+				</div>
+				<div className="button-row">
 					<button
 						onClick={handleClick}
 						className="inline-flex items-center
-                   rounded-md border-2 ring-cyan-950
-                   bg-white px-4 py-2
-                   text-sm font-bold text-gray-900"
+                   border-2 rounded-sm outline-double
+                   border-pink-950
+                    px-2 py-1 mt-2 mb-6
+                   font-mono text-gray-900
+                   bg-pink-100 shadow-lg shadow-pink-950/50"
 					>
 						Click me
 					</button>
 				</div>
+				<footer className="button-row">
+					<small>Built: {buildTime}</small>
+				</footer>
 			</main>
-			<footer>
-				<small>Built: {buildTime}</small>
-			</footer>
 		</div>
 	)
 }
