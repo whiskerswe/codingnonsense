@@ -7,11 +7,11 @@
 	  "king"
 	],
 	"sentences": {
-	  "observe": "Alice found herself standing before a King and a Queen, seated very still upon their throne.",
-	  "uncertainty": "They looked at her as though they were waiting for something she had already failed to do.",
+	  "observe": "A King and a Queen were seated very still upon their throne.",
+	  "uncertainty": "They looked at Alice as though they were waiting for something she had already failed to do.",
 	  "misreflection": "She assumed that sitting so quietly must require a great deal of authority.",
-	  "response": "Neither of them moved to confirm or deny this.",
-	  "exit": "Alice accepted a small cake that lay beside the throne and ate it."
+	  "response": "At the sound of a buisine, the air itself seemed to shift.",
+	  "exit": "The court, the royals included, were carried away by the sudden wind."
 	}
   },
   {
@@ -21,11 +21,11 @@
 	  "white_rabbit"
 	],
 	"sentences": {
-	  "observe": "Alice noticed a Rabbit hurrying past her, clutching something small and important.",
+	  "observe": "A Rabbit hurrying past her, clutching something small and important.",
 	  "uncertainty": "He spoke aloud to no one in particular and did not slow his pace.",
 	  "misreflection": "She concluded that whatever he was late for must already be underway.",
 	  "response": "This seemed only to make his hurry more urgent.",
-	  "exit": "Alice drank from a bottle she had not noticed before."
+	  "exit": "Alice watched him as he disappeared behind the tall grass"
 	}
   },
   {
@@ -33,11 +33,11 @@
 	"image": "book2",
 	"characters": [],
 	"sentences": {
-	  "observe": "Alice stood before a small door and held a key that seemed made for it.",
-	  "uncertainty": "The door was locked, though it offered no explanation for being so.",
-	  "misreflection": "She reasoned that possession of the key ought to be sufficient.",
-	  "response": "The door remained closed, as if waiting for a different version of Alice.",
-	  "exit": "Alice set the key down and drank from a bottle she found nearby."
+	  "observe": "A key appeared in her hand.",
+	  "uncertainty": "Behind a drapery stood a small door that seemed meant for it.",
+	  "misreflection": "She reasoned that having the key gave her leave to proceed.",
+	  "response": "The door remained bolted, as if waiting for a different version of Alice.",
+	  "exit": "The key turned, but the door did not yield."
 	}
   },
   {
@@ -45,11 +45,11 @@
 	"image": "book3",
 	"characters": [],
 	"sentences": {
-	  "observe": "Alice noticed a small bottle placed where it could not easily be ignored.",
-	  "uncertainty": "A label instructed her plainly, though it offered no reassurance.",
-	  "misreflection": "She decided that careful reading was the same as being cautious.",
-	  "response": "Nothing happened to contradict her reasoning.",
-	  "exit": "Alice drank from the bottle."
+	  "observe": "Alice was a girl who found herself in a place that did not ask to be understood.",
+	  "uncertainty": "There, she noticed a small bottle placed where it could not easily be ignored.",
+	  "misreflection": "Its label instructed her plainly, though it offered no explanation.",
+	  "response": "She decided that careful reading was the same as being cautious.",
+	  "exit": "Alice drank from the bottle, and the room disappeared."
 	}
   },
   {
@@ -60,7 +60,7 @@
 	  "observe": "Alice felt her body stretch in a way that made the world seem even smaller.",
 	  "uncertainty": "She could not tell whether the change was happening to her or simply around her.",
 	  "misreflection": "She assumed that holding still would make the sensation stop.",
-	  "response": "Nothing about her situation responded to her assumption.",
+	  "response": "The floor appeared to sink farther away.",
 	  "exit": "Alice turned her head and caught sight of something far off on the horizon."
 	}
   },
