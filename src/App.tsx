@@ -1,29 +1,26 @@
-import { useState } from 'react'
-import { chapters } from './data/chapters';
-import { images } from './assets/images';
+import { useRef, useState } from 'react'
 import { ImageWithCredit } from './components/ImageWithCredit'
-import { joinSentences } from "./domain/chapterText.ts";
-import defaultImage from './assets/tenniel/1book3.jpg';
-
+import { StoryEngine } from "./domain/storyEngine.ts";
+import { storyManifest } from "./domain/storyManifest.ts";
+import { chapters, resolveChapterImage } from "./data/chapters.ts";
+import { getBuildTime } from "./env/buildInfo.ts";
 
 function App() {
-	// @ts-ignore
-	const [count, setCount] = useState(0);
-	const drinkMeChapter = chapters[3];
-	const longNeckChapter = chapters[4];
-	const [chapter, setChapter] = useState(drinkMeChapter);
-	const imageSource = chapter.image ? images[chapter.image] : undefined;
-	const text = joinSentences(chapter.sentences);
-	const buildTime = import.meta.env.VITE_BUILD_TIME
-		? new Date(import.meta.env.VITE_BUILD_TIME).toLocaleString()
-		: "2026";
+	const engine = useRef(
+		new StoryEngine({
+			start: storyManifest.start,
+			endings: storyManifest.endings,
+			pool: storyManifest.pool,
+		})
+	);
+	const [chapterIndex, setChapterIndex] = useState(engine.current.getCurrentChapter());
+	const chapter = chapters[chapterIndex];
 	
 	function handleClick() {
-		setCount(( c ) => {
-			const next = c + 1;
-			setChapter(next % 2 == 0 ? drinkMeChapter : longNeckChapter);
-			return next;
-		});
+		setChapterIndex(engine.current.nextChapter());
+		console.log("chapterIndex " + chapterIndex);
+		console.log("chapter ", chapter.id, chapter.image);
+		
 	}
 	
 	return (
@@ -31,15 +28,14 @@ function App() {
 			<main className="content">
 				<div className="image-block">
 					<ImageWithCredit
-						src={imageSource ?? defaultImage}
-						alt={`Illustration from Alice in Wonderland, chapter ${chapter.id}`}
-						credit="Illustration by John Tenniel, 1865. Public domain."
+						src={resolveChapterImage(chapter)}
+						chapterId={chapter.id}
 					/>
 				</div>
 				<div className="read-the-book">
 				<h1>Drink Me</h1>
 				<p>
-					{text}
+					{chapter.sentences}
 				</p>
 				</div>
 				<div className="button-row">
@@ -56,7 +52,7 @@ function App() {
 					</button>
 				</div>
 				<footer className="button-row">
-					<small>Built: {buildTime}</small>
+					<small>Built: {getBuildTime()}</small>
 				</footer>
 			</main>
 		</div>

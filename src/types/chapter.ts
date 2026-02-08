@@ -1,5 +1,3 @@
-import { images } from '../assets/images';
-
 export type ChapterText = {
     observe: string;
     uncertainty: string;
@@ -10,7 +8,7 @@ export type ChapterText = {
 
 export type Chapter = {
     id: string;
-    image?: keyof typeof images;
+    image: string;
     characters: string[];
-    sentences: ChapterText;
+    sentences: string;
 };
