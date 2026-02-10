@@ -296,11 +296,11 @@
 	  "cheshire_cat"
 	],
 	"sentences": {
-	  "observe": "Alice saw the Cat suspended where the rest of the world appeared to be thinning.",
-	  "uncertainty": "He smiled at her as though she had already reached the end of something.",
-	  "misreflection": "She assumed that there might still be a proper way to leave.",
-	  "response": "The Cat did not offer one.",
-	  "exit": "Alice found herself no longer inside the place she had been."
+	  "observe": "The cat's whiskers shone through the foliage.",
+	  "uncertainty": "It smiled at Alice as though she had already reached the end of something.",
+	  "misreflection": "</br><i>Have you forgotten everything I have done for you? </i></br>",
+	  "response": "Alice looked back, but said nothing.",
+	  "exit": "The cat frowned, and Alice found herself no longer inside the place she had been."
 	}
   },
   {
@@ -310,11 +310,11 @@
 	  "cheshire_cat"
 	],
 	"sentences": {
-	  "observe": "Only the Cat’s face remained, regarding nothing in particular.",
-	  "uncertainty": "He spoke as though explaining what had just occurred.",
+	  "observe": "Yellow eyes stared expectantly, regarding nothing in particular.",
+	  "uncertainty": "The animal spoke as though explaining what had just occurred.",
 	  "misreflection": "It sounded almost like advice.",
-	  "response": "On closer listening, it failed to apply to anything at all.",
-	  "exit": "The Cat smiled, satisfied that this was sufficient."
+	  "response": "On closer listening, the words came to no meaningful end.",
+	  "exit": "The cat vanished, but the story remained."
 	}
   },
   {
