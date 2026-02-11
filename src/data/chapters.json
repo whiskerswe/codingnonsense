@@ -295,10 +295,13 @@
 	"characters": [
 	  "cheshire_cat"
 	],
+	"text_decoration": {
+	  "misreflection": ["italics", "new_line"]
+	},
 	"sentences": {
 	  "observe": "The cat's whiskers shone through the foliage.",
 	  "uncertainty": "It smiled at Alice as though she had already reached the end of something.",
-	  "misreflection": "</br><i>Have you forgotten everything I have done for you? </i></br>",
+	  "misreflection": "Have you forgotten everything I have done for you?",
 	  "response": "Alice looked back, but said nothing.",
 	  "exit": "The cat frowned, and Alice found herself no longer inside the place she had been."
 	}

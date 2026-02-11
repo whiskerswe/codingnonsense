@@ -4,6 +4,7 @@ import { StoryEngine } from "./domain/storyEngine.ts";
 import { storyManifest } from "./domain/storyManifest.ts";
 import { chapters, resolveChapterImage } from "./data/chapters.ts";
 import { getBuildTime } from "./env/buildInfo.ts";
+import { Sentence } from "./components/Sentence.tsx";
 
 function App() {
 	const engine = useRef(
@@ -35,7 +36,9 @@ function App() {
 				<div className="read-the-book">
 				<h1>Drink Me</h1>
 				<p>
-					{chapter.sentences}
+					{chapter.sentences.map((sentence, i) => (
+						<Sentence key={i} {...sentence} />
+					))}
 				</p>
 				</div>
 				<div className="button-row">

@@ -1,22 +1,10 @@
 import raw from './chapters.json';
 import type { Chapter } from '../types/chapter';
-import { joinSentences } from "../domain/chapterText.ts";
+import type { RawChapter } from '../types/rawChapter';
 import image3 from '../assets/tenniel/book3.jpg';
 import type { images } from "../env/tennielAssets.ts";
 import { tennielImages } from "../images/tenniel.ts";
-
-type RawChapter = {
-	id: string;
-	image?: string;
-	characters: string[];
-	sentences: {
-		observe: string;
-		uncertainty: string;
-		misreflection: string;
-		response: string;
-		exit: string;
-	};
-};
+import { mapTextWithStylingr } from "../domain/chapterText.ts";
 
 const defaultImage = image3;
 const rawChapters = raw as RawChapter[];
@@ -24,7 +12,7 @@ const rawChapters = raw as RawChapter[];
 export const chapters: Chapter[] = rawChapters.map((ch) => ({
 	id: ch.id,
 	characters: ch.characters,
-	sentences: joinSentences(ch.sentences),
+	sentences: mapTextWithStylingr(ch),
 	image:
 		ch.image !== undefined && isImageKey(ch.image)
 			? ch.image
