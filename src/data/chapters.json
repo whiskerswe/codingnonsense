@@ -21,7 +21,7 @@
 	  "white_rabbit"
 	],
 	"sentences": {
-	  "observe": "A Rabbit hurrying past her, clutching something small and important.",
+	  "observe": "A Rabbit hurried past her, clutching something small and important.",
 	  "uncertainty": "He spoke aloud to no one in particular and did not slow his pace.",
 	  "misreflection": "She concluded that whatever he was late for must already be underway.",
 	  "response": "This seemed only to make his hurry more urgent.",
@@ -255,12 +255,15 @@
 	"characters": [
 	  "frogs"
 	],
+	"text_decoration": {
+	  "misreflection": ["italics", "new_line"]
+	},
 	"sentences": {
-	  "observe": "Alice encountered two finely dressed frogs who regarded her with visible disapproval.",
-	  "uncertainty": "One of them informed her that she was in Wonderland, and that this was most improper.",
-	  "misreflection": "She assumed that a misunderstanding could be resolved through explanation.",
-	  "response": "The frogs appeared more offended by her presence than by any explanation she offered.",
-	  "exit": "Alice waited to see whether their outrage would turn into action."
+	  "observe": "Quite far away, His Right Honourable Monsieur le Comte d'Attrape-Mouches received an urgent dépêche, delivered by a page of uncommon dampness.",
+	  "uncertainty": "The letter contained alarming news of Alice’s arrival.",
+	  "misreflection": "Her présence in Wonderland is most irrégulière. This is a matter of constitutional extremity.",
+	  "response": "The page was instructed to inform the king and queen at once.",
+	  "exit": "He scurried off, catching a fly mid-air with admirable discretion."
 	}
   },
   {
@@ -282,11 +285,11 @@
 	  "pig"
 	],
 	"sentences": {
-	  "observe": "Alice held a pig in her arms and felt immediately unequal to the task.",
-	  "uncertainty": "It made no effort to cooperate, nor did it resist.",
-	  "misreflection": "She thought that responsibility must feel more purposeful than this.",
-	  "response": "The pig remained stubbornly itself.",
-	  "exit": "Alice loosened her grip, uncertain what she was expected to do next."
+	  "observe": "A plump little piglet leapt suddenly into Alice’s arms. She held it carefully, for fear of doing it harm.",
+	  "uncertainty": "It regarded her with a certain expectation, though its squeals conveyed nothing at all.",
+	  "misreflection": "Thinking that pigs, like people, might benefit from a touch of adornment, she attempted to fasten her red scarf about its neck.",
+	  "response": "The creature didn’t seem particularly concerned about its position.",
+	  "exit": "Alice relaxed her hold."
 	}
   },
   {

@@ -7,7 +7,7 @@ export function Sentence( {text, decoration}: StyledText ): JSX.Element {
 	const isNewLine = decoration?.includes("new_line");
 	return <>
 		{isNewLine && <br/>}
-			<span className={classes.join(" ")}>{text}</span>
+			<span className={classes.join(" ")}>{text + " "}</span>
 		{isNewLine && <br/>}
 	</>;
 }
