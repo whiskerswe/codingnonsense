@@ -4,7 +4,7 @@ import type { RawChapter } from '../types/rawChapter';
 import image3 from '../assets/tenniel/book3.jpg';
 import type { images } from "../env/tennielAssets.ts";
 import { tennielImages } from "../images/tenniel.ts";
-import { mapTextWithStylingr } from "../domain/chapterText.ts";
+import { mapTextWithStyling } from "../domain/chapterText.ts";
 
 const defaultImage = image3;
 const rawChapters = raw as RawChapter[];
@@ -12,7 +12,7 @@ const rawChapters = raw as RawChapter[];
 export const chapters: Chapter[] = rawChapters.map((ch) => ({
 	id: ch.id,
 	characters: ch.characters,
-	sentences: mapTextWithStylingr(ch),
+	sentences: mapTextWithStyling(ch),
 	image:
 		ch.image !== undefined && isImageKey(ch.image)
 			? ch.image

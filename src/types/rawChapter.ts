@@ -1,12 +1,9 @@
 
 import type { TextDecoration } from "../styles/textDecoration.ts";
+import type { sentenceOrder } from "../domain/chapterText.ts";
 
-export type SentenceKey =
-	| "observe"
-	| "uncertainty"
-	| "misreflection"
-	| "response"
-	| "exit";
+
+export type SentenceKey = typeof sentenceOrder[number];
 
 export type RawChapter = {
 	id: string;
