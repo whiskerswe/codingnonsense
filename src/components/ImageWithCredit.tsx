@@ -1,14 +1,14 @@
 type ImageWithCreditProps = {
     src: string;
-    alt: string;
-    credit: string;
+    chapterId: string;
     };
 
-export function ImageWithCredit({ src, alt, credit }: ImageWithCreditProps) {
-    return (
+export function ImageWithCredit({ src, chapterId}: ImageWithCreditProps) {
+    const altText = `Illustration from Alice in Wonderland, chapter ${chapterId}`;
+	return (
         <figure>
-        <img src={src} alt={alt} className="image-content"/>
-        <figcaption className="fig-caption">{credit}</figcaption>
+        <img src={src} alt={altText} className="image-content"/>
+        <figcaption className="fig-caption">Illustration by John Tenniel, 1865. Public domain.</figcaption>
         </figure>
         );
     }

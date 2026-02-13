@@ -1,16 +1,13 @@
-import { images } from '../assets/images';
+import type { TextDecoration } from "../styles/textDecoration.ts";
 
-export type ChapterText = {
-    observe: string;
-    uncertainty: string;
-    misreflection: string;
-    response: string;
-    exit: string;
+export type StyledText = {
+	text: string;
+	decoration?: TextDecoration[];
 };
 
 export type Chapter = {
-    id: string;
-    image?: keyof typeof images;
-    characters: string[];
-    sentences: ChapterText;
+	id: string;
+	image?: string;
+	characters: string[];
+	sentences: StyledText[];
 };

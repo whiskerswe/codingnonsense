@@ -1,25 +1,48 @@
 import { describe, expect, it } from 'vitest';
-import { joinSentences } from "./chapterText.ts";
+import type { RawChapter } from "../types/rawChapter.ts";
+import { mapTextWithStyling } from "./chapterText.ts";
 
 describe("joinSentences", () => {
-	it('joins only non empty sentences in order', () => {
-		const sentences = {
-			observe: 'A',
-			uncertainty: '',
-			misreflection: 'B',
-			response: '',
-			exit: 'C'
+	it('maps only non empty sentences in correct order', () => {
+		const raw = {
+			id: "1",
+			characters: [],
+			sentences: {
+				observe: 'A',
+				uncertainty: '',
+				misreflection: 'B',
+				response: '',
+				exit: 'C'
+			}
+		} as RawChapter;
+		
+		const result = mapTextWithStyling(raw);
+		
+		expect(result.map(s => s.text)).toEqual(['A', 'B', 'C']);
+	})
+	it('maps text and styling correctly', () => {
+		const raw: RawChapter = {
+			id: "1",
+			characters: [],
+			sentences: {
+				observe: 'A',
+				uncertainty: '',
+				misreflection: 'B',
+				response: '',
+				exit: 'C'
+			},
+			text_decoration: {
+				misreflection: ['italics'],
+				exit: ['new_line']
+			}
 		};
-		expect(joinSentences(sentences)).toBe('A B C')
-		});
-	it('returns an empty string if all sentences are empty', () => {
-		const sentences = {
-			observe: '',
-			uncertainty: '',
-			misreflection: '',
-			response: '',
-			exit: ''
-		};
-		expect(joinSentences(sentences)).toBe('');
-		});
+		
+		const result = mapTextWithStyling(raw);
+		
+		expect(result).toEqual([
+			{ text: 'A', decoration: undefined },
+			{ text: 'B', decoration: ['italics'] },
+			{ text: 'C', decoration: ['new_line'] }
+		]);
+	});
 });
