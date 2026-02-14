@@ -83,11 +83,11 @@
 	"image": "book6",
 	"characters": [],
 	"sentences": {
-	  "observe": "Alice found herself wading through water that tasted of salt and seemed to remember all her own mistakes.",
-	  "uncertainty": "She did not know how she had become so wet, nor whether the water was moving her or she was moving in it.",
-	  "misreflection": "She reasoned that if she simply kept going, she would soon be dry again.",
-	  "response": "The water flowed around her feet as though it had its own agenda.",
-	  "exit": "Alice turned her gaze toward a distant bank, where shapes gathered that made little sense and yet felt familiar."
+	  "observe": "Alice’s foot met with something unexpectedly animate. It withdrew at once.",
+	  "uncertainty": "Her toes could not find the unknown object again as they searched the sandy bottom.",
+	  "misreflection": "She reasoned that it must have been a clam, or possibly an ammonite.",
+	  "response": "The sand rose about her feet in pale clouds, as milk does in tea.",
+	  "exit": "Alice swam toward a distant bank."
 	}
   },
   {
@@ -96,12 +96,15 @@
 	"characters": [
 	  "mouse"
 	],
+	"text_decoration": {
+	  "misreflection": ["italics", "new_line"]
+	},
 	"sentences": {
-	  "observe": "Alice found herself surrounded by water that felt uncomfortably familiar.",
-	  "uncertainty": "A Mouse nearby regarded her with a seriousness she could not account for.",
-	  "misreflection": "She supposed that an apology would be sufficient to improve matters.",
-	  "response": "The Mouse listened as though she had said something else entirely.",
-	  "exit": "Alice waded forward until the edge of the pool was no longer behind her."
+	  "observe": "Though there were no cliffs to dive from, Alice found herself already in the water, which felt perfectly familiar, though not entirely plain. She stretched her arms and swam.",
+	  "uncertainty": "A Mouse nearby regarded her with an expression suggesting it had something of importance to contribute.",
+	  "misreflection": "If I may, Miss… One ought not to kick with one’s legs. They should ambulate vigorously.",
+	  "response": "Alice took another steady stroke, observing the Mouse with polite interest.",
+	  "exit": "Feeling satisfied that it had saved yet another fellow creature from technical error, the Mouse paddled away with modest efficiency."
 	}
   },
   {

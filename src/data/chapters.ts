@@ -26,9 +26,6 @@ export function isImageKey(value: unknown) : value is ImageKey {
 }
 
 export function resolveChapterImage(chapter: Chapter): string {
-	console.log("chapter", chapter.id, "image", chapter.image);
-	// @ts-ignore
-	console.log(tennielImages[chapter.image]);
 	return chapter.image
 		? tennielImages[chapter.image] ?? defaultImage
 		: defaultImage;

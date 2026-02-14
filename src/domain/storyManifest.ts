@@ -1,11 +1,18 @@
+import type { StoryConfig } from "./storyEngine.ts";
+
 export const storyManifest = {
 	start: 3,
-	endings: [22, 23],
-	pool: [0, 1, 2, 4, 19, 21, 39],
-};
+	ending: 22,
+	randomPool: [0, 1, 2, 4, 7, 19, 21, 39],
+	sequences: new Map([
+		[7, 6],
+		[22, 23],
+	]),
+}  satisfies StoryConfig;
 
 export const usedChapterIds = [
 	storyManifest.start,
-	...storyManifest.endings,
-	...storyManifest.pool,
+	storyManifest.ending,
+	...storyManifest.randomPool,
+	...storyManifest.sequences,
 ];

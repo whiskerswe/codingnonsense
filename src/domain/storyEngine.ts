@@ -1,21 +1,21 @@
-type StoryConfig = {
+export type StoryConfig = {
 	start: number;
-	endings: readonly number[];
-	pool: readonly number[];
+	ending: number;
+	randomPool: readonly number[];
+	sequences: ReadonlyMap<number, number>;
 }
 
 export class StoryEngine {
-	private currentChapter: number;
-	private readChapters = new Set<number>();
+	currentChapter: number;
+	consumedPoolEntries = new Set<number>();
 	private config;
-	private maxEndSteps = 2;
-	private endCount = 0;
 	
-	constructor(config: StoryConfig) {
+	constructor(
+		config: StoryConfig
+	) {
 		this.config = config;
 		this.currentChapter = config.start;
-		this.readChapters = this.readChapters.add(config.start);
-		
+		this.consumedPoolEntries = this.consumedPoolEntries.add(config.start);
 	}
 	
 	getCurrentChapter() {
@@ -23,22 +23,26 @@ export class StoryEngine {
 	}
 	
 	nextChapter() {
-		const remainingChapters = this.config.pool.filter(
-			c => !this.readChapters.has(c)
-		);
-		if (remainingChapters.length === 0) {
-			if (this.endCount >= this.maxEndSteps) {
-				return this.currentChapter;
-			}
-			this.currentChapter = this.config.endings[this.endCount++];
+		const forcedChapter = this.config.sequences.get(this.currentChapter);
+		if (forcedChapter !== undefined) {
+			this.currentChapter = forcedChapter;
 			return this.currentChapter;
 		}
+		const remainingChapters = this.config.randomPool.filter(
+			c => !this.consumedPoolEntries.has(c)
+		);
+		
+		if (remainingChapters.length === 0) {
+			this.currentChapter = this.config.ending;
+			return this.currentChapter;
+		}
+		
 		const ran = Math.floor(Math.random() * remainingChapters.length);
 		const next =
 			remainingChapters[ran];
-		
-		this.readChapters.add(next);
+		this.consumedPoolEntries.add(next);
 		this.currentChapter = next;
 		return next;
 	}
+	
 }

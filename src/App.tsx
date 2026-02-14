@@ -10,8 +10,9 @@ function App() {
 	const engine = useRef(
 		new StoryEngine({
 			start: storyManifest.start,
-			endings: storyManifest.endings,
-			pool: storyManifest.pool,
+			ending: storyManifest.ending,
+			randomPool: storyManifest.randomPool,
+			sequences: storyManifest.sequences,
 		})
 	);
 	const [chapterIndex, setChapterIndex] = useState(engine.current.getCurrentChapter());
@@ -19,9 +20,6 @@ function App() {
 	
 	function handleClick() {
 		setChapterIndex(engine.current.nextChapter());
-		console.log("chapterIndex " + chapterIndex);
-		console.log("chapter ", chapter.id, chapter.image);
-		
 	}
 	
 	return (
