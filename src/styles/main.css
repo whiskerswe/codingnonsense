@@ -12,7 +12,10 @@
 	}
 	
 	.read-the-book {
-		@apply text-center p-8 m-10 h-40;
+		@apply
+			text-center
+			p-8
+			m-10;
 	}
 	
 	.read-the-book h1 {
