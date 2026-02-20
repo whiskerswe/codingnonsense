@@ -19,7 +19,9 @@ function App() {
 	const chapter = chapters[chapterIndex];
 	
 	function handleClick() {
-		setChapterIndex(engine.current.nextChapter());
+		if (engine.current.canAdvance()) {
+			setChapterIndex(engine.current.nextChapter());
+		}
 	}
 	
 	return (
