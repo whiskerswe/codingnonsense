@@ -22,24 +22,33 @@ export class StoryEngine {
 		return this.currentChapter;
 	}
 	
-	nextChapter() {
-		const forcedChapter = this.config.sequences.get(this.currentChapter);
-		if (forcedChapter !== undefined) {
-			this.currentChapter = forcedChapter;
-			return this.currentChapter;
+	canAdvance(): boolean {
+		const forcedAfterEnding = this.config.sequences.get(this.config.ending);
+		const final = forcedAfterEnding ?? this.config.ending;
+		
+		return !this.consumedPoolEntries.has(final);
+	}
+	
+	private computeNextChapter(){
+		const forced = this.config.sequences.get(this.currentChapter);
+		if (forced !== undefined) {
+			return forced;
 		}
-		const remainingChapters = this.config.randomPool.filter(
+		
+		const remaining = this.config.randomPool.filter(
 			c => !this.consumedPoolEntries.has(c)
 		);
 		
-		if (remainingChapters.length === 0) {
-			this.currentChapter = this.config.ending;
-			return this.currentChapter;
+		if (remaining.length === 0) {
+			return this.config.ending;
 		}
 		
-		const ran = Math.floor(Math.random() * remainingChapters.length);
-		const next =
-			remainingChapters[ran];
+		return remaining[Math.floor(Math.random() * remaining.length)];
+	}
+	
+	
+	nextChapter() {
+		const next = this.computeNextChapter();
 		this.consumedPoolEntries.add(next);
 		this.currentChapter = next;
 		return next;
