@@ -41,4 +41,4 @@ jobs:
         run: aws s3 sync dist/ s3://alice-codingnonsense --delete
 
       - name: Invalidate CloudFront
-        run: aws cloudfront create-invalidation  --distribution-id E311WEV1FY7DTR --paths "/*"
+        run: aws cloudfront create-invalidation  --distribution-id E311WEV1FY7DTR --paths "/index.html"
