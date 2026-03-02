@@ -10,9 +10,12 @@ export const storyManifest = {
 	]),
 }  satisfies StoryConfig;
 
-export const usedChapterIds = [
-	storyManifest.start,
-	storyManifest.ending,
-	...storyManifest.randomPool,
-	...storyManifest.sequences,
-];
+export const usedChapterIds = Array.from(
+	new Set([
+		storyManifest.start,
+		storyManifest.ending,
+		...storyManifest.randomPool,
+		...storyManifest.sequences.keys(),
+		...storyManifest.sequences.values(),
+	])
+);

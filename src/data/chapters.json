@@ -50,7 +50,8 @@
 	  "misreflection": "Its label instructed her plainly, though it offered no explanation.",
 	  "response": "She decided that careful reading was the same as being cautious.",
 	  "exit": "Alice drank from the bottle, and the room disappeared."
-	}
+	},
+	"button_text": "Drink me"
   },
   {
 	"id": "1book4",
@@ -324,7 +325,8 @@
 	  "misreflection": "It sounded almost like advice.",
 	  "response": "On closer listening, the words came to no meaningful end.",
 	  "exit": "The cat vanished, but the story remained."
-	}
+	},
+	"button_text": "Exeunt"
   },
   {
 	"id": "1book24",

@@ -1,5 +1,5 @@
-import type { StyledText } from "../types/chapter.ts";
 import type { JSX } from "react";
+import type { StyledText } from "../domain/models/styledText.ts";
 
 export function Sentence( {text, decoration}: StyledText ): JSX.Element {
 	const classes = [];

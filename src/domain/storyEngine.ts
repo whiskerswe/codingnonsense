@@ -15,7 +15,8 @@ export class StoryEngine {
 	) {
 		this.config = config;
 		this.currentChapter = config.start;
-		this.consumedPoolEntries = this.consumedPoolEntries.add(config.start);
+		this.consumedPoolEntries = new Set<number>();
+		this.consumedPoolEntries.add(config.start);
 	}
 	
 	getCurrentChapter() {

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const IMAGE_DIR = "../public/tenniel";
+const IMAGE_DIR = "../public/chapters";
 const OUTPUT_FILE = "./chapters.json";
 
 const files = fs
@@ -31,5 +31,3 @@ fs.writeFileSync(
     JSON.stringify(chapters, null, 2),
     "utf-8"
 );
-
-console.log(`Created ${chapters.length} chapters in ${OUTPUT_FILE}`);

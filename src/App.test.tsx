@@ -1,23 +1,27 @@
-import { describe, it, expect } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
-describe("App UI", () => {
-	it("changes chapter text and image when clicking", async () => {
-		render(<App />);
-		
-		const srcBefore = screen.getByRole("img").getAttribute("src");
-		
-		const button = screen.getByRole("button");
-		await userEvent.click(button);
-		
-		// expect(imageAfter).not.toBe(imageBefore);
-		await waitFor(() => {
-			const srcAfter = screen.getByRole("img").getAttribute("src");
-			expect(srcAfter).not.toBe(srcBefore);
-		});
-	});
+it("goes from Start page to first chapter", async () => {
+	render(<App />);
+	
+	expect(
+		screen.getByRole("heading", { name: /start/i })
+	).toBeInTheDocument();
+	
+	const user = userEvent.setup();
+	const openButton = screen.getByRole("button", { name: /open/i });
+	
+	await user.click(openButton);
+	
+	await screen.findByRole("button", { name: /drink me/i });
+	
+	const image = screen.getByAltText(
+		/illustration from alice in wonderland/i
+	);
+	
+	expect(image).toHaveAttribute(
+		"src",
+		expect.stringContaining("book3")
+	);
 });
-
-
