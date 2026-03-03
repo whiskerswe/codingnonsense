@@ -10,11 +10,11 @@ export function AliceButton({ onClick, children }: AliceButtonProps) {
 				type="button"
 				onClick={onClick}
 				className="inline-flex items-center
-                   border-2 rounded-sm outline-double
-                   border-pink-950
+                   border-1 outline-double
+                   border-stone-950
                    px-2 py-1 mt-2 mb-6
                    font-mono text-gray-900
-                   bg-pink-100 shadow-lg shadow-pink-950/50"
+                   shadow-lg shadow-stone-950/50"
 			>
 				{children}
 			</button>

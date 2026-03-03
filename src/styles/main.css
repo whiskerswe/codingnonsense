@@ -3,23 +3,18 @@
 @reference "tailwindcss";
 
 @layer components {
-	.page {
-		@apply min-h-screen bg-stone-50 flex justify-center;
-	}
-	
 	.content {
-		@apply max-w-prose w-full;
+		@apply flex flex-col justify-center items-center m-2 text-sm/6;
 	}
 	
 	.read-the-book {
-		@apply
-			text-center
+		@apply w-full max-w-2/4
 			p-8
 			m-10;
 	}
 	
 	.read-the-book h1 {
-		@apply mx-2 text-amber-950 underline decoration-2;
+		@apply text-center mx-2 text-amber-950;
 	}
 	
 	.image-block {

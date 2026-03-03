@@ -35,7 +35,7 @@ export function Header()  {
 	}
 	
 	return (
-		<header className="flex items-center justify-between px-4 py-3 bg-pink-800 text-white">
+		<header className="flex justify-between border-b border-gray-600">
 			
 			{/* Home */}
 			<button
@@ -51,7 +51,7 @@ export function Header()  {
 				<button
 					onClick={() => setOpen(!open)}
 					aria-label="Menu"
-					className="w-10 h-10 flex items-center justify-center text-xl"
+					className="w-10 h-10 flex items-center justify-items-end text-xl"
 				>
 					☰
 				</button>
