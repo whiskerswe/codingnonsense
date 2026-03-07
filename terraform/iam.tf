@@ -1,34 +1,32 @@
-resource "aws_iam_policy" "terraform_alice" {
-  name = "TerraformCodingNonsensePolicy"
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect = "Allow"
-        Action = [
-          "s3:*",
-          "dynamodb:*",
-          "cloudfront:*",
-          "acm:*",
-          "wafv2:*",
-          "route53:*",
-          "iam:GetPolicy",
-          "iam:GetPolicyVersion",
-          "iam:ListPolicyVersions",
-          "iam:CreatePolicy",
-          "iam:DeletePolicy",
-          "iam:CreatePolicyVersion",
-          "iam:DeletePolicyVersion",
-          "iam:AttachUserPolicy",
-          "iam:DetachUserPolicy",
-          "iam:ListAttachedUserPolicies"
-        ]
-        Resource = "*"
-      }
-    ]
-  })
+# ------------------------------
+# Terraform policy
+# ------------------------------
+data "aws_iam_policy_document" "terraform_alice" {
+  dynamic "statement" {
+    for_each = local.terraform_permissions
+    content {
+      effect    = "Allow"
+      actions   = sort(statement.value)
+      resources = local.any_resource
+    }
+  }
 }
 
+# ------------------------------
+# Policies
+# ------------------------------
+resource "aws_iam_policy" "terraform_alice" {
+  name   = "TerraformCodingNonsensePolicy"
+  policy = data.aws_iam_policy_document.terraform_alice.json
+}
+resource "aws_iam_policy" "alice_deploy_policy" {
+  name   = "AliceDeployPolicy"
+  policy = data.aws_iam_policy_document.alice_deploy.json
+}
+
+# ------------------------------
+# Attachments
+# ------------------------------
 resource "aws_iam_user_policy_attachment" "terraform_alice_attach" {
   user       = "terraform-admin"
   policy_arn = aws_iam_policy.terraform_alice.arn
