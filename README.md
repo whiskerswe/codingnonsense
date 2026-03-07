@@ -12,7 +12,7 @@ with navigation controlled by a small story engine.
 
 The project also explores a lightweight deployment setup using AWS and Terraform.
 
-    [Live page](https://www.codingnonsense.art/)
+https://www.codingnonsense.art/
 
 ---
 
