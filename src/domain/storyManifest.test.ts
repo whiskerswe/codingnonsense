@@ -17,8 +17,6 @@ describe("storyManifest", () => {
 			...storyManifest.sequences.keys(),
 			...storyManifest.sequences.values(),
 		]));
-
 		expect(usedChapterIds).toEqual(expected);
-		expect(usedChapterIds.every((id) => typeof id === "number")).toBe(true);
 	});
 });

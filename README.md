@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="docs/images/book36.jpg" width="150">
 
-Currently, two official plugins are available:
+# Coding Nonsense
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+An experimental interactive storytelling project inspired by *Alice in Wonderland*.
 
-## React Compiler
+The application presents chapters as pages containing images and sentences,
+with navigation controlled by a small story engine.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The project also explores a lightweight deployment setup using AWS and Terraform.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Infrastructure
+- AWS S3 (static hosting)
+- CloudFront
+- Route53
+- Terraform
+---
+## Running locally
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Install dependencies:
+npm install
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start development server:
+npm run dev
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Build production version:
+npm run build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+## Infrastructure
+
+Infrastructure is defined in the `terraform/` directory.
+
+Terraform provisions:
+
+- S3 bucket for static hosting
+- CloudFront distribution
+- Route53 records
+- IAM policies for deploy and infrastructure management
+
+Terraform state is stored remotely in S3 with DynamoDB locking.
+
+This project uses IAM users instead of roles since it is a single-person project.
+
+---
+
+## Deployment
+
+Deployment is handled via GitHub Actions.
+
+The deploy workflow uploads the built site to S3 and invalidates the CloudFront cache.
+
+---
+
+## Project structure
+
+src/
+    components/
+    domain/
+    app/
+
+terraform/
+    provider.tf
+    iam.tf
+    main.tf
+    locals.tf
+
+---
+
+## Notes
+
+Images are based on public domain illustrations by John Tenniel.

@@ -1,21 +1,21 @@
 data "aws_caller_identity" "current" {}
 
 locals {
-  account_id = data.aws_caller_identity.current.account_id
-  site_bucket = "alice-codingnonsense"
+  account_id              = data.aws_caller_identity.current.account_id
+  site_bucket             = "alice-codingnonsense"
   site_bucket_arn         = "arn:aws:s3:::${local.site_bucket}"
   site_bucket_objects_arn = "arn:aws:s3:::${local.site_bucket}/*"
 
   cloudfront_distribution_arn = "arn:aws:cloudfront::${local.account_id}:distribution/E311WEV1FY7DTR"
 
   terraform_permissions = {
-    s3        = local.terraform_s3_actions
-    dynamodb  = local.terraform_dynamodb_actions
+    s3         = local.terraform_s3_actions
+    dynamodb   = local.terraform_dynamodb_actions
     cloudfront = local.terraform_cloudfront_actions
-    acm       = local.terraform_acm_actions
-    waf       = local.terraform_waf_actions
-    route53   = local.terraform_route53_actions
-    iam       = local.terraform_iam_actions
+    acm        = local.terraform_acm_actions
+    waf        = local.terraform_waf_actions
+    route53    = local.terraform_route53_actions
+    iam        = local.terraform_iam_actions
   }
   any_resource = ["*"]
 

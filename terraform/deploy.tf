@@ -3,7 +3,7 @@
 # ------------------------------
 data "aws_iam_policy_document" "alice_deploy" {
   statement {
-    effect = "Allow"
+    effect  = "Allow"
     actions = local.deploy_s3_actions
     resources = [
       local.site_bucket_arn,
@@ -11,8 +11,8 @@ data "aws_iam_policy_document" "alice_deploy" {
     ]
   }
   statement {
-    effect = "Allow"
-    actions = local.deploy_cloudfront_actions
+    effect    = "Allow"
+    actions   = local.deploy_cloudfront_actions
     resources = [local.cloudfront_distribution_arn]
   }
 }

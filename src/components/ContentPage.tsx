@@ -2,6 +2,7 @@ import { ImageWithCredit } from "./ImageWithCredit.tsx";
 import { Sentence } from "./Sentence.tsx";
 import type { Page } from "../domain/models/page.ts";
 import { AliceButton } from "./AliceButton.tsx";
+import { getBuildTime } from "../app/buildInfo.ts";
 
 interface Props {
 	page: Page;
@@ -30,6 +31,9 @@ export function ContentPage({ page, onButtonClick }: Props) {
 					{page.button_text ?? "Click me"}
 				</AliceButton>
 			)}
+			<footer className="build-info">
+				Build: {getBuildTime()}
+			</footer>
 		</main>
 	);
 }

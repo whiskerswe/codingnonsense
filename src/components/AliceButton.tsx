@@ -1,3 +1,5 @@
+import * as React from "react";
+
 interface AliceButtonProps {
 	onClick?: () => void;
 	children: React.ReactNode;

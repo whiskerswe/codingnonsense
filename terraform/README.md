@@ -8,7 +8,7 @@ Infrastructure for codingnonsense.art
 
 IAM
 
-Users instead of roles as this is a simple one person project.
+Users instead of roles as this is a simple one-person project.
 - terraform-admin → infrastructure management
 - alice-deploy → site deployment
 

@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
 import { useHome } from "../app/HomeContext.tsx";
 
 export function Header()  {
@@ -51,7 +50,7 @@ export function Header()  {
 				<button
 					onClick={() => setOpen(!open)}
 					aria-label="Menu"
-					className="w-10 h-10 flex items-center justify-items-end text-xl"
+					className="w-10 h-10 flex items-center justify-center text-xl"
 				>
 					☰
 				</button>
