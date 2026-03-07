@@ -33,13 +33,19 @@ Infrastructure
 ## Running locally
 
 Install dependencies:
+```
 npm install
+```
 
 Start development server:
+```
 npm run dev
+```
 
 Build production version:
+```
 npm run build
+```
 
 ---
 ## Infrastructure
@@ -69,16 +75,16 @@ The deploy workflow uploads the built site to S3 and invalidates the CloudFront 
 
 ## Project structure
 
-src/
-    components/
-    domain/
-    app/
+- `src/`
+  - `components/`
+  - `domain/`
+  - `app/`
 
-terraform/
-    provider.tf
-    iam.tf
-    main.tf
-    locals.tf
+- `terraform/`
+  - `provider.tf`
+  - `iam.tf`
+  - `main.tf`
+  - `locals.tf`
 
 ---
 
