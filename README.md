@@ -1,6 +1,8 @@
 
 <img src="docs/images/book36.jpg" width="150">
 
+
+
 # Coding Nonsense
 
 An experimental interactive storytelling project inspired by *Alice in Wonderland*.
@@ -9,6 +11,8 @@ The application presents chapters as pages containing images and sentences,
 with navigation controlled by a small story engine.
 
 The project also explores a lightweight deployment setup using AWS and Terraform.
+
+    [Live page](https://www.codingnonsense.art/)
 
 ---
 
