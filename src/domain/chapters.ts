@@ -1,23 +1,26 @@
-import raw from '../data/chapters.json';
-import type { Chapter } from './models/chapter.ts';
-import type { RawChapter } from './models/rawChapter.ts';
-import { mapTextWithStyling } from "./text/chapterText.ts";
+import type { Chapter } from "./models/chapter.ts";
 import { resolveImage } from "./images/imageRegistry.ts";
+import { parseMarkdown } from "./text/parseMarkdown.ts";
 
+const modules = import.meta.glob("/src/data/chapters/*.md", {
+	eager: true,
+	query: "?raw",
+	import: 'default'
+});
 
-const rawChapters = raw as RawChapter[];
+const sortedModules = Object.entries(modules).sort(([a], [b]) =>
+	a.localeCompare(b)
+);
 
-
-function convertRawChapter(raw: RawChapter): Chapter {
-	console.log("raw.image:", raw.image);
+export const chapters: Chapter[] = sortedModules.map(([, raw]) => {
+	const { attributes, body } = parseMarkdown<Chapter>(raw as string);
+	
 	return {
-		id: raw.id,
-		characters: raw.characters,
-		title: raw.title ?? "*       *       *       *       *",
-		sentences: mapTextWithStyling(raw),
-		image: resolveImage(raw.image),
-		button_text: raw.button_text
+		id: attributes.id,
+		title: attributes.title ?? "*       *       *       *       *",
+		body,
+		image: resolveImage(attributes.image),
+		characters: attributes.characters ?? [],
+		button_text: attributes.button_text
 	};
-}
-
-export const chapters: Chapter[] = rawChapters.map(convertRawChapter);
+});

@@ -1,35 +1,28 @@
-import raw_start from '../data/start.json';
-import raw_about from '../data/about.json';
-import { mapPageTextWithStyling } from "./text/pageText.ts";
-import type { RawPage } from "./models/rawPage.ts";
 import type { Page } from "./models/page.ts";
-
-const rawStart = raw_start as RawPage;
-const rawAbout = raw_about as RawPage;
-
 import { resolveImage } from "./images/imageRegistry";
+import { parseMarkdown } from "./text/parseMarkdown.ts";
 
-function convertRawPage(raw: RawPage): Page {
+import rawStart from "../data/pages/start.md?raw";
+import rawAbout from "../data/pages/about.md?raw";
+
+function convertMarkdownPage(raw: string): Page {
+	const { attributes, body } = parseMarkdown<Page>(raw);
+	
 	return {
-		id: raw.id,
-		image: resolveImage(raw.image),
-		title: raw.title,
-		button_text: raw.button_text,
-		sentences: mapPageTextWithStyling(raw)
+		id: attributes.id,
+		image: resolveImage(attributes.image),
+		title: attributes.title,
+		button_text: attributes.button_text,
+		body: body
 	};
 }
 
-const rawPages: Record<string, RawPage> = {
+const rawPages: Record<string, string> = {
 	start: rawStart,
 	about: rawAbout
 };
 
 export function getPage(id: string): Page {
 	const raw = rawPages[id] ?? rawStart;
-	return convertRawPage(raw);
+	return convertMarkdownPage(raw);
 }
-
-
-
-
-

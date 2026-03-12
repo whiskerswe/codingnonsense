@@ -1,8 +1,8 @@
 import { ImageWithCredit } from "./ImageWithCredit.tsx";
-import { Sentence } from "./Sentence.tsx";
 import type { Page } from "../domain/models/page.ts";
 import { AliceButton } from "./AliceButton.tsx";
 import { getBuildTime } from "../app/buildInfo.ts";
+import { PageText } from "./PageText.tsx";
 
 interface Props {
 	page: Page;
@@ -22,9 +22,7 @@ export function ContentPage({ page, onButtonClick }: Props) {
 			)}
 			<div className="read-the-book">
 				<h1>{page.title}</h1>
-				{page.sentences.map((sentence, i) => (
-					<Sentence key={i} {...sentence} />
-				))}
+				<PageText body={page.body} />
 			</div>
 			{onButtonClick && (
 				<AliceButton onClick={onButtonClick}>

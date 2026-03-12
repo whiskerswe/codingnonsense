@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 
-const IMAGE_DIR = "../public/chapters";
-const OUTPUT_FILE = "./chapters.json";
+const IMAGE_DIR = "../src/data/chapters";
+const OUTPUT_FILE = "../src/data/chapters.json";
 
 const files = fs
     .readdirSync(IMAGE_DIR)
@@ -11,7 +11,7 @@ const files = fs
 
 const chapters = files.map(file => {
     const id = path.parse(file).name;
-
+	console.log("Chapter " + id);
     return {
         id,
         image: file,
