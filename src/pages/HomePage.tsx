@@ -1,15 +1,19 @@
 import { ContentPage } from "../components/ContentPage";
 import { getPage } from "../domain/pages.ts";
+import { useNavigate } from "react-router-dom";
+import { storyManifest } from "../domain/storyManifest.ts";
 
-interface StartPageProps {
-	onStart: () => void;
-}
-
-export function StartPage({ onStart }: StartPageProps) {
+export function HomePage() {
+	const navigate = useNavigate();
+	
+	function startStory() {
+		navigate(`/chapter/book${storyManifest.start}`);
+	}
+	
 	return (
 		<ContentPage
 			page={getPage("start")}
-			onButtonClick={onStart}
+			onButtonClick={startStory}
 		/>
 	);
 }
