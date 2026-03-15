@@ -1,0 +1,18 @@
+---
+id: book13
+image: book13
+characters:
+  - dog
+---
+Alice found herself facing a small dog — small, perhaps, by the dog’s own reckoning.
+To Alice it appeared quite enormous, and very much alarmed by her presence.
+
+Its trembling suggested danger, though she could not tell to whom.
+
+She supposed that moving more gently might make her less frightening.  
+The dog shrank back as if gentleness were beside the point.
+
+Alice picked up a stick and tossed it as far as she could manage.  
+The dog bounded after it in a few great leaps and vanished deeper into the woods.
+
+Alice stepped away, uncertain which of them had been the greater threat.

@@ -1,0 +1,10 @@
+---
+id: book2
+image: book2
+characters:
+---
+A key appeared in her hand.
+Behind a drapery stood a small door that seemed meant for it.
+She reasoned that having the key gave her leave to proceed.
+The door remained bolted, as if waiting for a different version of Alice.
+The key turned, but the door did not yield.

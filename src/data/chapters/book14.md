@@ -1,0 +1,11 @@
+---
+id: book14
+image: book14
+characters:
+  - caterpillar
+---
+Alice spoke to a figure seated calmly upon a mushroom, surrounded by drifting smoke.
+He responded as though she had asked a different question.
+She concluded that she must first understand who she was before continuing.
+The smoke thickened, offering no assistance.
+Alice waited for an answer.
