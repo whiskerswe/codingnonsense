@@ -1,4 +1,3 @@
-import type { StyledText } from "./styledText.ts";
 import type { ImageKey } from "../images/imageRegistry.ts";
 
 export type Chapter = {
@@ -6,6 +5,6 @@ export type Chapter = {
 	image?: ImageKey;
 	characters: string[];
 	title: string;
-	sentences: StyledText[];
+	body: string;
 	button_text?: string;
 };

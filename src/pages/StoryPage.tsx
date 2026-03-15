@@ -36,7 +36,6 @@ export function StoryPage({ onExit }: StoryPageProps) {
 	}, [navigate]);
 	
 	const chapter = chapters[chapterIndex];
-	
 	function handleClick() {
 		if (engine.canAdvance()) {
 			setChapterIndex(engine.nextChapter());
@@ -51,7 +50,7 @@ export function StoryPage({ onExit }: StoryPageProps) {
 				id: chapter.id,
 				image: chapter.image,
 				title: chapter.title,
-				sentences: chapter.sentences,
+				body: chapter.body,
 				button_text: chapter.button_text
 			}}
 			
