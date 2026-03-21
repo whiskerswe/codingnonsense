@@ -6,7 +6,7 @@ it("goes from start page to first chapter", async () => {
 	render(<App />);
 	
 	expect(
-		screen.getByRole("heading", { name: /start/i })
+		screen.getByRole("heading", { name: /A story.../i })
 	).toBeInTheDocument();
 	
 	const user = userEvent.setup();

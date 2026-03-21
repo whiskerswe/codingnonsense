@@ -14,7 +14,7 @@ export function ImageWithCredit({ src, chapterId }: ImageWithCreditProps) {
 		<figure className="text-right">
 			<img src={src} alt={altText} className="image-content mx-auto" />
 			<button
-				className="mb-2 mr-2 text-xs text-gray-700 italic underline"
+				className="mb-2 mr-6 text-xs text-gray-700 italic underline"
 				onClick={() => setOpen(true)}
 			>
 				Tenniel

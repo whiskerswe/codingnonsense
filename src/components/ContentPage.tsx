@@ -14,7 +14,8 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 	const [open, setOpen] = useState(false);
 	
 	return (
-		<main className="content">
+		<main className="content px-4">
+			<div className="content-inner">
 			{page.image && (
 				<div className="image-block">
 					<ImageWithCredit
@@ -34,6 +35,7 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 			)}
 			<Footer onClick={() => setOpen(true)} open={open} onClick1={() => setOpen(false)}
 					onClick2={( e ) => e.stopPropagation()}/>
-		</main>
+			</div>
+			</main>
 	);
 }

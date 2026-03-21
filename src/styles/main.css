@@ -1,20 +1,28 @@
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
+@plugin "@tailwindcss/typography";
+
 @reference "tailwindcss";
 
 @layer components {
 	.content {
-		@apply flex flex-col justify-center items-center m-2 text-sm/6;
+		@apply flex flex-col justify-center items-center px-4 py-2 text-sm/6 w-full;
+	}
+	
+	.content-inner {
+		@apply w-full max-w-xl mx-auto flex flex-col items-center;
 	}
 	
 	.read-the-book {
-		@apply w-full max-w-2/4
-			p-8
-			m-10;
+		@apply inline-block w-auto max-w-full px-6 py-8 my-10 prose;
 	}
 	
 	.read-the-book h1 {
-		@apply text-center mx-2 text-amber-950;
+		@apply text-center px-6 py-8 mb-60 text-2xl/8 font-semibold italic text-amber-950;
+	}
+	
+	.read-the-book p {
+		@apply text-sm/6;
 	}
 	
 	.image-block {
