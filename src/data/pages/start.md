@@ -1,7 +1,7 @@
 ---
 id: start
 image: alice_circle.png
-title: Start
+title: A story...
 button_text: Open
 ---
 All my delight on deeds of arms is set,  
