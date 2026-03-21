@@ -17,11 +17,7 @@ describe("imageRegistry", () => {
 	});
 
 	it("returns default image for missing key", () => {
-		const defaultImage = resolveImage();
+		const defaultImage = resolveImage("");
 		expect(resolveImage("does-not-exist")).toBe(defaultImage);
-	});
-
-	it("returns default image when key is undefined", () => {
-		expect(resolveImage()).toBe(resolveImage("book3"));
 	});
 });

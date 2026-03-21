@@ -19,11 +19,6 @@ export class StoryEngine {
 		this.consumedPoolEntries.add(config.start);
 	}
 	
-	getCurrentChapter() {
-		console.log("Current chapter is "  + this.currentChapter);
-		return this.currentChapter;
-	}
-	
 	canAdvance(): boolean {
 		const forcedAfterEnding = this.config.sequences.get(this.config.ending);
 		const final = forcedAfterEnding ?? this.config.ending;
@@ -51,7 +46,6 @@ export class StoryEngine {
 	
 	nextChapter() {
 		const next = this.computeNextChapter();
-		console.log("nextChapter", next);
 		this.consumedPoolEntries.add(next);
 		this.currentChapter = next;
 		return next;

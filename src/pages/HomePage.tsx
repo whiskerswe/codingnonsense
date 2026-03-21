@@ -5,7 +5,6 @@ import { storyManifest } from "../domain/storyManifest.ts";
 
 export function HomePage() {
 	const navigate = useNavigate();
-	console.log("Rendering HomePage");
 	function startStory() {
 		navigate(`/chapter/book${storyManifest.start}`);
 	}

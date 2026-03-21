@@ -24,9 +24,8 @@ export const imageRegistry: Record<string, string> =
 	}, {} as Record<string, string>);
 
 export function resolveImage(
-	key?: string
-): string | undefined {
-	if (!key) return defaultImage;
+	key: string
+): string {
 	const normalizedKey = key.replace(/\.[^/.]+$/, "");
 	return imageRegistry[normalizedKey] ?? defaultImage;
 }

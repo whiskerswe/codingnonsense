@@ -15,7 +15,7 @@ export function StoryPage() {
 	}
 	
 	const chapter = chapters.find(c => c.id === chapterId);
-	if (!chapter || !chapter.body) {
+	if (!chapter || !chapter.page.body) {
 		return <Navigate to="/not-found" replace />;
 	}
 	
@@ -41,13 +41,7 @@ export function StoryPage() {
 	
 	return (
 		<ContentPage
-			page={{
-				id: chapter.id,
-				image: chapter.image,
-				title: chapter.title,
-				body: chapter.body,
-				button_text: chapter.button_text
-			}}
+			page={chapter.page}
 			onButtonClick={handleClick}
 		/>
 	);
