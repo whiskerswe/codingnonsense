@@ -1,17 +1,23 @@
 import { useState } from "react";
 import { StoryEngine } from "../domain/storyEngine";
 import { storyManifest } from "../domain/storyManifest";
-import { chapters } from "../domain/chapters.ts";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { ContentPage } from "../components/ContentPage.tsx";
+import { chapters } from "../domain/chapters";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { ContentPage } from "../components/ContentPage";
 
-interface StoryPageProps {
-	onExit: () => void;
-}
-
-export function StoryPage({ onExit }: StoryPageProps) {
+export function StoryPage() {
+	
 	const navigate = useNavigate();
+	const { chapterId } = useParams();
+	
+	if (!chapterId) {
+		return <Navigate to="/not-found" replace />;
+	}
+	
+	const chapter = chapters.find(c => c.id === chapterId);
+	if (!chapter || !chapter.body) {
+		return <Navigate to="/not-found" replace />;
+	}
 	
 	const [engine] = useState(
 		() =>
@@ -23,27 +29,16 @@ export function StoryPage({ onExit }: StoryPageProps) {
 			})
 	);
 	
-	const [chapterIndex, setChapterIndex] = useState(
-		() => engine.getCurrentChapter()
-	);
-	
-	useEffect(() => {
-		const isActive = sessionStorage.getItem("alice_story_active");
-		
-		if (!isActive) {
-			navigate("/", { replace: true });
-		}
-	}, [navigate]);
-	
-	const chapter = chapters[chapterIndex];
 	function handleClick() {
 		if (engine.canAdvance()) {
-			setChapterIndex(engine.nextChapter());
-		}
-		else {
-			onExit();
+			const nextIndex = engine.nextChapter();
+			const nextId = `book${nextIndex}`;
+			navigate(`/chapter/${nextId}`);
+		} else {
+			navigate("/");
 		}
 	}
+	
 	return (
 		<ContentPage
 			page={{
@@ -53,7 +48,6 @@ export function StoryPage({ onExit }: StoryPageProps) {
 				body: chapter.body,
 				button_text: chapter.button_text
 			}}
-			
 			onButtonClick={handleClick}
 		/>
 	);

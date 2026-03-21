@@ -3,7 +3,7 @@ import type { StoryConfig } from "./storyEngine.ts";
 export const storyManifest = {
 	start: 3,
 	ending: 22,
-	randomPool: [0, 1, 2, 4, 7, 13, 14, 19, 21, 39],
+	randomPool: [0, 1, 2, 4, 7, 13, 14, 21, 39],
 	sequences: new Map([
 		[7, 6],
 		[22, 23],

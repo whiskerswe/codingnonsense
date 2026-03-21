@@ -20,6 +20,7 @@ export class StoryEngine {
 	}
 	
 	getCurrentChapter() {
+		console.log("Current chapter is "  + this.currentChapter);
 		return this.currentChapter;
 	}
 	
@@ -50,6 +51,7 @@ export class StoryEngine {
 	
 	nextChapter() {
 		const next = this.computeNextChapter();
+		console.log("nextChapter", next);
 		this.consumedPoolEntries.add(next);
 		this.currentChapter = next;
 		return next;

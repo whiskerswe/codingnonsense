@@ -1,16 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AboutPage } from "./pages/AboutPage.tsx";
 import { Header } from "./components/Header.tsx";
-import { useState } from "react";
 import { HomeContext } from "./app/HomeContext.tsx";
 import { StoryPage } from "./pages/StoryPage.tsx";
-import { StartPage } from "./pages/StartPage.tsx";
+import { HomePage } from "./pages/HomePage.tsx";
+import { NotFoundPage } from "./pages/NotFoundPage.tsx";
 
 function App() {
-	const [mode, setMode] = useState<"start" | "story">("start");
 	
 	function resetHome() {
-		setMode("start");
 	}
 	
 	return (
@@ -18,12 +16,11 @@ function App() {
 			<BrowserRouter>
 				<Header />
 				<Routes>
-					<Route path="/" element={
-						mode === "start"
-							? <StartPage onStart={() => setMode("story")} />
-							: <StoryPage onExit={() => setMode("start")} />
-					} />
+					<Route path="/" element={<HomePage />} />
+					<Route path="/chapter/:chapterId" element={<StoryPage />} />
 					<Route path="/about" element={<AboutPage />} />
+					<Route path="/not-found" element={<NotFoundPage />} />
+					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</BrowserRouter>
 		</HomeContext.Provider>

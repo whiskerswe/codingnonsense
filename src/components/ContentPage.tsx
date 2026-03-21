@@ -5,11 +5,11 @@ import { getBuildTime } from "../app/buildInfo.ts";
 import { PageText } from "./PageText.tsx";
 
 interface Props {
-	page: Page;
-	onButtonClick?: () => void;
+	page: Page,
+	onButtonClick?: () => void,
 }
 
-export function ContentPage({ page, onButtonClick }: Props) {
+export function ContentPage( {page, onButtonClick}: Props ) {
 	return (
 		<main className="content">
 			{page.image && (
@@ -22,7 +22,7 @@ export function ContentPage({ page, onButtonClick }: Props) {
 			)}
 			<div className="read-the-book">
 				<h1>{page.title}</h1>
-				<PageText body={page.body} />
+				<PageText body={page.body}/>
 			</div>
 			{onButtonClick && (
 				<AliceButton onClick={onButtonClick}>

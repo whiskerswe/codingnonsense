@@ -1,5 +1,5 @@
 ---
-id: start
+id: book3
 image: book3
 characters:
 button_text: Drink me
