@@ -1,8 +1,9 @@
 import { ImageWithCredit } from "./ImageWithCredit.tsx";
 import type { Page } from "../domain/models/page.ts";
 import { AliceButton } from "./AliceButton.tsx";
-import { getBuildTime } from "../app/buildInfo.ts";
 import { PageText } from "./PageText.tsx";
+import { useState } from "react";
+import { Footer } from "./Footer.tsx";
 
 interface Props {
 	page: Page,
@@ -10,6 +11,8 @@ interface Props {
 }
 
 export function ContentPage( {page, onButtonClick}: Props ) {
+	const [open, setOpen] = useState(false);
+	
 	return (
 		<main className="content">
 			{page.image && (
@@ -29,9 +32,8 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 					{page.button_text ?? "Click me"}
 				</AliceButton>
 			)}
-			<footer className="build-info">
-				Build: {getBuildTime()}
-			</footer>
+			<Footer onClick={() => setOpen(true)} open={open} onClick1={() => setOpen(false)}
+					onClick2={( e ) => e.stopPropagation()}/>
 		</main>
 	);
 }
