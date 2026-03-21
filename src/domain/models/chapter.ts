@@ -1,10 +1,11 @@
-import type { ImageKey } from "../images/imageRegistry.ts";
+import type { Page } from "./page.ts";
 
 export type Chapter = {
-	id: string;
-	image?: ImageKey;
+	page: Page;
 	characters: string[];
-	title: string;
-	body: string;
-	button_text?: string;
+	
+	get id(): string;
+	get title(): string;
+	get body(): string;
+	get image(): string;
 };

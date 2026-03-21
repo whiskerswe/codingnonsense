@@ -11,7 +11,6 @@ const files = fs
 
 const chapters = files.map(file => {
     const id = path.parse(file).name;
-	console.log("Chapter " + id);
     return {
         id,
         image: file,

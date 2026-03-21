@@ -32,5 +32,4 @@ chapters.forEach((chapter) => {
 	const filename = path.join(outputDir, `${number}.md`);
 
 	fs.writeFileSync(filename, markdown);
-	console.log(`Created ${filename}`);
 });
