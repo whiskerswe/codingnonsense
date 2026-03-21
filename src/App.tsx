@@ -4,6 +4,7 @@ import { Header } from "./components/Header.tsx";
 import { HomeContext } from "./app/HomeContext.tsx";
 import { StoryPage } from "./pages/StoryPage.tsx";
 import { HomePage } from "./pages/HomePage.tsx";
+import { NotFoundPage } from "./pages/NotFoundPage.tsx";
 
 function App() {
 	
@@ -18,6 +19,8 @@ function App() {
 					<Route path="/" element={<HomePage />} />
 					<Route path="/chapter/:chapterId" element={<StoryPage />} />
 					<Route path="/about" element={<AboutPage />} />
+					<Route path="/not-found" element={<NotFoundPage />} />
+					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</BrowserRouter>
 		</HomeContext.Provider>

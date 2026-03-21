@@ -2,12 +2,22 @@ import { useState } from "react";
 import { StoryEngine } from "../domain/storyEngine";
 import { storyManifest } from "../domain/storyManifest";
 import { chapters } from "../domain/chapters";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { ContentPage } from "../components/ContentPage";
 
 export function StoryPage() {
+	
 	const navigate = useNavigate();
 	const { chapterId } = useParams();
+	
+	if (!chapterId) {
+		return <Navigate to="/not-found" replace />;
+	}
+	
+	const chapter = chapters.find(c => c.id === chapterId);
+	if (!chapter || !chapter.body) {
+		return <Navigate to="/not-found" replace />;
+	}
 	
 	const [engine] = useState(
 		() =>
@@ -19,17 +29,10 @@ export function StoryPage() {
 			})
 	);
 	
-	const chapter = chapters.find(c => c.id === chapterId);
-	
-	if (!chapter) {
-		return null;
-	}
-	
 	function handleClick() {
 		if (engine.canAdvance()) {
 			const nextIndex = engine.nextChapter();
 			const nextId = `book${nextIndex}`;
-			
 			navigate(`/chapter/${nextId}`);
 		} else {
 			navigate("/");
