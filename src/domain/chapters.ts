@@ -5,17 +5,43 @@ import type { ChapterAttributes } from "./models/chapter_attributes.ts";
 import type { Page } from "./models/page.ts";
 
 const modules = import.meta.glob("/src/data/chapters/*.md", {
-	eager: true,
 	query: "?raw",
-	import: 'default'
+	import: "default"
 });
 
-function createChapterPageFromMarkdown(attributes: ChapterAttributes, body: string): Page {
+export async function getChapter(id: string): Promise<Chapter | null> {
+	const path = `/src/data/chapters/${id}.md`;
+	const loader = modules[path];
+	
+	if (!loader) return null;
+	
+	const result = await loader();
+	
+	if (!result) return null;
+	
+	const raw =
+		typeof result === "string"
+			? result
+			: (result as any).default;
+	
+	if (typeof raw !== "string") {
+		throw new Error("Markdown loader did not return a string");
+	}
+	
+	const { attributes, body } = parseMarkdown<ChapterAttributes>(raw);
+	
+	return createChapter({
+		page: await createChapterPageFromMarkdown(attributes, body),
+		characters: attributes.characters ?? [],
+	});
+}
+
+async function createChapterPageFromMarkdown( attributes: ChapterAttributes, body: string ): Promise<Page> {
 	return {
 		id: attributes.id,
 		title: attributes.title ?? "*       *       *       *       *",
 		body,
-		image: resolveImage(attributes.image),
+		image: await resolveImage(attributes.image),
 		button_text: attributes.button_text
 	};
 }
@@ -41,16 +67,3 @@ export function createChapter(data: {
 		}
 	};
 }
-
-const sortedModules = Object.entries(modules).sort(([a], [b]) =>
-	a.localeCompare(b)
-);
-
-export const chapters: Chapter[] = sortedModules.map(([, raw]) => {
-	const { attributes, body } = parseMarkdown<ChapterAttributes>(raw as string);
-	
-	return createChapter({
-		page: createChapterPageFromMarkdown(attributes, body),
-		characters: attributes.characters ?? [],
-	});
-});

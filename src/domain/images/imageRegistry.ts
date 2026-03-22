@@ -5,27 +5,37 @@ const defaultImage = image3;
 const modules = import.meta.glob(
 	"../../assets/images/**/*.{jpg,jpeg,png,webp,svg}",
 	{
-		eager: true,
 		import: "default"
 	}
 );
 
 export type ImageKey = keyof typeof imageRegistry;
 
-export const imageRegistry: Record<string, string> =
-	Object.entries(modules).reduce((acc, [path, src]) => {
+export const imageRegistry: Record<string, () => Promise<string>> =
+	Object.entries(modules).reduce((acc, [path, loader]) => {
 		const fileName = path.split("/").pop();
 		if (!fileName) return acc;
 		
-		const key = fileName.replace(/\.[^/.]+$/, ""); // remove extension
-		acc[key] = src as string;
+		const key = fileName.replace(/\.[^/.]+$/, "");
+		acc[key] = loader as () => Promise<string>;
 		
 		return acc;
-	}, {} as Record<string, string>);
+	}, {} as Record<string, () => Promise<string>>);
 
-export function resolveImage(
-	key: string
-): string {
+const cache = new Map<string, string>();
+
+export async function resolveImage(key: string): Promise<string> {
 	const normalizedKey = key.replace(/\.[^/.]+$/, "");
-	return imageRegistry[normalizedKey] ?? defaultImage;
+	
+	if (cache.has(normalizedKey)) {
+		return cache.get(normalizedKey)!;
+	}
+	
+	const loader = imageRegistry[normalizedKey];
+	if (!loader) return defaultImage;
+	
+	const src = await loader();
+	cache.set(normalizedKey, src);
+	
+	return src;
 }
