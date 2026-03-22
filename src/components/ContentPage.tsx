@@ -12,7 +12,9 @@ interface Props {
 
 export function ContentPage( {page, onButtonClick}: Props ) {
 	const [open, setOpen] = useState(false);
-	
+	if (!page.body) {
+		return <div style={{ padding: 20 }}>Loading...</div>;
+	}
 	return (
 		<main className="content px-4">
 			<div className="content-inner">

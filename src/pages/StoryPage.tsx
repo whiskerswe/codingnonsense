@@ -1,23 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StoryEngine } from "../domain/storyEngine";
 import { storyManifest } from "../domain/storyManifest";
-import { chapters } from "../domain/chapters";
+import { getChapter } from "../domain/chapters";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { ContentPage } from "../components/ContentPage";
 
 export function StoryPage() {
-	
 	const navigate = useNavigate();
 	const { chapterId } = useParams();
+	
+	const [chapter, setChapter] = useState<any>(null);
+	const [loading, setLoading] = useState(true);
 	
 	if (!chapterId) {
 		return <Navigate to="/not-found" replace />;
 	}
 	
-	const chapter = chapters.find(c => c.id === chapterId);
-	if (!chapter || !chapter.page.body) {
-		return <Navigate to="/not-found" replace />;
-	}
+	useEffect(() => {
+		let isMounted = true;
+		
+		async function load() {
+			const found = await getChapter(chapterId!);
+			
+			if (isMounted) {
+				setChapter(found);
+				setLoading(false);
+			}
+		}
+		
+		void load();
+		
+		return () => {
+			isMounted = false;
+		};
+	}, [chapterId]);
 	
 	const [engine] = useState(
 		() =>
@@ -28,6 +44,14 @@ export function StoryPage() {
 				sequences: storyManifest.sequences,
 			})
 	);
+	
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+	
+	if (!chapter || !chapter.page.body) {
+		return <Navigate to="/not-found" replace />;
+	}
 	
 	function handleClick() {
 		if (engine.canAdvance()) {

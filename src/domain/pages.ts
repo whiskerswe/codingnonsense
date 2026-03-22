@@ -6,12 +6,12 @@ import rawStart from "../data/pages/start.md?raw";
 import rawAbout from "../data/pages/about.md?raw";
 import rawNotFound from "../data/pages/not_found.md?raw";
 
-function convertMarkdownPage(raw: string): Page {
+async function convertMarkdownPage( raw: string ): Promise<Page> {
 	const { attributes, body } = parseMarkdown<Page>(raw);
 	
 	return {
 		id: attributes.id,
-		image: resolveImage(attributes.image),
+		image: await resolveImage(attributes.image),
 		title: attributes.title,
 		button_text: attributes.button_text,
 		body: body
@@ -24,7 +24,7 @@ const rawPages: Record<string, string> = {
 	not_found: rawNotFound
 };
 
-export function getPage(id: string): Page {
+export async function getPage( id: string ): Promise<Page> {
 	const raw = rawPages[id] ?? rawStart;
-	return convertMarkdownPage(raw);
+	return await convertMarkdownPage(raw);
 }
