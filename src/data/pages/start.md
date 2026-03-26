@@ -1,8 +1,10 @@
 ---
 id: start
-image: alice_circle.png
+image: alice_circle.webp
 title: A story...
 button_text: Open
+width: 
+height: 
 ---
 All my delight on deeds of arms is set,  
 
