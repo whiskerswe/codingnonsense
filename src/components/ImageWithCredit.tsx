@@ -1,18 +1,27 @@
 import { useState } from "react";
 
 type ImageWithCreditProps = {
-    src: string;
-    chapterId: string;
-    };
+	src: string;
+};
 
-export function ImageWithCredit({ src, chapterId }: ImageWithCreditProps) {
+export function ImageWithCredit({ src }: ImageWithCreditProps) {
 	const [open, setOpen] = useState(false);
-	
-	const altText = `Illustration from Alice in Wonderland, chapter ${chapterId}`;
+	const altText = `Illustration from Alice in Wonderland by Sir John Tenniel (1820-1914)`;
 	
 	return (
 		<figure className="text-right">
-			<img src={src} alt={altText} className="image-content mx-auto" />
+			<img src={src}
+				alt={altText}
+				width={500}
+				height={509}
+				loading="eager"
+				fetchPriority="high"
+				style={{
+					maxWidth: 500,
+					width: "100%",
+					height: "auto"
+				}}
+				className="image-content mx-auto" />
 			<button
 				className="mb-2 mr-6 text-xs text-gray-700 italic underline"
 				onClick={() => setOpen(true)}

@@ -5,7 +5,7 @@ type Props = {
 	body: string;
 };
 
-export function PageText({ body }: Props) {
+export default function PageText({ body }: Props) {
 	return (
 		<ReactMarkdown remarkPlugins={[remarkGfm]}>
 			{body}

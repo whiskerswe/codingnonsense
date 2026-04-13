@@ -17,14 +17,14 @@ describe("imageRegistry", () => {
 	});
 	
 	it("normalizes extension when resolving a key", async () => {
-		const a = await resolveImage("book1.jpg");
+		const a = await resolveImage("book1.webp");
 		const b = await resolveImage("book1");
 		
 		expect(a).toBe(b);
 	});
 	
 	it("returns default image for missing key", async () => {
-		const defaultImage = "/src/assets/images/chapters/book3.jpg";
+		const defaultImage = "/src/assets/images/chapters/book3.webp";
 		const result = await resolveImage("does-not-exist");
 		
 		expect(result).toBe(defaultImage);

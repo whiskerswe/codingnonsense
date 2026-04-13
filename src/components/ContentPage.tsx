@@ -1,8 +1,7 @@
 import { ImageWithCredit } from "./ImageWithCredit.tsx";
 import type { Page } from "../domain/models/page.ts";
 import { AliceButton } from "./AliceButton.tsx";
-import { PageText } from "./PageText.tsx";
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Footer } from "./Footer.tsx";
 
 interface Props {
@@ -15,20 +14,30 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 	if (!page.body) {
 		return <div style={{ padding: 20 }}>Loading...</div>;
 	}
+	const PageText = lazy(() => import("./PageText"));
 	return (
 		<main className="content px-4">
 			<div className="content-inner">
 			{page.image && (
-				<div className="image-block">
+				<div className="image-block" style={{ minHeight: "300px" }}>
+					<div
+						style={{
+							aspectRatio: "3 / 2", // ungefär Tenniel
+							width: "100%",
+							maxWidth: 500
+						}}
+					>
 					<ImageWithCredit
 						src={page.image}
-						chapterId={page.id}
 					/>
+					</div>
 				</div>
 			)}
 			<div className="read-the-book">
 				<h1>{page.title}</h1>
-				<PageText body={page.body}/>
+				<Suspense fallback={null}>
+					<PageText body={page.body}/>
+				</Suspense>
 			</div>
 			{onButtonClick && (
 				<AliceButton onClick={onButtonClick}>

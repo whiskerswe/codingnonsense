@@ -65,8 +65,8 @@ it("all chapters have valid images", async () => {
 		
 		const chapter = await getChapter(id);
 		
-		expect(typeof chapter!.page.image).toBe("string");
-		expect(chapter!.page.image.length).toBeGreaterThan(0);
+		expect(typeof chapter!.page.image!).toBe("string");
+		expect(chapter!.page.image!.length).toBeGreaterThan(0);
 	}
 });
 

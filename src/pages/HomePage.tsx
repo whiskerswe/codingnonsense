@@ -5,7 +5,7 @@ import { storyManifest } from "../domain/storyManifest.ts";
 import { useNavigate } from "react-router-dom";
 import type { Page } from "../domain/models/page.ts";
 
-export function HomePage() {
+export default function HomePage() {
 	const navigate = useNavigate();
 	
 	const [page, setPage] = useState<Page | null>(null);

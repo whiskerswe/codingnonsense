@@ -5,10 +5,10 @@ import { getChapter } from "../domain/chapters";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { ContentPage } from "../components/ContentPage";
 
-export function StoryPage() {
+export default function StoryPage() {
 	const navigate = useNavigate();
 	const { chapterId } = useParams();
-	
+	const [, setTick] = useState(0);
 	const [chapter, setChapter] = useState<any>(null);
 	const [loading, setLoading] = useState(true);
 	
@@ -18,7 +18,7 @@ export function StoryPage() {
 	
 	useEffect(() => {
 		let isMounted = true;
-		
+		setLoading(true);
 		async function load() {
 			const found = await getChapter(chapterId!);
 			
@@ -57,6 +57,7 @@ export function StoryPage() {
 		if (engine.canAdvance()) {
 			const nextIndex = engine.nextChapter();
 			const nextId = `book${nextIndex}`;
+			setTick(t => t + 1);
 			navigate(`/chapter/${nextId}`);
 		} else {
 			navigate("/");
