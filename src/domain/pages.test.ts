@@ -1,7 +1,7 @@
 import { getPage } from "./pages.ts";
-import { resolveImage } from "./images/imageRegistry.ts";
 import { parseMarkdown } from "./text/parseMarkdown.ts";
 import type { Page } from "./models/page.ts";
+import { resolveImage } from "./images/imageRegistry.ts";
 import rawStart from "../data/pages/start.md?raw";
 import rawAbout from "../data/pages/about.md?raw";
 
@@ -15,7 +15,7 @@ describe("getPage", () => {
 		expect(page.id).toBe(start.attributes.id);
 		expect(page.title).toBe(start.attributes.title);
 		expect(page.button_text).toBe(start.attributes.button_text);
-		expect(page.image).toBe(await resolveImage(start.attributes.image));
+		expect(page.image).toBe(await resolveImage(start.attributes.image!));
 		expect(page.body).toEqual(start.body);
 	});
 	
@@ -25,7 +25,7 @@ describe("getPage", () => {
 		expect(page.id).toBe(about.attributes.id);
 		expect(page.title).toBe(about.attributes.title);
 		expect(page.button_text).toBe(about.attributes.button_text);
-		expect(page.image).toBe(await resolveImage(about.attributes.image));
+		expect(page.image).toBe(await resolveImage(about.attributes.image!));
 		expect(page.body).toEqual(about.body);
 	});
 	

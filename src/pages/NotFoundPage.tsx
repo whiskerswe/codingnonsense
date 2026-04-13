@@ -2,7 +2,7 @@ import { ContentPage } from "../components/ContentPage";
 import { getPage } from "../domain/pages.ts";
 import { useEffect, useState } from "react";
 
-export function NotFoundPage() {
+export default function NotFoundPage() {
 	
 	const [page, setPage] = useState<any>(null);
 	const [loading, setLoading] = useState(true);

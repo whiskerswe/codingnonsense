@@ -1,6 +1,6 @@
 import type { Page } from "./models/page.ts";
-import { resolveImage } from "./images/imageRegistry";
 import { parseMarkdown } from "./text/parseMarkdown.ts";
+import { resolveImage } from "./images/imageRegistry.ts";
 
 import rawStart from "../data/pages/start.md?raw";
 import rawAbout from "../data/pages/about.md?raw";
@@ -11,7 +11,7 @@ async function convertMarkdownPage( raw: string ): Promise<Page> {
 	
 	return {
 		id: attributes.id,
-		image: await resolveImage(attributes.image),
+		image: attributes.image ? await resolveImage(attributes.image) : undefined,
 		title: attributes.title,
 		button_text: attributes.button_text,
 		body: body

@@ -1,4 +1,4 @@
-import image3 from '../../assets/images/chapters/book3.jpg';
+import image3 from '../../assets/images/chapters/book3.webp';
 
 const defaultImage = image3;
 
