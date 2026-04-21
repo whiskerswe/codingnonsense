@@ -12,7 +12,6 @@ const modules = import.meta.glob("/src/data/chapters/*.md", {
 export async function getChapter(id: string): Promise<Chapter | null> {
 	const path = `/src/data/chapters/${id}.md`;
 	const loader = modules[path];
-	console.log("Path is " + path);
 	if (!loader) return null;
 	
 	const result = await loader();
