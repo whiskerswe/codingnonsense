@@ -11,6 +11,7 @@ function defaultConfig(): StoryConfig {
 	return {
 		start: 3,
 		ending: 22,
+		numberOfChapters: 10,
 		randomPool: [4, 5, 7],
 		sequences: new Map([
 			[7, 6],
@@ -24,6 +25,7 @@ function createEngine(overrides?: Partial<StoryConfig>) {
 	const config: StoryConfig = {
 		start: overrides?.start ?? START,
 		ending: overrides?.ending ?? ENDING,
+		numberOfChapters: overrides?.numberOfChapters ?? base.numberOfChapters,
 		randomPool: overrides?.randomPool ?? base.randomPool,
 		sequences: overrides?.sequences ?? base.sequences,
 	};
@@ -91,4 +93,22 @@ it.each([
 	if (expectNotIn) {
 		expect(expectNotIn).not.toContain(result);
 	}
+});
+
+it("draws from the random pool while fewer than numberOfChapters have been read", () => {
+	const engine = createEngine({
+		numberOfChapters: 2,
+		randomPool: [4],
+	});
+
+	expect(engine.nextChapter()).toBe(4);
+});
+
+it("goes to the ending once numberOfChapters have been read", () => {
+	const engine = createEngine({
+		numberOfChapters: 1,
+		randomPool: [4],
+	});
+
+	expect(engine.nextChapter()).toBe(ENDING);
 });

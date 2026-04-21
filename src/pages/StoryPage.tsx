@@ -40,6 +40,7 @@ export default function StoryPage() {
 			new StoryEngine({
 				start: storyManifest.start,
 				ending: storyManifest.ending,
+				numberOfChapters: storyManifest.numberOfChapters,
 				randomPool: storyManifest.randomPool,
 				sequences: storyManifest.sequences,
 			})

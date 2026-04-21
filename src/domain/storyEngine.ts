@@ -1,6 +1,7 @@
 export type StoryConfig = {
 	start: number;
 	ending: number;
+	numberOfChapters: number;
 	randomPool: readonly number[];
 	sequences: ReadonlyMap<number, number>;
 }
@@ -32,11 +33,13 @@ export class StoryEngine {
 			return forced;
 		}
 		
+		const maxChaptersRead = this.consumedPoolEntries.size >= this.config.numberOfChapters;
+		
 		const remaining = this.config.randomPool.filter(
 			c => !this.consumedPoolEntries.has(c)
 		);
 		
-		if (remaining.length === 0) {
+		if (remaining.length === 0 || maxChaptersRead) {
 			return this.config.ending;
 		}
 		
