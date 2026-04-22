@@ -6,34 +6,13 @@ import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { ContentPage } from "../components/ContentPage";
 
 export default function StoryPage() {
+	
 	const navigate = useNavigate();
 	const { chapterId } = useParams();
 	const [, setTick] = useState(0);
 	const [chapter, setChapter] = useState<any>(null);
 	const [loading, setLoading] = useState(true);
 	
-	if (!chapterId) {
-		return <Navigate to="/not-found" replace />;
-	}
-	
-	useEffect(() => {
-		let isMounted = true;
-		setLoading(true);
-		async function load() {
-			const found = await getChapter(chapterId!);
-			
-			if (isMounted) {
-				setChapter(found);
-				setLoading(false);
-			}
-		}
-		
-		void load();
-		
-		return () => {
-			isMounted = false;
-		};
-	}, [chapterId]);
 	
 	const [engine] = useState(
 		() =>
@@ -45,6 +24,31 @@ export default function StoryPage() {
 				sequences: storyManifest.sequences,
 			})
 	);
+	
+	useEffect(() => {
+		if (!chapterId) {
+			navigate("/not-found", { replace: true });
+			return;
+		}
+		
+		let cancelled = false;
+		
+		async function load() {
+			setLoading(true);
+			const found = await getChapter(chapterId!);
+			
+			if (!cancelled) {
+				setChapter(found);
+				setLoading(false);
+			}
+		}
+		
+		void load();
+		
+		return () => {
+			cancelled = true;
+		};
+	}, [chapterId, navigate]);
 	
 	if (loading) {
 		return <div>Loading...</div>;
