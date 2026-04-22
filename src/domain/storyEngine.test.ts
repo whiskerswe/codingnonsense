@@ -3,9 +3,9 @@ import { type StoryConfig, StoryEngine } from "./storyEngine.js";
 
 
 const base = defaultConfig();
-const START = base.start
+const START = base.start;
 const ENDING = base.ending;
-const FORCE_FROM_7 = base.sequences.get(7)!;
+const SEQUENCE_FROM_7 = base.sequences.get(7)!;
 
 function defaultConfig(): StoryConfig {
 	return {
@@ -14,8 +14,8 @@ function defaultConfig(): StoryConfig {
 		numberOfChapters: 10,
 		randomPool: [4, 5, 7],
 		sequences: new Map([
-			[7, 6],
-			[22, 23],
+			[7, [6]],
+			[22, [23]],
 		]),
 	};
 }
@@ -37,11 +37,6 @@ function createEngine(overrides?: Partial<StoryConfig>) {
 
 it.each([
 	{
-		name: 'forces next chapter when sequence exists',
-		current: 7,
-		expectExact: FORCE_FROM_7,
-	},
-	{
 		name: 'goes to ending when pool is empty',
 		randomPool: [],
 		expectExact: ENDING,
@@ -54,16 +49,10 @@ it.each([
 	{
 		name: 'random chapter must not be in consumedPoolEntries',
 		consumedPoolEntries: new Set([4, 5]),
-		expectIn: [7, 8],
+		expectIn: [7],
 		expectNotIn: [4, 5],
 	},
-	{
-		name: 'forced overrides random pool',
-		current: 7,
-		expectExact: FORCE_FROM_7,
-	}
 ])('$name', ( {
-				  current,
 				  randomPool,
 				  consumedPoolEntries,
 				  expectExact,
@@ -75,7 +64,6 @@ it.each([
 		randomPool,
 	});
 	
-	engine.currentChapter = current ?? START;
 	consumedPoolEntries?.forEach(c =>
 		engine.consumedPoolEntries.add(c)
 	);
@@ -93,6 +81,15 @@ it.each([
 	if (expectNotIn) {
 		expect(expectNotIn).not.toContain(result);
 	}
+});
+
+it("queues sequence chapters after landing on a sequence start", () => {
+	const engine = createEngine({
+		randomPool: [7],
+	});
+	
+	expect(engine.nextChapter()).toBe(7);
+	expect(engine.nextChapter()).toBe(SEQUENCE_FROM_7[0]);
 });
 
 it("draws from the random pool while fewer than numberOfChapters have been read", () => {

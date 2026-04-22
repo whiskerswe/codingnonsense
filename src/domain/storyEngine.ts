@@ -3,13 +3,14 @@ export type StoryConfig = {
 	ending: number;
 	numberOfChapters: number;
 	randomPool: readonly number[];
-	sequences: ReadonlyMap<number, number>;
+	sequences: ReadonlyMap<number, number[]>;
 }
 
 export class StoryEngine {
 	currentChapter: number;
 	consumedPoolEntries = new Set<number>();
 	private config;
+	private chapterQueue: number[];
 	
 	constructor(
 		config: StoryConfig
@@ -18,19 +19,20 @@ export class StoryEngine {
 		this.currentChapter = config.start;
 		this.consumedPoolEntries = new Set<number>();
 		this.consumedPoolEntries.add(config.start);
+		this.chapterQueue = [];
 	}
 	
 	canAdvance(): boolean {
-		const forcedAfterEnding = this.config.sequences.get(this.config.ending);
-		const final = forcedAfterEnding ?? this.config.ending;
-		
-		return !this.consumedPoolEntries.has(final);
+		if (this.chapterQueue.length > 0) return true;
+		// Last chapter is always 23. Can be found in storyConfig, but
+		// this is OK to save some logic.
+		return !this.consumedPoolEntries.has(23);
 	}
 	
 	private computeNextChapter(){
-		const forced = this.config.sequences.get(this.currentChapter);
-		if (forced !== undefined) {
-			return forced;
+		
+		if (this.chapterQueue.length > 0) {
+			return this.chapterQueue.shift()!;
 		}
 		
 		const maxChaptersRead = this.consumedPoolEntries.size >= this.config.numberOfChapters;
@@ -51,6 +53,10 @@ export class StoryEngine {
 		const next = this.computeNextChapter();
 		this.consumedPoolEntries.add(next);
 		this.currentChapter = next;
+		const queue = this.config.sequences.get(this.currentChapter);
+		if (queue !== undefined) {
+			this.chapterQueue.push(...queue);
+		}
 		return next;
 	}
 	
