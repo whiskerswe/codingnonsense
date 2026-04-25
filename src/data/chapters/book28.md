@@ -1,7 +1,7 @@
 ---
 id: book28
 image: book28
-characters: queen, porridge
+characters: [queen, porridge]
 ---
 A large crowd had gathered. Alice joined it, wishing to see what was the matter.
 After some time, it became apparent that they were looking at her.

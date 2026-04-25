@@ -5,15 +5,17 @@ import { resolveImage } from "./images/imageRegistry.ts";
 import rawStart from "../data/pages/start.md?raw";
 import rawAbout from "../data/pages/about.md?raw";
 import rawNotFound from "../data/pages/not_found.md?raw";
+import { PageAttributesSchema } from "./models/page_attributes.ts";
 
 async function convertMarkdownPage( raw: string ): Promise<Page> {
-	const { attributes, body } = parseMarkdown<Page>(raw);
+	const { attributes, body } = parseMarkdown(raw);
+	const validatedAttributes = PageAttributesSchema.parse(attributes);
 	
 	return {
-		id: attributes.id,
-		image: attributes.image ? await resolveImage(attributes.image) : undefined,
-		title: attributes.title,
-		button_text: attributes.button_text,
+		id: validatedAttributes.id,
+		image: validatedAttributes.image ? await resolveImage(validatedAttributes.image) : undefined,
+		title: validatedAttributes.title,
+		button_text: validatedAttributes.button_text,
 		body: body
 	};
 }

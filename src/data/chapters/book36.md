@@ -1,7 +1,6 @@
 ---
 id: book36
 image: book36
-characters:
 ---
 How do you like the tale so far?  
   

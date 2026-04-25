@@ -1,7 +1,7 @@
 ---
 id: book34
 image: book34
-characters:
+characters: [mock_turtle,gryphon]
 ---
 And thus the Mock Turtle finished his tale.
 

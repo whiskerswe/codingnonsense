@@ -1,8 +1,7 @@
 ---
 id: book12
 image: book12
-characters:
-  - lizard
+characters: [lizard]
 ---
 Alice saw a Lizard suddenly propelled from a chimney, trailing smoke behind it.
 

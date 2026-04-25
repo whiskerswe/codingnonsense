@@ -1,8 +1,7 @@
 ---
 id: book5
 image: book5
-characters:
-  - white_rabbit
+characters: [white_rabbit]
 ---
 Alice watched the White Rabbit dart off, his coat flapping as though the wind were an accomplice.
 

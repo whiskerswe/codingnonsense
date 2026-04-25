@@ -1,7 +1,7 @@
 ---
 id: book25
 image: book25
-characters:
+characters: [hatter, white_rabbit, mouse]
 ---
 “Have you the hammer?” asked the Hare once more.
 The Hatter flung his arm into the air:

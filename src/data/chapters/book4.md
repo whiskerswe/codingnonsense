@@ -1,7 +1,6 @@
 ---
 id: book4
 image: book4
-characters:
 ---
 Alice felt her body stretch in a way that made the world seem even smaller.
 She could not tell whether the change was happening to her or simply around her.

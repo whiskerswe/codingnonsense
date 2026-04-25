@@ -1,7 +1,7 @@
 ---
 id: book10
 image: book10
-characters:
+themes: [dolls_house]
 ---
 Alice noticed that part of her no longer belonged where it was.
 

@@ -1,7 +1,7 @@
 ---
 id: book20
 image: book20
-characters: duchess
+characters: [duchess]
 ---
 ONCE upon a time there were Three Ladies, who lived together in a house of their own, in a wood.
 One of them was a Little, Small, Wee Lady; one was a Middle-sized Lady; and the other was a Great, Huge Nurse.

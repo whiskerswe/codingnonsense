@@ -1,8 +1,7 @@
 import type { Chapter } from "./models/chapter.ts";
 import { resolveImage } from "./images/imageRegistry.ts";
 import { parseMarkdown } from "./text/parseMarkdown.ts";
-import type { ChapterAttributes } from "./models/chapter_attributes.ts";
-import type { Page } from "./models/page.ts";
+import { type ChapterAttributes, ChapterAttributesSchema } from "./models/chapter_attributes.ts";
 
 const modules = import.meta.glob("/src/data/chapters/*.md", {
 	query: "?raw",
@@ -27,42 +26,34 @@ export async function getChapter(id: string): Promise<Chapter | null> {
 		throw new Error("Markdown loader did not return a string");
 	}
 	
-	const { attributes, body } = parseMarkdown<ChapterAttributes>(raw);
+	const { attributes, body } = parseChapter(raw);
 	
-	return createChapter({
-		page: await createChapterPageFromMarkdown(attributes, body),
-		characters: attributes.characters ?? [],
+	return await createChapterPage(attributes, body);
+}
+
+function parseChapter(raw: string) {
+	const { attributes, body } = parseMarkdown(raw);
+	const validatedAttributes = ChapterAttributesSchema.parse(attributes);
+	const interpolatedBody = interpolateBody(body, validatedAttributes.parameters);
+	return { attributes: validatedAttributes, body: interpolatedBody };
+}
+
+export function interpolateBody(body: string, parameters: string[] = []): string {
+	return body.replace(/\{parameters\[(\d+)\]\}/g, (_, index) => {
+		return parameters[Number(index)] ?? "";
 	});
 }
 
-async function createChapterPageFromMarkdown( attributes: ChapterAttributes, body: string ): Promise<Page> {
+async function createChapterPage(
+	attributes: ChapterAttributes,
+	body: string
+): Promise<Chapter> {
 	return {
 		id: attributes.id,
 		title: attributes.title ?? "*       *       *       *       *",
 		body,
 		image: await resolveImage(attributes.image),
-		button_text: attributes.button_text
-	};
-}
-
-export function createChapter(data: {
-	page: Page;
-	characters: string[];
-}): Chapter {
-	return {
-		...data,
-		
-		get id() {
-			return data.page.id;
-		},
-		get title() {
-			return data.page.title;
-		},
-		get body() {
-			return data.page.body;
-		},
-		get image() {
-			return data.page.image!;
-		}
+		button_text: attributes.button_text,
+		characters: attributes.characters ?? [],
 	};
 }

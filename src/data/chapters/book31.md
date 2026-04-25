@@ -1,7 +1,7 @@
 ---
 id: book31
 image: book31
-characters:
+characters: [bird]
 ---
 Before Alice had quite let go of the wise creature, a most bombastic voice sounded behind her.  
 

@@ -1,8 +1,8 @@
 ---
 id: book40
 image: book40
-characters: queen
-theme: low
+characters: [queen]
+themes: [low]
 ---
 The King pointed to the tarts.  
 

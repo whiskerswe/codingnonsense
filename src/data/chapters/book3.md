@@ -1,7 +1,6 @@
 ---
 id: book3
 image: book3
-characters:
 button_text: Drink me
 ---
 Alice was a girl who found herself in a place that did not ask to be understood.

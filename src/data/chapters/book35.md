@@ -1,7 +1,7 @@
 ---
 id: book35
 image: book35
-characters:
+characters: [lobster]
 ---
 The Lobster was waiting by the table, where tea had already been laid. There was some uncertainty as to whether it ought to be served.  
 

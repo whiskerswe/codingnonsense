@@ -1,8 +1,7 @@
 ---
 id: book23
 image: book23
-characters:
-  - cheshire_cat
+characters: [cheshire_cat]
 button_text: Exeunt
 ---
 Yellow eyes stared expectantly, regarding nothing in particular.  

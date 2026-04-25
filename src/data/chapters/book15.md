@@ -1,7 +1,6 @@
 ---
 id: book15
 image: book15
-characters:
 ---
 _“Why, ’tis a haystack—and you’re upside down.”_
 But still the ancient man went on, 

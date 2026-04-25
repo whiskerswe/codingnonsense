@@ -1,8 +1,8 @@
 ---
 id: book39
 image: book39
-characters:
-theme: drama
+characters: [cards]
+themes: [drama]
 ---
 The day had been full of odd incidents, and Alice sat for a while to consider them.
 They did not, upon consideration, arrange themselves..

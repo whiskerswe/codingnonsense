@@ -1,7 +1,7 @@
 ---
 id: book30
 image: book30
-characters:
+characters: [queen]
 ---
 The crowd was gathered, as usual, about the royal pair. 
 The Queen regarded a guard, who held an axe of considerable size.  

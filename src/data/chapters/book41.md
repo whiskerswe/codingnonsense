@@ -1,7 +1,7 @@
 ---
 id: book41
 image: book41
-characters:
+characters: [cards]
 ---
 A whole pack of cards rose up into the air, and came flying down upon
 her: she gave a little scream, half of fright and half of anger, and

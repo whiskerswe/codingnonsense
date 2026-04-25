@@ -1,7 +1,7 @@
 ---
 id: book37
 image: book37
-characters:
+characters: [hatter]
 ---
 The Hatter stood as though he had mislaid something of importance.
 He removed his shoes and began to search.  

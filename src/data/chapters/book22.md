@@ -1,8 +1,7 @@
 ---
 id: book22
 image: book22
-characters:
-  - cheshire_cat
+characters: [cheshire_cat]
 ---
 The cat's whiskers shone through the foliage.
 It smiled at Alice as though she had already reached the end of something.  

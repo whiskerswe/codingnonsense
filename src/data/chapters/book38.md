@@ -1,7 +1,7 @@
 ---
 id: book38
 image: book38
-characters: hatter
+characters: [hatter]
 ---
 A little pattering of feet in the distance. It was the Mad Hatter returning, fully dressed, but without shoes: he came trotting along in a
 great hurry, muttering to himself as he came, “Oh! the Mouse, the
