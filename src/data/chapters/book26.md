@@ -1,7 +1,7 @@
 ---
 id: book26
 image: book26
-characters:
+characters: [hatter, white_rabbit, mouse]
 ---
 A voice within a teapot grew more clear:
 “I practice strokes. The current suits me well.

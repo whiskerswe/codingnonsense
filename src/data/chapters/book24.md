@@ -1,7 +1,7 @@
 ---
 id: book24
 image: book24
-characters:
+characters: [hatter, white_rabbit, mouse]
 ---
 “Have you some cake?” asked the Hatter.
 Alice, being hungry, thought this civil enough

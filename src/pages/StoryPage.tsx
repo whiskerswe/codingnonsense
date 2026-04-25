@@ -54,7 +54,7 @@ export default function StoryPage() {
 		return <div>Loading...</div>;
 	}
 	
-	if (!chapter || !chapter.page.body) {
+	if (!chapter || !chapter.body) {
 		return <Navigate to="/not-found" replace />;
 	}
 	
@@ -71,7 +71,7 @@ export default function StoryPage() {
 	
 	return (
 		<ContentPage
-			page={chapter.page}
+			page={chapter}
 			onButtonClick={handleClick}
 		/>
 	);

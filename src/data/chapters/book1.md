@@ -1,8 +1,7 @@
 ---
 id: book1
 image: book1
-characters:
-  - white_rabbit
+characters: [white_rabbit]
 ---
 A Rabbit hurried past her, clutching something small and important.
 He spoke aloud to no one in particular and did not slow his pace.

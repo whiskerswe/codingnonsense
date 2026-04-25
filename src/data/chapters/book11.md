@@ -1,8 +1,7 @@
 ---
 id: book11
 image: book11
-characters:
-  - white_rabbit
+characters: [white_rabbit]
 ---
 Alice saw the Rabbit suddenly leave the ground.
 

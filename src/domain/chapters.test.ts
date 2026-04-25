@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getChapter } from "./chapters";
+import { getChapter, interpolateBody } from "./chapters";
 
 const modules = import.meta.glob("/src/data/chapters/*.md");
 
@@ -36,6 +36,29 @@ describe("chapters", () => {
 	});
 });
 
+describe("interpolateBody", () => {
+	it("replaces numbered parameter placeholders", () => {
+		const result = interpolateBody(
+			"Perhaps {parameters[0]}, or {parameters[1]}, or even {parameters[2]}.",
+			["a thing", "another thing", "the other thing"]
+		);
+
+		expect(result).toBe("Perhaps a thing, or another thing, or even the other thing.");
+	});
+
+	it("replaces missing parameters with an empty string", () => {
+		const result = interpolateBody("Hello {parameters[0]}{parameters[1]}.", ["world"]);
+
+		expect(result).toBe("Hello world.");
+	});
+
+	it("leaves incomplete placeholders unchanged", () => {
+		const result = interpolateBody("Broken {parameters[0] placeholder", ["value"]);
+
+		expect(result).toBe("Broken {parameters[0] placeholder");
+	});
+});
+
 it("creates valid chapter object", async () => {
 	const chapter = await getChapter("book1");
 	
@@ -54,8 +77,8 @@ it("applies fallback title", async () => {
 it("resolves image", async () => {
 	const chapter = await getChapter("book1");
 	
-	expect(chapter!.page.image).toBeDefined();
-	expect(typeof chapter!.page.image).toBe("string");
+	expect(chapter!.image).toBeDefined();
+	expect(typeof chapter!.image).toBe("string");
 });
 
 it("all chapters have valid images", async () => {
@@ -65,8 +88,8 @@ it("all chapters have valid images", async () => {
 		
 		const chapter = await getChapter(id);
 		
-		expect(typeof chapter!.page.image!).toBe("string");
-		expect(chapter!.page.image!.length).toBeGreaterThan(0);
+		expect(typeof chapter!.image!).toBe("string");
+		expect(chapter!.image!.length).toBeGreaterThan(0);
 	}
 });
 

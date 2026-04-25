@@ -1,8 +1,7 @@
 ---
 id: book13
 image: book13
-characters:
-  - dog
+characters: [dog]
 ---
 Alice found herself facing a small dog — small, perhaps, by the dog’s own reckoning.
 To Alice it appeared quite enormous, and very much alarmed by her presence.

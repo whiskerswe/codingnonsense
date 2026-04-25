@@ -1,14 +1,14 @@
 import fm from "front-matter";
 
-type ParseResult<T> = {
-	attributes: T;
+type ParseResult = {
+	attributes: unknown;
 	body: string;
 };
 
-export function parseMarkdown<T>(raw: string) : ParseResult<T> {
-	const { attributes, body } = fm<T>(raw);
+export function parseMarkdown(raw: string): ParseResult {
+	const { attributes, body } = fm(raw);
 	return {
 		attributes,
-		body: body.trim()
+		body: body.trim(),
 	};
 }
