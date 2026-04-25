@@ -2,13 +2,15 @@
 id: book39
 image: book39
 characters:
+theme: drama
 ---
-Alice stood up, and in doing so upset a table that had been carefully arranged.
+The day had been full of odd incidents, and Alice sat for a while to consider them.
+They did not, upon consideration, arrange themselves..
+She rose quite suddenly. In doing so, she upset the room, and the creatures within it flew out in all directions. There was a good deal of motion, and very little order.
 
-She could not tell whether the disturbance was noticed.
+A doll’s house collapsed, and the air was full of feathers, fur, 
+and other trinkets of the sort to be found in such a place.  
 
-She assumed that standing was a neutral action.
+“It does not matter,” she said. “They are only toys. They may be replaced.”  
 
-The table lay overturned, suggesting otherwise.
-
-Alice remained standing, waiting to see if this required an apology.
+This seemed to offend the room, and the air grew more agitated.
