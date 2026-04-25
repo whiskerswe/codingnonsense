@@ -1,3 +1,4 @@
+import importPlugin from "eslint-plugin-import";
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
@@ -19,5 +20,20 @@ export default defineConfig(
 			ecmaVersion: 2020,
 			globals: globals.browser,
 		},
+		plugins: {
+			import: importPlugin,
+		},
+		rules: {
+			"import/no-extraneous-dependencies": [
+				"error",
+				{
+					devDependencies: [
+						"**/*.test.ts",
+						"**/*.test.tsx",
+						"vite.config.ts",
+					],
+				},
+			],
+		},
 	},
-)
+);
