@@ -1,30 +1,45 @@
 import { describe, expect, it } from "vitest";
-import { storyManifest, usedChapterIds } from "./storyManifest.ts";
+import { storyManifest } from "./storyManifest.ts";
+
+
+const usedChapterIds = Array.from(
+	new Set([
+		storyManifest.startChapterId,
+		...storyManifest.endChapterIds,
+		...storyManifest.randomChapterPool,
+		...Object.keys(storyManifest.chapterSequences).map(Number),
+		...Object.values(storyManifest.chapterSequences).flatMap(
+			(sequence) => sequence.chapters
+		),
+	])
+);
+
 
 describe("storyManifest", () => {
 	it("defines a valid story config shape", () => {
-		expect(typeof storyManifest.start).toBe("number");
-		expect(Array.isArray(storyManifest.ending)).toBe(true);
-		expect(typeof storyManifest.numberOfChapters).toBe("number");
-		expect(Array.isArray(storyManifest.randomPool)).toBe(true);
-		expect(storyManifest.sequences).toBeInstanceOf(Map);
+		expect(typeof storyManifest.startChapterId).toBe("number");
+		expect(typeof storyManifest.maxNumberOfChapters).toBe("number");
+		expect(Array.isArray(storyManifest.randomChapterPool)).toBe(true);
+		expect(typeof storyManifest.chapterSequences).toBe("object");
 	});
 
 	it("defines numberOfChapters as a reachable story length before the ending", () => {
-		expect(Number.isInteger(storyManifest.numberOfChapters)).toBe(true);
-		expect(storyManifest.numberOfChapters).toBeGreaterThan(0);
-		expect(storyManifest.randomPool.length).toBeGreaterThanOrEqual(
-			storyManifest.numberOfChapters - 1
+		expect(Number.isInteger(storyManifest.maxNumberOfChapters)).toBe(true);
+		expect(storyManifest.maxNumberOfChapters).toBeGreaterThan(0);
+		expect(storyManifest.randomChapterPool.length).toBeGreaterThanOrEqual(
+			storyManifest.maxNumberOfChapters - 1
 		);
 	});
 
 	it("builds usedChapterIds as a flat list of chapter numbers", () => {
 		const expected = Array.from(new Set([
-			storyManifest.start,
-			...storyManifest.ending,
-			...storyManifest.randomPool,
-			...storyManifest.sequences.keys(),
-			...Array.from(storyManifest.sequences.values()).flatMap(sequence => sequence.chapters),
+			storyManifest.startChapterId,
+			...storyManifest.endChapterIds,
+			...storyManifest.randomChapterPool,
+			...Object.keys(storyManifest.chapterSequences).map(Number),
+			...Object.values(storyManifest.chapterSequences).flatMap(
+				(sequence) => sequence.chapters
+			),
 		]));
 		expect(usedChapterIds).toEqual(expected);
 		expect(usedChapterIds.every(chapterId => typeof chapterId === "number")).toBe(true);

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { StoryEngine } from "../domain/storyEngine";
-import { storyManifest } from "../domain/storyManifest";
-import { getChapter } from "../domain/chapters";
+import { StoryEngine } from "../domain/engine/storyEngine.ts";
+import { storyManifest } from "../domain/engine/storyManifest.ts";
+import { getChapter } from "../domain/content/chapters.ts";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { ContentPage } from "../components/ContentPage";
 
@@ -17,11 +17,11 @@ export default function StoryPage() {
 	const [engine] = useState(
 		() =>
 			new StoryEngine({
-				start: storyManifest.start,
-				ending: storyManifest.ending,
-				numberOfChapters: storyManifest.numberOfChapters,
-				randomPool: storyManifest.randomPool,
-				sequences: storyManifest.sequences,
+				startChapterId: storyManifest.startChapterId,
+				endChapterIds: storyManifest.endChapterIds,
+				maxNumberOfChapters: storyManifest.maxNumberOfChapters,
+				randomChapterPool: storyManifest.randomChapterPool,
+				chapterSequences: storyManifest.chapterSequences,
 			})
 	);
 	
