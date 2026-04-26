@@ -1,5 +1,5 @@
 import { ContentPage } from "../components/ContentPage";
-import { getPage } from "../domain/pages.ts";
+import { getPage } from "../domain/content/pages.ts";
 import { useEffect, useState } from "react";
 
 export default function AboutPage() {

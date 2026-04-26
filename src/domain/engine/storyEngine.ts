@@ -1,4 +1,4 @@
-import type { SequenceConfig, StoryConfig } from "./storyManifest.ts";
+import type { SequenceConfig, StoryConfig } from "./engineConfig.ts";
 
 
 export class StoryEngine {
@@ -12,11 +12,11 @@ export class StoryEngine {
 		config: StoryConfig
 	) {
 		this.config = config;
-		this.currentChapter = config.start;
+		this.currentChapter = config.startChapterId;
 		this.consumedPoolEntries = new Set<number>();
-		this.consumedPoolEntries.add(config.start);
+		this.consumedPoolEntries.add(config.startChapterId);
 		this.chapterQueue = [];
-		this.endingQueue = [...config.ending]
+		this.endingQueue = [...config.endChapterIds]
 	}
 	
 	canAdvance(): boolean {
@@ -28,9 +28,9 @@ export class StoryEngine {
 			return this.chapterQueue.shift()!;
 		}
 		
-		const maxChaptersRead = this.consumedPoolEntries.size >= this.config.numberOfChapters;
+		const maxChaptersRead = this.consumedPoolEntries.size >= this.config.maxNumberOfChapters;
 		
-		const remaining = this.config.randomPool.filter(
+		const remaining = this.config.randomChapterPool.filter(
 			c => !this.consumedPoolEntries.has(c)
 		);
 		
@@ -54,7 +54,7 @@ export class StoryEngine {
 	}
 	
 	addChaptersToQueue(newChapterId: number) {
-		const sequence = this.config.sequences.get(newChapterId);
+		const sequence = this.config.chapterSequences[newChapterId];
 		if (!sequence) return;
 		const chapters = this.resolveChapters(newChapterId, sequence);
 		

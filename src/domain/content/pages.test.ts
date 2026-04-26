@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { getPage } from "./pages.ts";
-import { parseMarkdown } from "./text/parseMarkdown.ts";
-import { resolveImage } from "./images/imageRegistry.ts";
-import { PageAttributesSchema } from "./models/page_attributes.ts";
-import rawStart from "../data/pages/start.md?raw";
-import rawAbout from "../data/pages/about.md?raw";
-import rawNotFound from "../data/pages/not_found.md?raw";
+import { parseMarkdown } from "./parseMarkdown.ts";
+import { resolveImage } from "../images/imageRegistry.ts";
+import { PageAttributesSchema } from "../models/page_attributes.ts";
+import rawStart from "../../assets/data/pages/start.md?raw";
+import rawAbout from "../../assets/data/pages/about.md?raw";
+import rawNotFound from "../../assets/data/pages/not_found.md?raw";
 
 function parseExpectedPage(raw: string) {
 	const { attributes, body } = parseMarkdown(raw);

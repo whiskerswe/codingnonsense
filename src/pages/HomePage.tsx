@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ContentPage } from "../components/ContentPage.tsx";
-import { getPage } from "../domain/pages.ts";
-import { storyManifest } from "../domain/storyManifest.ts";
+import { getPage } from "../domain/content/pages.ts";
+import { storyConfig } from "../domain/engine/storyConfig.ts";
 import { useNavigate } from "react-router-dom";
 import type { Page } from "../domain/models/page.ts";
 
@@ -11,7 +11,7 @@ export default function HomePage() {
 	const [page, setPage] = useState<Page | null>(null);
 	
 	function startStory() {
-		navigate(`/chapter/book${storyManifest.start}`);
+		navigate(`/chapter/book${storyConfig.startChapterId}`);
 	}
 	
 	useEffect(() => {

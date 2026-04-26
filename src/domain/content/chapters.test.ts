@@ -1,10 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { getChapter, interpolateBody } from "./chapters";
-
-const modules = import.meta.glob("/src/data/chapters/*.md");
+import { chapterModules, getChapter } from "./chapters.ts";
+import { resolveChapterText } from "../storyTextRules/textResolver.ts";
 
 describe("all chapters", () => {
-	const paths = Object.keys(modules);
+	const paths = Object.keys(chapterModules);
 	
 	it("has at least one chapter", () => {
 		expect(paths.length).toBeGreaterThan(0);
@@ -36,9 +35,9 @@ describe("chapters", () => {
 	});
 });
 
-describe("interpolateBody", () => {
+describe("resolveChapterText", () => {
 	it("replaces numbered parameter placeholders", () => {
-		const result = interpolateBody(
+		const result = resolveChapterText(
 			"Perhaps {parameters[0]}, or {parameters[1]}, or even {parameters[2]}.",
 			["a thing", "another thing", "the other thing"]
 		);
@@ -47,13 +46,13 @@ describe("interpolateBody", () => {
 	});
 
 	it("replaces missing parameters with an empty string", () => {
-		const result = interpolateBody("Hello {parameters[0]}{parameters[1]}.", ["world"]);
+		const result = resolveChapterText("Hello {parameters[0]}{parameters[1]}.", ["world"]);
 
 		expect(result).toBe("Hello world.");
 	});
 
 	it("leaves incomplete placeholders unchanged", () => {
-		const result = interpolateBody("Broken {parameters[0] placeholder", ["value"]);
+		const result = resolveChapterText("Broken {parameters[0] placeholder", ["value"]);
 
 		expect(result).toBe("Broken {parameters[0] placeholder");
 	});
@@ -82,7 +81,7 @@ it("resolves image", async () => {
 });
 
 it("all chapters have valid images", async () => {
-	for (const path of Object.keys(modules)) {
+	for (const path of Object.keys(chapterModules)) {
 		const fileName = path.split("/").pop()!;
 		const id = fileName.replace(".md", "");
 		
