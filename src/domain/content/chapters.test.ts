@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { chapterModules, getChapter, interpolateBody } from "./chapters";
+import { chapterModules, getChapter, interpolateBody } from "./chapters.ts";
 
 describe("all chapters", () => {
 	const paths = Object.keys(chapterModules);

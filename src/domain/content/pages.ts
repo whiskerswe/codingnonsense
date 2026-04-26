@@ -1,13 +1,13 @@
-import type { Page } from "./models/page.ts";
-import { parseMarkdown } from "./text/parseMarkdown.ts";
-import { resolveImage } from "./images/imageRegistry.ts";
+import type { Page } from "../models/page.ts";
+import { parseMarkdown } from "./parseMarkdown.ts";
+import { resolveImage } from "../images/imageRegistry.ts";
 
-import rawStart from "../assets/data/pages/start.md?raw";
-import rawAbout from "../assets/data/pages/about.md?raw";
-import rawNotFound from "../assets/data/pages/not_found.md?raw";
-import { PageAttributesSchema } from "./models/page_attributes.ts";
+import rawStart from "../../assets/data/pages/start.md?raw";
+import rawAbout from "../../assets/data/pages/about.md?raw";
+import rawNotFound from "../../assets/data/pages/not_found.md?raw";
+import { PageAttributesSchema } from "../models/page_attributes.ts";
 
-async function convertMarkdownPage( raw: string ): Promise<Page> {
+async function createChapterFromMarkdown( raw: string ): Promise<Page> {
 	const { attributes, body } = parseMarkdown(raw);
 	const validatedAttributes = PageAttributesSchema.parse(attributes);
 	
@@ -28,5 +28,5 @@ const rawPages: Record<string, string> = {
 
 export async function getPage( id: string ): Promise<Page> {
 	const raw = rawPages[id] ?? rawStart;
-	return await convertMarkdownPage(raw);
+	return await createChapterFromMarkdown(raw);
 }

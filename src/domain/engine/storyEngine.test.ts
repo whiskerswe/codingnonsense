@@ -1,6 +1,6 @@
 import { afterEach, expect, it, vi } from "vitest";
-import { StoryEngine } from "./storyEngine.js";
-import type { StoryConfig } from "./storyManifest.js";
+import { StoryEngine } from "./storyEngine.ts";
+import type { StoryConfig } from "./storyManifest.ts";
 
 
 const base = defaultConfig();

@@ -1,7 +1,7 @@
-import type { Chapter } from "./models/chapter.ts";
-import { resolveImage } from "./images/imageRegistry.ts";
-import { parseMarkdown } from "./text/parseMarkdown.ts";
-import { type ChapterAttributes, ChapterAttributesSchema } from "./models/chapter_attributes.ts";
+import type { Chapter } from "../models/chapter.ts";
+import { resolveImage } from "../images/imageRegistry.ts";
+import { parseMarkdown } from "./parseMarkdown.ts";
+import { type ChapterAttributes, ChapterAttributesSchema } from "../models/chapter_attributes.ts";
 
 export const CHAPTERS_DIRECTORY = "/src/assets/data/chapters";
 
@@ -32,12 +32,12 @@ export async function getChapter(id: string): Promise<Chapter | null> {
 		throw new Error("Markdown loader did not return a string");
 	}
 	
-	const { attributes, body } = parseChapter(raw);
+	const { attributes, body } = parseChapterFromMarkdown(raw);
 	
-	return await createChapterPage(attributes, body);
+	return await createChapter(attributes, body);
 }
 
-function parseChapter(raw: string) {
+function parseChapterFromMarkdown(raw: string) {
 	const { attributes, body } = parseMarkdown(raw);
 	const validatedAttributes = ChapterAttributesSchema.parse(attributes);
 	const interpolatedBody = interpolateBody(body, validatedAttributes.parameters);
@@ -50,7 +50,7 @@ export function interpolateBody(body: string, parameters: string[] = []): string
 	});
 }
 
-async function createChapterPage(
+async function createChapter(
 	attributes: ChapterAttributes,
 	body: string
 ): Promise<Chapter> {

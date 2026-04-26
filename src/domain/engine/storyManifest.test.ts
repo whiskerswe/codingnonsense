@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { storyManifest, usedChapterIds } from "./storyManifest";
+import { storyManifest, usedChapterIds } from "./storyManifest.ts";
 
 describe("storyManifest", () => {
 	it("defines a valid story config shape", () => {
