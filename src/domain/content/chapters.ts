@@ -2,6 +2,7 @@ import type { Chapter } from "../models/chapter.ts";
 import { resolveImage } from "../images/imageRegistry.ts";
 import { parseMarkdown } from "./parseMarkdown.ts";
 import { type ChapterAttributes, ChapterAttributesSchema } from "../models/chapter_attributes.ts";
+import { resolveChapterText } from "../storyTextRules/textResolver.ts";
 
 export const CHAPTERS_DIRECTORY = "/src/assets/data/chapters";
 
@@ -40,14 +41,8 @@ export async function getChapter(id: string): Promise<Chapter | null> {
 function parseChapterFromMarkdown(raw: string) {
 	const { attributes, body } = parseMarkdown(raw);
 	const validatedAttributes = ChapterAttributesSchema.parse(attributes);
-	const interpolatedBody = interpolateBody(body, validatedAttributes.parameters);
+	const interpolatedBody = resolveChapterText(body, validatedAttributes.parameters);
 	return { attributes: validatedAttributes, body: interpolatedBody };
-}
-
-export function interpolateBody(body: string, parameters: string[] = []): string {
-	return body.replace(/\{parameters\[(\d+)\]\}/g, (_, index) => {
-		return parameters[Number(index)] ?? "";
-	});
 }
 
 async function createChapter(

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { chapterModules, getChapter, interpolateBody } from "./chapters.ts";
+import { chapterModules, getChapter } from "./chapters.ts";
+import { interpolateBody } from "./storyTextRules}textResolver.ts";
 
 describe("all chapters", () => {
 	const paths = Object.keys(chapterModules);
