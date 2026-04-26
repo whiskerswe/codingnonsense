@@ -1,5 +1,5 @@
 import { SequenceMode, type StoryConfig } from "./engineConfig.ts";
-export const storyManifest = {
+export const storyConfig = {
 	startChapterId: 3,
 	endChapterIds: [22, 23],
 	maxNumberOfChapters: 7,
