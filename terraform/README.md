@@ -1,4 +1,4 @@
-Infrastructure for codingnonsense.art
+validateInfrastructure for codingnonsense.art
 
 - S3 static hosting
 - CloudFront CDN
