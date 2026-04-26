@@ -2,9 +2,9 @@ import type { Page } from "./models/page.ts";
 import { parseMarkdown } from "./text/parseMarkdown.ts";
 import { resolveImage } from "./images/imageRegistry.ts";
 
-import rawStart from "../data/pages/start.md?raw";
-import rawAbout from "../data/pages/about.md?raw";
-import rawNotFound from "../data/pages/not_found.md?raw";
+import rawStart from "../assets/data/pages/start.md?raw";
+import rawAbout from "../assets/data/pages/about.md?raw";
+import rawNotFound from "../assets/data/pages/not_found.md?raw";
 import { PageAttributesSchema } from "./models/page_attributes.ts";
 
 async function convertMarkdownPage( raw: string ): Promise<Page> {

@@ -1,10 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { getChapter, interpolateBody } from "./chapters";
-
-const modules = import.meta.glob("/src/data/chapters/*.md");
+import { chapterModules, getChapter, interpolateBody } from "./chapters";
 
 describe("all chapters", () => {
-	const paths = Object.keys(modules);
+	const paths = Object.keys(chapterModules);
 	
 	it("has at least one chapter", () => {
 		expect(paths.length).toBeGreaterThan(0);
@@ -82,7 +80,7 @@ it("resolves image", async () => {
 });
 
 it("all chapters have valid images", async () => {
-	for (const path of Object.keys(modules)) {
+	for (const path of Object.keys(chapterModules)) {
 		const fileName = path.split("/").pop()!;
 		const id = fileName.replace(".md", "");
 		

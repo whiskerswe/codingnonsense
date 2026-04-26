@@ -3,14 +3,20 @@ import { resolveImage } from "./images/imageRegistry.ts";
 import { parseMarkdown } from "./text/parseMarkdown.ts";
 import { type ChapterAttributes, ChapterAttributesSchema } from "./models/chapter_attributes.ts";
 
-const modules = import.meta.glob("/src/data/chapters/*.md", {
+export const CHAPTERS_DIRECTORY = "/src/assets/data/chapters";
+
+export const chapterModules = import.meta.glob("/src/assets/data/chapters/*.md", {
 	query: "?raw",
 	import: "default"
 });
 
+export function getChapterModulePath(id: string): string {
+	return `${CHAPTERS_DIRECTORY}/${id}.md`;
+}
+
 export async function getChapter(id: string): Promise<Chapter | null> {
-	const path = `/src/data/chapters/${id}.md`;
-	const loader = modules[path];
+	const path = getChapterModulePath(id);
+	const loader = chapterModules[path];
 	if (!loader) return null;
 	
 	const result = await loader();
