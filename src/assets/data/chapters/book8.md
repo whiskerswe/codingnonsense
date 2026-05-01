@@ -1,6 +1,8 @@
 ---
 id: book8
 image: book8
+image_width: 650
+image_height: 743
 characters: [birds]
 ---
 Alice found herself among a group of birds, all of whom appeared to be waiting.

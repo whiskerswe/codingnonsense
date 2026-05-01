@@ -1,6 +1,8 @@
 ---
 id: book21
 image: book21
+image_width: 650
+image_height: 973
 characters: [pig]
 ---
 A plump little piglet leapt suddenly into Alice’s arms. She held it carefully, for fear of doing it harm.

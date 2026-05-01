@@ -1,6 +1,8 @@
 ---
 id: book23
 image: book23
+image_width: 650
+image_height: 421
 characters: [cheshire_cat]
 button_text: Exeunt
 ---

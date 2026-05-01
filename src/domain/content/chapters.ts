@@ -54,6 +54,8 @@ async function createChapter(
 		title: attributes.title ?? "*       *       *       *       *",
 		body,
 		image: await resolveImage(attributes.image),
+		image_width: attributes.image_width,
+		image_height: attributes.image_height,
 		button_text: attributes.button_text,
 		characters: attributes.characters ?? [],
 	};

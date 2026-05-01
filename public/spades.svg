@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   role="img"
+   aria-label="Spade favicon"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="spades.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.7441406"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="2869"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="false" />
+  </sodipodi:namedview>
+  <!-- Square SVG favicon based on the public-domain playing-card spade idea from Wikimedia Commons: File:SuitSpades.svg -->
+  <path
+     fill="#111111"
+     d="M 254.27996,6.718925 C 181.35946,143.08063 70.825308,187.17357 51.825308,259.17357 c -24.320269,51.13326 33.893617,141.41434 88.893612,141.41434 33,0 83.50728,-7.82644 100.50728,-35.82644 -6,55 -40.17357,89.13327 -95.94737,102.23965 l -7.45352,34.83987 246.66966,0.57334 -6.30685,-31.97312 c -45.45352,-12.53304 -92.24075,-27.17245 -96.5207,-105.67973 17,28 92.55023,52.10507 120.57446,34.67973 59.01344,-36.69429 75.94625,-87.41433 61.94625,-141.41433 -19,-72 -142.14782,-118.38635 -209.90817,-251.307955 z"
+     id="path1"
+     sodipodi:nodetypes="ccsccccccscc" />
+</svg>

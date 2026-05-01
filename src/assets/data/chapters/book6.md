@@ -1,6 +1,8 @@
 ---
 id: book6
 image: book6
+image_width: 650
+image_height: 533
 ---
 Alice’s foot met with something unexpectedly animate. It withdrew at once.
 Her toes could not find the unknown object again as they searched the sandy bottom.

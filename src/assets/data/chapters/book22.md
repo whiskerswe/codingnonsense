@@ -1,6 +1,8 @@
 ---
 id: book22
 image: book22
+image_width: 650
+image_height: 942
 characters: [cheshire_cat]
 ---
 The cat's whiskers shone through the foliage.

@@ -28,6 +28,8 @@ export default function HomePage() {
 				title: "Alice",
 				body: "Nonsense is loading. Please wait...",
 				image: "",
+				image_width: 0,
+				image_height: 0,
 				button_text: "Start"
 			}}
 			onButtonClick={startStory}

@@ -5,6 +5,6 @@ export const PageAttributesSchema = z.object({
 	title: z.string(),
 	image: z.string(),
 	button_text: z.string().optional(),
-	width: z.string().nullable().optional(),
-	height: z.string().nullable().optional(),
+	image_width: z.int(),
+	image_height: z.int(),
 }).strict();

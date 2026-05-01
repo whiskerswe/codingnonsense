@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "format": "prettier --write .",
+    "update:chapter-dimensions": "node scripts/updateChapterImageDimensions.js",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",

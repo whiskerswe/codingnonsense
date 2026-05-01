@@ -1,6 +1,8 @@
 ---
 id: book41
 image: book41
+image_width: 650
+image_height: 871
 characters: [cards]
 ---
 A whole pack of cards rose up into the air, and came flying down upon

@@ -1,6 +1,8 @@
 ---
 id: book32
 image: book32
+image_width: 650
+image_height: 454
 characters: [gryphon]
 parameters: ["a thing", "another thing", "the other thing"]
 ---

@@ -1,6 +1,8 @@
 ---
 id: book37
 image: book37
+image_width: 650
+image_height: 914
 characters: [hatter]
 ---
 The Hatter stood as though he had mislaid something of importance.

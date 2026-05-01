@@ -1,6 +1,8 @@
 ---
 id: book27
 image: book27
+image_width: 650
+image_height: 907
 characters: [comte, cards]
 ---
 The air was buzzing with industry as the Cards painted the roses black.  

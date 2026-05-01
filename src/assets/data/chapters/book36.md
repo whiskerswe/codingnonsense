@@ -1,6 +1,8 @@
 ---
 id: book36
 image: book36
+image_width: 650
+image_height: 950
 ---
 How do you like the tale so far?  
   

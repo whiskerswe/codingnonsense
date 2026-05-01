@@ -1,6 +1,8 @@
 ---
 id: book16
 image: book16
+image_width: 650
+image_height: 493
 ---
 About, about, in eel and rout
 Miss Fortune sailed the night;

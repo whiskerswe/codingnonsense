@@ -1,6 +1,8 @@
 ---
 id: book2
 image: book2
+image_width: 650
+image_height: 668
 ---
 A key appeared in her hand.
 Behind a drapery stood a small door that seemed meant for it.

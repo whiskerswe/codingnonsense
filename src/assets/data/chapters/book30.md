@@ -1,6 +1,8 @@
 ---
 id: book30
 image: book30
+image_width: 650
+image_height: 837
 characters: [queen]
 ---
 The crowd was gathered, as usual, about the royal pair. 

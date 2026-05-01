@@ -1,6 +1,8 @@
 ---
 id: book25
 image: book25
+image_width: 650
+image_height: 742
 characters: [hatter, white_rabbit, mouse]
 ---
 “Have you the hammer?” asked the Hare once more.
