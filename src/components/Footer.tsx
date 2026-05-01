@@ -2,7 +2,7 @@ import { getBuildTime } from "../app/buildInfo.ts";
 
 export function Footer( props: { onClick: () => void, open: boolean, onClick1: () => void, onClick2: ( e: any ) => void } ) {
 	return <>
-		<footer className="m-3 flex gap-4 justify-center text-sm">
+		<footer className="m-3 mt-10 flex gap-4 justify-center text-sm">
 			<span>Build: {getBuildTime()}</span>
 			<button
 				className="underline cursor-pointer"
@@ -21,8 +21,7 @@ export function Footer( props: { onClick: () => void, open: boolean, onClick1: (
 					onClick={props.onClick2}
 				>
 					<p className="text-sm">
-						No tracking is used on this site.
-						Not by design — it simply hasn’t been implemented.
+						This site uses <a href="https://www.simpleanalytics.com/" target="_blank">Simple Analytics</a> for anonymous, privacy-friendly traffic statistics. No cookies are used, and no personal profiles are created. We use aggregated visit information such as page views, referrers, and approximate location signals.
 					</p>
 				</div>
 			</div>
