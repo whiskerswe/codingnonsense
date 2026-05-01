@@ -1,6 +1,8 @@
 ---
 id: book20
 image: book20
+image_width: 650
+image_height: 541
 characters: [duchess]
 ---
 ONCE upon a time there were Three Ladies, who lived together in a house of their own, in a wood.

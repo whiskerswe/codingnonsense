@@ -14,6 +14,8 @@ async function createChapterFromMarkdown( raw: string ): Promise<Page> {
 	return {
 		id: validatedAttributes.id,
 		image: validatedAttributes.image ? await resolveImage(validatedAttributes.image) : undefined,
+		image_width: validatedAttributes.image_width,
+		image_height: validatedAttributes.image_height,
 		title: validatedAttributes.title,
 		button_text: validatedAttributes.button_text,
 		body: body

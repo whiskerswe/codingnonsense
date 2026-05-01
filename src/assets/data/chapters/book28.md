@@ -1,6 +1,8 @@
 ---
 id: book28
 image: book28
+image_width: 650
+image_height: 772
 characters: [queen, porridge]
 ---
 A large crowd had gathered. Alice joined it, wishing to see what was the matter.

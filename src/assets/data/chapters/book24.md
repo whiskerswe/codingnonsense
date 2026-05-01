@@ -1,6 +1,8 @@
 ---
 id: book24
 image: book24
+image_width: 650
+image_height: 496
 characters: [hatter, white_rabbit, mouse]
 ---
 “Have you some cake?” asked the Hatter.

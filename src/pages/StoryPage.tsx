@@ -10,8 +10,7 @@ export default function StoryPage() {
 	const navigate = useNavigate();
 	const { chapterId } = useParams();
 	const [, setTick] = useState(0);
-	const [chapter, setChapter] = useState<any>(null);
-	const [loading, setLoading] = useState(true);
+	const [chapter, setChapter] = useState<any | undefined>(undefined);
 	
 	
 	const [engine] = useState(
@@ -27,19 +26,17 @@ export default function StoryPage() {
 	
 	useEffect(() => {
 		if (!chapterId) {
-			navigate("/not-found", { replace: true });
+			setChapter(null);
 			return;
 		}
 		
 		let cancelled = false;
 		
 		async function load() {
-			setLoading(true);
 			const found = await getChapter(chapterId!);
 			
 			if (!cancelled) {
-				setChapter(found);
-				setLoading(false);
+				setChapter(found ?? null);
 			}
 		}
 		
@@ -48,13 +45,13 @@ export default function StoryPage() {
 		return () => {
 			cancelled = true;
 		};
-	}, [chapterId, navigate]);
+	}, [chapterId]);
 	
-	if (loading) {
-		return <div>Loading...</div>;
+	if (chapter === undefined) {
+		return null;
 	}
 	
-	if (!chapter || !chapter.body) {
+	if (chapter === null || !chapter.body) {
 		return <Navigate to="/not-found" replace />;
 	}
 	

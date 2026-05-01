@@ -42,7 +42,7 @@ export function Header()  {
 				aria-label="Home"
 				className="w-10 h-10 flex items-center justify-center"
 			>
-				<img src="/spades.png" alt="" aria-hidden="true" className="w-6 h-6" />
+				<img src="/spades.svg" alt="" aria-hidden="true" className="w-6 h-6" />
 			</button>
 			
 			{/* Menu */}

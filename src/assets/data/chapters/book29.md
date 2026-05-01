@@ -1,6 +1,8 @@
 ---
 id: book29
 image: book29
+image_width: 650
+image_height: 947
 characters: [bird, duchess]
 button_text: Rustle
 ---

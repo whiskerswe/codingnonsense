@@ -1,6 +1,8 @@
 ---
 id: book14
 image: book14
+image_width: 650
+image_height: 870
 characters: [caterpillar]
 ---
 Alice spoke to a figure seated calmly upon a mushroom, surrounded by drifting smoke.

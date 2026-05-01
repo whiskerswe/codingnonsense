@@ -1,6 +1,8 @@
 ---
 id: book7
 image: book7
+image_width: 650
+image_height: 432
 characters: [mouse]
 ---
 Though there were no cliffs to dive from, Alice found herself already in the water, which felt perfectly familiar, though not entirely plain. She stretched her arms and swam.

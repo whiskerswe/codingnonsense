@@ -1,6 +1,8 @@
 ---
 id: book18
 image: book18
+image_width: 650
+image_height: 492
 ---
 He poised a thing upon his nose,
 A long and writhing eel—

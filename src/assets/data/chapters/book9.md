@@ -1,6 +1,8 @@
 ---
 id: book9
 image: book9
+image_width: 650
+image_height: 501
 characters: [mouse, birds]
 ---
 Alice listened as the Mouse addressed her and the other animals with great seriousness.

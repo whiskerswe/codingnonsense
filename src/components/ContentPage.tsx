@@ -27,9 +27,7 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 							maxWidth: 500
 						}}
 					>
-					<ImageWithCredit
-						src={page.image}
-					/>
+					<ImageWithCredit image_src={page.image} image_width={page.image_width} image_height={page.image_height}/>
 					</div>
 				</div>
 			)}

@@ -1,6 +1,8 @@
 ---
 id: about
 image: chess_landscape.webp
+image_width: 500
+image_height: 342
 title: About Alice
 ---
 Alice is a web project that began as an opportunity to explore Terraform,

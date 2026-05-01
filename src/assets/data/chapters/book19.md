@@ -1,6 +1,8 @@
 ---
 id: book19
 image: book19
+image_width: 650
+image_height: 799
 characters: [comte]
 ---
 Quite far away, His Right Honourable Monsieur le Comte d'Attrape-Mouches received an urgent dépêche, delivered by a page of uncommon dampness.

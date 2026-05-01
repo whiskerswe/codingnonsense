@@ -1,6 +1,8 @@
 ---
 id: book13
 image: book13
+image_width: 650
+image_height: 775
 characters: [dog]
 ---
 Alice found herself facing a small dog — small, perhaps, by the dog’s own reckoning.

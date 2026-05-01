@@ -1,6 +1,8 @@
 ---
 id: book11
 image: book11
+image_width: 650
+image_height: 955
 characters: [white_rabbit]
 ---
 Alice saw the Rabbit suddenly leave the ground.

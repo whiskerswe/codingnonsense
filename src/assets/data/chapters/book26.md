@@ -1,6 +1,8 @@
 ---
 id: book26
 image: book26
+image_width: 650
+image_height: 570
 characters: [hatter, white_rabbit, mouse]
 ---
 A voice within a teapot grew more clear:

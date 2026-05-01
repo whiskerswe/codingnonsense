@@ -1,6 +1,8 @@
 ---
 id: book38
 image: book38
+image_width: 650
+image_height: 530
 characters: [hatter]
 ---
 A little pattering of feet in the distance. It was the Mad Hatter returning, fully dressed, but without shoes: he came trotting along in a

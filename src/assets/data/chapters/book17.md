@@ -1,6 +1,8 @@
 ---
 id: book17
 image: book17
+image_width: 650
+image_height: 496
 ---
 The farmer's boy stood by the board:
 He cannot choose but hear;

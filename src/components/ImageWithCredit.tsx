@@ -1,19 +1,21 @@
 import { useState } from "react";
 
 type ImageWithCreditProps = {
-	src: string;
+	image_src: string;
+	image_width: number;
+	image_height: number;
 };
 
-export function ImageWithCredit({ src }: ImageWithCreditProps) {
+export function ImageWithCredit({ image_src, image_width, image_height }: ImageWithCreditProps) {
 	const [open, setOpen] = useState(false);
 	const altText = `Illustration from Alice in Wonderland by Sir John Tenniel (1820-1914)`;
 	
 	return (
 		<figure className="text-right">
-			<img src={src}
+			<img src={image_src}
 				alt={altText}
-				width={500}
-				height={509}
+				width={image_width}
+				height={image_height}
 				loading="eager"
 				fetchPriority="high"
 				style={{

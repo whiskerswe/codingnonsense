@@ -1,6 +1,8 @@
 ---
 id: book0
 image: book0
+image_width: 650
+image_height: 925
 characters: [queen, king]
 ---
 A King and a Queen were seated very still upon their throne.

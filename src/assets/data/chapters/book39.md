@@ -1,6 +1,8 @@
 ---
 id: book39
 image: book39
+image_width: 650
+image_height: 789
 characters: [cards]
 themes: [drama]
 ---

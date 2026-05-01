@@ -1,6 +1,8 @@
 ---
 id: book1
 image: book1
+image_width: 650
+image_height: 995
 characters: [white_rabbit]
 ---
 A Rabbit hurried past her, clutching something small and important.
