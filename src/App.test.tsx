@@ -7,16 +7,17 @@ it("goes from start page to first chapter", async () => {
 	render(<App />);
 	
 	const user = userEvent.setup();
+	await screen.findByRole("heading", { name: /a story about alice/i });
+
 	const startImageSrc = await resolveImage("alice_circle");
 	const firstChapterImageSrc = await resolveImage("book3");
 	
-	await screen.findByRole("heading", { name: /A story.../i });
 	const startImage = await screen.findByAltText(
 		/illustration from alice in wonderland/i
 	);
 	expect(startImage).toHaveAttribute("src", startImageSrc);
 	
-	const openButton = await screen.findByRole("button", { name: /open/i });
+	const openButton = await screen.findByRole("button", { name: /read the book/i });
 	
 	await user.click(openButton);
 	

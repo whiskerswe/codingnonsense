@@ -4,6 +4,7 @@ image: book16
 image_width: 650
 image_height: 493
 ---
+:::verse
 About, about, in eel and rout
 Miss Fortune sailed the night;
 Like witch’s oils the vapours burned
@@ -18,6 +19,7 @@ With jutting heels and flapping coat,
 As one the storm made free,
 He shot aloft on gusts untamed—
 'Thus sailed I on the sea!'
+:::
 
 
 

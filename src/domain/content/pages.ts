@@ -6,10 +6,12 @@ import rawStart from "../../assets/data/pages/start.md?raw";
 import rawAbout from "../../assets/data/pages/about.md?raw";
 import rawNotFound from "../../assets/data/pages/not_found.md?raw";
 import { PageAttributesSchema } from "../models/page_attributes.ts";
+import { resolveChapterText } from "../storyTextRules/textResolver.ts";
 
 async function createChapterFromMarkdown( raw: string ): Promise<Page> {
 	const { attributes, body } = parseMarkdown(raw);
 	const validatedAttributes = PageAttributesSchema.parse(attributes);
+	const interpolatedBody = resolveChapterText(body, validatedAttributes.parameters);
 	
 	return {
 		id: validatedAttributes.id,
@@ -18,7 +20,7 @@ async function createChapterFromMarkdown( raw: string ): Promise<Page> {
 		image_height: validatedAttributes.image_height,
 		title: validatedAttributes.title,
 		button_text: validatedAttributes.button_text,
-		body: body
+		body: interpolatedBody
 	};
 }
 

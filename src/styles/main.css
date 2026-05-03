@@ -6,23 +6,11 @@
 
 @layer components {
 	.content {
-		@apply flex flex-col justify-center items-center px-4 py-2 text-sm/6 w-full;
+		@apply flex flex-col justify-center items-center px-4 py-6 text-sm/6 w-full;
 	}
 	
 	.content-inner {
 		@apply w-full max-w-xl mx-auto flex flex-col items-center;
-	}
-	
-	.read-the-book {
-		@apply inline-block w-auto max-w-full px-6 py-8 my-10 prose;
-	}
-	
-	.read-the-book h1 {
-		@apply text-center px-6 py-8 mb-60 text-2xl/8 font-semibold italic text-amber-950;
-	}
-	
-	.read-the-book p {
-		@apply text-sm/6;
 	}
 	
 	.image-block {

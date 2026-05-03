@@ -5,7 +5,7 @@ image_width: 650
 image_height: 775
 characters: [dog]
 ---
-Alice found herself facing a small dog — small, perhaps, by the dog’s own reckoning.
+A dog ran into Alice. It was a small dog — small, perhaps, by the dog’s own reckoning.
 To Alice it appeared quite enormous, and very much alarmed by her presence.
 
 Its trembling suggested danger, though she could not tell to whom.

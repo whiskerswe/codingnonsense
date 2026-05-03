@@ -4,7 +4,7 @@ image: book4
 image_width: 650
 image_height: 1460
 ---
-Alice felt her body stretch in a way that made the world seem even smaller.
+Her body stretch in a way that made the world seem even smaller.
 She could not tell whether the change was happening to her or simply around her.
 She assumed that holding still would make the sensation stop.
 The floor appeared to sink farther away.

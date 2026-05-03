@@ -5,6 +5,7 @@ image_width: 650
 image_height: 570
 characters: [hatter, white_rabbit, mouse]
 ---
+:::verse
 A voice within a teapot grew more clear:
 “I practice strokes. The current suits me well.
 Each stroke I take returns me almost here.
@@ -19,6 +20,7 @@ The steam rose up. The steam returned once more.
 “Have you the hammer?” asked the Hare, content.
 They found the spoon where it had lain before
 And smiled, as if the waiting now were spent.
+:::
 
 
 

@@ -1,8 +1,9 @@
 import { ImageWithCredit } from "./ImageWithCredit.tsx";
 import type { Page } from "../domain/models/page.ts";
 import { AliceButton } from "./AliceButton.tsx";
-import { lazy, Suspense, useState } from "react";
+import { Suspense, useState } from "react";
 import { Footer } from "./Footer.tsx";
+import { renderMarkdown } from "../domain/content/markdownRendered.ts";
 
 interface Props {
 	page: Page,
@@ -11,10 +12,11 @@ interface Props {
 
 export function ContentPage( {page, onButtonClick}: Props ) {
 	const [open, setOpen] = useState(false);
+	console.log(page.body);
 	if (!page.body) {
 		return <div style={{ padding: 20 }}>Loading...</div>;
 	}
-	const PageText = lazy(() => import("./PageText"));
+	//const PageText = lazy(() => import("./PageText"));
 	return (
 		<main className="content px-4">
 			<div className="content-inner">
@@ -31,10 +33,14 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 					</div>
 				</div>
 			)}
-			<div className="read-the-book">
-				<h1>{page.title}</h1>
+			<div className="prose inline-block w-auto max-w-full p-2">
+				<h1 className="text-center font-serif font-light">{page.title}</h1>
 				<Suspense fallback={null}>
-					<PageText body={page.body}/>
+					<div
+						dangerouslySetInnerHTML={{
+							__html: renderMarkdown(page.body),
+						}}
+					/>
 				</Suspense>
 			</div>
 			{onButtonClick && (
@@ -45,6 +51,6 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 			<Footer onClick={() => setOpen(true)} open={open} onClick1={() => setOpen(false)}
 					onClick2={( e ) => e.stopPropagation()}/>
 			</div>
-			</main>
+		</main>
 	);
 }
