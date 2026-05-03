@@ -5,6 +5,7 @@ image_width: 650
 image_height: 496
 characters: [hatter, white_rabbit, mouse]
 ---
+:::verse
 “Have you some cake?” asked the Hatter.
 Alice, being hungry, thought this civil enough
 And took a chair that seemed unoffered.
@@ -18,6 +19,7 @@ And pressed the lid as if it held a face.
 “For opening,” the Hare replied, “no more.”
 The teapot shivered, warm within his arm,
 As something turned where liquid shadows flow.
+:::
 
 Alice looked, but found nothing sweet.
 

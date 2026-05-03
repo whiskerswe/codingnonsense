@@ -4,7 +4,8 @@ image: book17
 image_width: 650
 image_height: 496
 ---
-The farmer's boy stood by the board:
+:::verse
+ farmer's boy stood by the board:
 He cannot choose but hear;
 And thus spake on that ancient man,
 The bright-eyed Mariner.
@@ -13,6 +14,7 @@ The bright-eyed Mariner.
 Set down the dish,' quoth he.
 'Merrily did the gravy drop
 By the lighthouse forth sailed we'
+:::
 
 
 
