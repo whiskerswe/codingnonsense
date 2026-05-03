@@ -6,7 +6,9 @@ image_height: 509
 title: A story about Alice
 button_text: Read the book
 ---
-*A browser-based story inspired by Carroll, chance, and code.*  
+:::note
+A browser-based story inspired by Carroll, chance, and code.
+:::
 
 :::verse
 All my delight on deeds of arms is set,
