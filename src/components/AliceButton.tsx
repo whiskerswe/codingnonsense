@@ -5,16 +5,16 @@ interface AliceButtonProps {
 	children: React.ReactNode;
 }
 
-export function AliceButton({ onClick, children }: AliceButtonProps) {
+export function AliceButton( {onClick, children}: AliceButtonProps ) {
 	return (
-		<div className="button-row">
+		<div className="flex justify-center">
 			<button
 				type="button"
 				onClick={onClick}
 				className="inline-flex items-center
                    border outline outline-offset-2
                    border-stone-800
-                   px-2 pb-1 m-4 shadow-xl
+                   m-4 px-2 pb-1 shadow-xl
                    text-base text-gray-900"
 			>
 				{children}

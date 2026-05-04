@@ -12,16 +12,14 @@ interface Props {
 
 export function ContentPage( {page, onButtonClick}: Props ) {
 	const [open, setOpen] = useState(false);
-	console.log(page.body);
 	if (!page.body) {
 		return <div style={{ padding: 20 }}>Loading...</div>;
 	}
-	//const PageText = lazy(() => import("./PageText"));
 	return (
-		<main className="content px-4">
-			<div className="content-inner">
+		<main className="flex flex-col justify-center items-center px-4 py-6 text-sm/6 w-full">
+			<div className="w-full max-w-xl mx-auto flex flex-col items-center">
 			{page.image && (
-				<div className="image-block" style={{ minHeight: "300px" }}>
+				<div className="flex justify-center" style={{ minHeight: "300px" }}>
 					<div
 						style={{
 							aspectRatio: "3 / 2", // ungefär Tenniel

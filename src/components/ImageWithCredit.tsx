@@ -23,7 +23,7 @@ export function ImageWithCredit({ image_src, image_width, image_height }: ImageW
 					width: "100%",
 					height: "auto"
 				}}
-				className="image-content mx-auto" />
+				className="mx-auto max-h-[400px] my-8" />
 			<button
 				className="mb-2 mr-6 text-xs text-gray-700 italic underline"
 				onClick={() => setOpen(true)}

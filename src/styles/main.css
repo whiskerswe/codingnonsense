@@ -1,37 +1,4 @@
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
-@plugin "@tailwindcss/typography";
 
 @reference "tailwindcss";
-
-@layer components {
-	.content {
-		@apply flex flex-col justify-center items-center px-4 py-6 text-sm/6 w-full;
-	}
-	
-	.content-inner {
-		@apply w-full max-w-xl mx-auto flex flex-col items-center;
-	}
-	
-	.image-block {
-		@apply flex justify-center;
-	}
-	
-	.image-content {
-		@apply my-8 max-h-[400px];
-	}
-	
-	.image-content img {
-		margin-left: auto;
-		margin-right: auto;
-	}
-	
-	.fig-caption {
-		@apply mt-2 text-right text-xs italic text-gray-800;
-	}
-	
-	.button-row {
-		@apply flex justify-center my-8;
-	}
-	
-}
