@@ -20,18 +20,10 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 			<div className="w-full max-w-xl mx-auto flex flex-col items-center">
 			{page.image && (
 				<div className="flex justify-center" style={{ minHeight: "300px" }}>
-					<div
-						style={{
-							aspectRatio: "3 / 2", // ungefär Tenniel
-							width: "100%",
-							maxWidth: 500
-						}}
-					>
 					<ImageWithCredit image_src={page.image} image_width={page.image_width} image_height={page.image_height}/>
-					</div>
 				</div>
 			)}
-			<div className="prose inline-block w-auto max-w-full p-2">
+			<div className="prose max-w-full p-2">
 				<h1 className="text-center font-serif font-light">{page.title}</h1>
 				<Suspense fallback={null}>
 					<div
