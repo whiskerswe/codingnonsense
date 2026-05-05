@@ -6,14 +6,14 @@ import rawStart from "../../assets/data/pages/start.md?raw";
 import rawAbout from "../../assets/data/pages/about.md?raw";
 import rawNotFound from "../../assets/data/pages/not_found.md?raw";
 import { PageAttributesSchema } from "../models/page_attributes.ts";
-import { resolveChapterText } from "../storyTextRules/textResolver.ts";
+import { resolveTextWithParams } from "../storyTextRules/textResolver.ts";
 
 
 export async function getPage( id: string ): Promise<Page> {
 	const raw = getRawPage(id);
 	const parsed = parseMarkdown(raw);
 	const attributes = validateAttributes(parsed.attributes);
-	const body = resolveChapterText(parsed.body, attributes.parameters);
+	const body = resolveTextWithParams(parsed.body, attributes.parameters);
 	const image = attributes.image
 		? await resolveImage(attributes.image)
 		: undefined;

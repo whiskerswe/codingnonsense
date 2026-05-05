@@ -1,5 +1,5 @@
 
-export function resolveChapterText( body: string, parameters: string[] = [] ) {
+export function resolveTextWithParams( body: string, parameters: string[] = [] ) {
 	return interpolateBody(body, parameters)
 }
 

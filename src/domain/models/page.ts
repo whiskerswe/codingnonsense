@@ -3,7 +3,7 @@ export type Page = {
 	image?: string;
 	image_width: number;
 	image_height: number;
-	title: string;
+	title?: string;
 	body: string;
 	button_text?: string;
 };
