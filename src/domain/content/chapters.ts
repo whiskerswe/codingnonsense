@@ -2,7 +2,7 @@ import type { Chapter } from "../models/chapter.ts";
 import { resolveImage } from "../images/imageRegistry.ts";
 import { parseMarkdown } from "./parseMarkdown.ts";
 import { type ChapterAttributes, ChapterAttributesSchema } from "../models/chapter_attributes.ts";
-import { resolveTextWithParams } from "../storyTextRules/textResolver.ts";
+import { resolveTextWithParams } from "./text/textResolver.ts";
 
 export const CHAPTERS_DIRECTORY = "/src/assets/data/chapters";
 

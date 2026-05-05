@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { chapterModules, getChapter } from "./chapters.ts";
-import { resolveTextWithParams } from "../storyTextRules/textResolver.ts";
+import { resolveTextWithParams } from "./text/textResolver.ts";
 
 describe("all chapters", () => {
 	const paths = Object.keys(chapterModules);

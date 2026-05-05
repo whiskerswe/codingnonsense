@@ -3,7 +3,7 @@ import type { Page } from "../domain/models/page.ts";
 import { AliceButton } from "./AliceButton.tsx";
 import { Suspense, useState } from "react";
 import { Footer } from "./Footer.tsx";
-import { renderMarkdown } from "../domain/content/markdownRendered.ts";
+import { renderMarkdown } from "../domain/ui/markdownRendered.ts";
 
 interface Props {
 	page: Page,
