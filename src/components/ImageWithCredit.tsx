@@ -18,7 +18,7 @@ export function ImageWithCredit({ image_src, image_width, image_height }: ImageW
 				height={image_height}
 				loading="eager"
 				fetchPriority="high"
-				className="mx-auto my-8 max-h-[400px] w-full h-auto"
+				className="mx-auto my-2 max-h-[400px] w-full h-auto"
 			/>
 	<button
 		className="mb-2 mr-6 text-xs text-gray-700 italic underline"

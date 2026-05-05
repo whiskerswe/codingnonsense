@@ -16,7 +16,7 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 		return <div style={{ padding: 20 }}>Loading...</div>;
 	}
 	return (
-		<main className="flex flex-col justify-center items-center px-4 py-6 text-sm/6 w-full">
+		<main className="flex flex-col justify-center items-center p-4 text-sm/6 w-full">
 			<div className="w-full max-w-xl mx-auto flex flex-col items-center">
 			{page.image && (
 				<div className="flex justify-center" style={{ minHeight: "300px" }}>
