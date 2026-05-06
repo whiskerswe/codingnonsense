@@ -1,4 +1,4 @@
-import { SequenceMode, type StoryConfig } from "./engineConfig.ts";
+import { SequenceMode, type StoryConfig } from "./storyDefinition.ts";
 export const storyConfig = {
 	startChapterId: 3,
 	endChapterIds: [22, 23],

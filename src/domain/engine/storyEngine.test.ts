@@ -1,5 +1,5 @@
 import { afterEach, expect, it, vi } from "vitest";
-import { SequenceMode, type StoryConfig } from "./engineConfig.ts";
+import { SequenceMode, type StoryConfig } from "./storyDefinition.ts";
 import { StoryEngine } from "./storyEngine.ts";
 
 
@@ -71,7 +71,7 @@ it.each([
 		});
 
 		consumedPoolEntries?.forEach((chapterId) => {
-			engine.consumedPoolEntries.add(chapterId);
+			engine.excludedChapters.add(chapterId);
 		});
 
 		const result = engine.nextChapter();

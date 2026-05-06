@@ -1,11 +1,12 @@
-import type { SequenceConfig, StoryConfig } from "./engineConfig.ts";
+import type { SequenceConfig, StoryConfig } from "./storyDefinition.ts";
+import { shuffleAndTake } from "./shuffling.ts";
 
 
 export class StoryEngine {
 	currentChapter: number;
-	consumedPoolEntries = new Set<number>();
-	private config;
-	private chapterQueue: number[];
+	readonly excludedChapters: Set<number>;
+	private config: StoryConfig;
+	private chaptersToRead: number[];
 	private endingQueue: number[];
 	
 	constructor(
@@ -13,9 +14,9 @@ export class StoryEngine {
 	) {
 		this.config = config;
 		this.currentChapter = config.startChapterId;
-		this.consumedPoolEntries = new Set<number>();
-		this.consumedPoolEntries.add(config.startChapterId);
-		this.chapterQueue = [];
+		this.excludedChapters = new Set<number>();
+		this.excludedChapters.add(config.startChapterId);
+		this.chaptersToRead = [];
 		this.endingQueue = [...config.endChapterIds]
 	}
 	
@@ -23,68 +24,67 @@ export class StoryEngine {
 		return this.endingQueue.length > 0;
 	}
 	
-	private computeNextChapter(){
-		if (this.chapterQueue.length > 0) {
-			return this.chapterQueue.shift()!;
-		}
-		
-		const maxChaptersRead = this.consumedPoolEntries.size >= this.config.maxNumberOfChapters;
-		
-		const remaining = this.config.randomChapterPool.filter(
-			c => !this.consumedPoolEntries.has(c)
-		);
-		
-		if (remaining.length === 0 || maxChaptersRead) {
-			return this.endingQueue.shift()!;
-		}
-		
-		const newChapterId = remaining[Math.floor(Math.random() * remaining.length)];
-		this.addChaptersToQueue(newChapterId);
-		if (this.chapterQueue.length > 0) {
-			return this.chapterQueue.shift()!;
-		}
-		return newChapterId;
-	}
-	
 	nextChapter() {
 		const next = this.computeNextChapter();
-		this.consumedPoolEntries.add(next);
+		this.excludedChapters.add(next);
 		this.currentChapter = next;
 		return next;
 	}
 	
-	addChaptersToQueue(newChapterId: number) {
-		const sequence = this.config.chapterSequences[newChapterId];
-		if (!sequence) return;
-		const chapters = this.resolveChapters(newChapterId, sequence);
-		
-		this.chapterQueue.push(...chapters);
-		chapters.forEach(c => this.consumedPoolEntries.add(c));
-	}
-	
-	private resolveChapters(newChapterId: number, sequence: SequenceConfig): number[] {
-		const data = [newChapterId].concat(sequence.chapters);
-		return sequence.mode === "random"
-			? this.shuffleAndTake(data)
-			: data;
-	}
-	
-	shuffleAndTake<T>(
-		arr: T[],
-		min = 2,
-		max = arr.length
-	): T[] {
-		const shuffled = [...arr]
-		
-		for (let i = shuffled.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1))
-			;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+	private computeNextChapter(){
+		if (this.chaptersToRead.length > 0) {
+			return this.takeQueuedChapter();
 		}
 		
-		const count =
-			Math.floor(Math.random() * (max - min + 1)) + min
+		if (this.shouldEnd()) {
+			return this.endingQueue.shift()!;
+		}
 		
-		return shuffled.slice(0, count)
+		const newChapterId = this.pickRandomChapter();
+		
+		const sequence = this.config.chapterSequences[newChapterId];
+		if (sequence) {
+			this.applyChapterSequence(newChapterId, sequence);
+			return this.takeQueuedChapter();
+		}
+		
+		return newChapterId;
 	}
 	
+	private pickRandomChapter(): number {
+		const remaining = this.getRemainingChapters();
+		
+		return remaining[Math.floor(Math.random() * remaining.length)];
+	}
+	
+	private shouldEnd(): boolean {
+		const maxReached =
+			this.excludedChapters.size >= this.config.maxNumberOfChapters;
+		const remaining = this.getRemainingChapters();
+		
+		return remaining.length === 0 || maxReached;
+	}
+	
+	private getRemainingChapters(): number[] {
+		return this.config.randomChapterPool.filter(
+			c => !this.excludedChapters.has(c)
+		);
+	}
+	
+	private takeQueuedChapter(): number {
+		return this.chaptersToRead.shift()!;
+	}
+	
+	private applyChapterSequence(newChapterId: number, sequence: SequenceConfig): void {
+		const newChaptersSequence = this.generateChapterSequence(newChapterId, sequence);
+		this.chaptersToRead.push(...newChaptersSequence);
+		newChaptersSequence.forEach(c => this.excludedChapters.add(c));
+	}
+	
+	private generateChapterSequence(newChapterId: number, sequence: SequenceConfig): number[] {
+		const data = [newChapterId].concat(sequence.chapters);
+		return sequence.mode === "random"
+			? shuffleAndTake(data)
+			: data;
+	}
 }
