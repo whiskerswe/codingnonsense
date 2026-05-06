@@ -4,24 +4,17 @@ import { storyConfig } from "../domain/engine/storyConfig.ts";
 import { getChapter } from "../domain/content/chapters.ts";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { ContentPage } from "../components/ContentPage";
+import type { Chapter } from "../domain/models/chapter.ts";
 
 export default function StoryPage() {
 	
 	const navigate = useNavigate();
-	const { chapterId } = useParams();
-	const [, setTick] = useState(0);
-	const [chapter, setChapter] = useState<any | undefined>(undefined);
-	
+	const {chapterId} = useParams();
+	const [chapter, setChapter] = useState<Chapter | null | undefined>(undefined);
 	
 	const [engine] = useState(
 		() =>
-			new StoryEngine({
-				startChapterId: storyConfig.startChapterId,
-				endChapterIds: storyConfig.endChapterIds,
-				maxNumberOfChapters: storyConfig.maxNumberOfChapters,
-				randomChapterPool: storyConfig.randomChapterPool,
-				chapterSequences: storyConfig.chapterSequences,
-			})
+			new StoryEngine(storyConfig)
 	);
 	
 	useEffect(() => {
@@ -47,19 +40,17 @@ export default function StoryPage() {
 		};
 	}, [chapterId]);
 	
-	if (chapter === undefined) {
+	if (chapter === undefined) { //Loading
 		return null;
 	}
 	
-	if (chapter === null || !chapter.body) {
-		return <Navigate to="/not-found" replace />;
+	if (!chapter || !chapter.body) {
+		return <Navigate to="/not-found" replace/>;
 	}
 	
 	function handleClick() {
 		if (engine.canAdvance()) {
-			const nextIndex = engine.nextChapter();
-			const nextId = `book${nextIndex}`;
-			setTick(t => t + 1);
+			const nextId = `book${engine.nextChapter()}`;
 			navigate(`/chapter/${nextId}`);
 		} else {
 			navigate("/");

@@ -35,9 +35,7 @@ function createEngine(overrides: Partial<StoryConfig> = {}) {
 		chapterSequences: overrides.chapterSequences ?? base.chapterSequences,
 	};
 
-	const engine = new StoryEngine(config);
-	engine.currentChapter = config.startChapterId;
-	return engine;
+	return new StoryEngine(config);
 }
 
 it.each([

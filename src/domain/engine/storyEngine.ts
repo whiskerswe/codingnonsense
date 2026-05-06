@@ -3,7 +3,6 @@ import { shuffleAndTake } from "./shuffling.ts";
 
 
 export class StoryEngine {
-	currentChapter: number;
 	readonly excludedChapters: Set<number>;
 	private config: StoryConfig;
 	private chaptersToRead: number[];
@@ -13,7 +12,6 @@ export class StoryEngine {
 		config: StoryConfig
 	) {
 		this.config = config;
-		this.currentChapter = config.startChapterId;
 		this.excludedChapters = new Set<number>();
 		this.excludedChapters.add(config.startChapterId);
 		this.chaptersToRead = [];
@@ -27,7 +25,6 @@ export class StoryEngine {
 	nextChapter() {
 		const next = this.computeNextChapter();
 		this.excludedChapters.add(next);
-		this.currentChapter = next;
 		return next;
 	}
 	
