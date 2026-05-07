@@ -26,7 +26,7 @@ describe("getPage", () => {
 		expect(page.id).toBe(start.attributes.id);
 		expect(page.title).toBe(start.attributes.title);
 		expect(page.button_text).toBe(start.attributes.button_text);
-		expect(page.image).toBe(await resolveImage(start.attributes.image!));
+		expect(page.image).toBe(resolveImage(start.attributes.image!));
 		expect(page.body).toEqual(start.body);
 	});
 	
@@ -36,7 +36,7 @@ describe("getPage", () => {
 		expect(page.id).toBe(about.attributes.id);
 		expect(page.title).toBe(about.attributes.title);
 		expect(page.button_text).toBe(about.attributes.button_text);
-		expect(page.image).toBe(await resolveImage(about.attributes.image!));
+		expect(page.image).toBe(resolveImage(about.attributes.image!));
 		expect(page.body).toEqual(about.body);
 	});
 
@@ -46,7 +46,7 @@ describe("getPage", () => {
 		expect(page.id).toBe(notFound.attributes.id);
 		expect(page.title).toBe(notFound.attributes.title);
 		expect(page.button_text).toBe(notFound.attributes.button_text);
-		expect(page.image).toBe(await resolveImage(notFound.attributes.image!));
+		expect(page.image).toBe(resolveImage(notFound.attributes.image!));
 		expect(page.body).toEqual(notFound.body);
 	});
 	
@@ -56,6 +56,6 @@ describe("getPage", () => {
 		expect(page.id).toBe(start.attributes.id);
 		expect(page.title).toBe(start.attributes.title);
 		expect(page.button_text).toBe(start.attributes.button_text);
-		expect(page.image).toBe(await resolveImage(start.attributes.image!));
+		expect(page.image).toBe(resolveImage(start.attributes.image!));
 	});
 });

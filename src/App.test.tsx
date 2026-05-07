@@ -9,8 +9,8 @@ it("goes from start page to first chapter", async () => {
 	const user = userEvent.setup();
 	await screen.findByRole("heading", { name: /a story about alice/i });
 
-	const startImageSrc = await resolveImage("alice_circle");
-	const firstChapterImageSrc = await resolveImage("book3");
+	const startImageSrc = resolveImage("alice_circle");
+	const firstChapterImageSrc = resolveImage("book3");
 	
 	const startImage = await screen.findByAltText(
 		/illustration from alice in wonderland/i

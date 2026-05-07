@@ -25,7 +25,7 @@ export async function getChapter(id: string): Promise<Chapter | null> {
 	const attributes = validateAttributes(parsed.attributes);
 	const body = resolveTextWithParams(parsed.body, attributes.parameters);
 	const image = attributes.image
-		? await resolveImage(attributes.image)
+		? resolveImage(attributes.image)
 		: undefined;
 	
 	return buildChapter({

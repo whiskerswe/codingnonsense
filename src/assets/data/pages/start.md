@@ -1,6 +1,6 @@
 ---
 id: start
-image: alice_circle.webp
+image: alice_circle
 image_width: 500
 image_height: 509
 title: A story about Alice

@@ -15,9 +15,9 @@ export async function getPage( id: string ): Promise<Page> {
 	const attributes = validateAttributes(parsed.attributes);
 	const body = resolveTextWithParams(parsed.body, attributes.parameters);
 	const image = attributes.image
-		? await resolveImage(attributes.image)
+		? resolveImage(attributes.image)
 		: undefined;
-	
+	console.log(attributes);
 	return buildPage({
 		...attributes,
 		body,
