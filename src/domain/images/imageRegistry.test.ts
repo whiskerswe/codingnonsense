@@ -6,26 +6,27 @@ describe("imageRegistry", () => {
 		const keys = Object.keys(imageRegistry);
 		
 		expect(keys.length).toBeGreaterThan(0);
-		expect(typeof imageRegistry[keys[0]]).toBe("function");
+		expect(typeof imageRegistry[keys[0]]).toBe("string");
 	});
 	
-	it("resolves a known key", async () => {
-		const expected = await imageRegistry["book1"]();
-		const actual = await resolveImage("book1");
+	it("resolves a known key for chapters", async () => {
+		const expected = "/src/assets/images/chapters/book1.webp";
+		const actual = resolveImage("book1");
 		
 		expect(actual).toBe(expected);
 	});
 	
-	it("normalizes extension when resolving a key", async () => {
-		const a = await resolveImage("book1.webp");
-		const b = await resolveImage("book1");
+	
+	it("resolves a known key for pages", async () => {
+		const expected = "/src/assets/images/pages/alice_circle.webp";
+		const actual = resolveImage("alice_circle");
 		
-		expect(a).toBe(b);
+		expect(actual).toBe(expected);
 	});
 	
 	it("returns default image for missing key", async () => {
 		const defaultImage = "/src/assets/images/chapters/book3.webp";
-		const result = await resolveImage("does-not-exist");
+		const result = resolveImage("does-not-exist");
 		
 		expect(result).toBe(defaultImage);
 	});

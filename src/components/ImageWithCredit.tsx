@@ -18,22 +18,19 @@ export function ImageWithCredit({ image_src, image_width, image_height }: ImageW
 				height={image_height}
 				loading="eager"
 				fetchPriority="high"
-				style={{
-					maxWidth: 500,
-					width: "100%",
-					height: "auto"
-				}}
-				className="image-content mx-auto" />
-			<button
-				className="mb-2 mr-6 text-xs text-gray-700 italic underline"
-				onClick={() => setOpen(true)}
-			>
-				Tenniel
-			</button>
-			
-			{open && (
-				<div
-					className="fixed inset-0 bg-black/40 flex items-center justify-center"
+				className="mx-auto my-2 max-h-[400px] w-full h-auto"
+			/>
+	<button
+		className="mb-2 mr-6 text-xs text-gray-700 italic underline"
+		onClick={() => setOpen(true)}
+	>
+		Tenniel
+	</button>
+
+{
+	open && (
+		<div
+			className="fixed inset-0 bg-black/40 flex items-center justify-center"
 					onClick={() => setOpen(false)}
 				>
 					<div

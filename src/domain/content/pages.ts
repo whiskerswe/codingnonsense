@@ -6,22 +6,43 @@ import rawStart from "../../assets/data/pages/start.md?raw";
 import rawAbout from "../../assets/data/pages/about.md?raw";
 import rawNotFound from "../../assets/data/pages/not_found.md?raw";
 import { PageAttributesSchema } from "../models/page_attributes.ts";
-import { resolveChapterText } from "../storyTextRules/textResolver.ts";
+import { resolveTextWithParams } from "./text/textResolver.ts";
+import type { Chapter } from "../models/chapter.ts";
 
-async function createChapterFromMarkdown( raw: string ): Promise<Page> {
-	const { attributes, body } = parseMarkdown(raw);
-	const validatedAttributes = PageAttributesSchema.parse(attributes);
-	const interpolatedBody = resolveChapterText(body, validatedAttributes.parameters);
+
+export async function getPage( id: string ):  Promise<Chapter | null>{
+	const raw = getRawPage(id);
+	if (!raw) {
+		return null;
+	}
 	
-	return {
-		id: validatedAttributes.id,
-		image: validatedAttributes.image ? await resolveImage(validatedAttributes.image) : undefined,
-		image_width: validatedAttributes.image_width,
-		image_height: validatedAttributes.image_height,
-		title: validatedAttributes.title,
-		button_text: validatedAttributes.button_text,
-		body: interpolatedBody
-	};
+	const parsed = parseMarkdown(raw);
+	const attributes = validateAttributes(parsed.attributes);
+	const body = resolveTextWithParams(parsed.body, attributes.parameters);
+	const image = attributes.image
+		? resolveImage(attributes.image)
+		: undefined;
+	return buildPage({
+		...attributes,
+		body,
+		image
+	});
+}
+
+function buildPage( data: {
+	id: string;
+	title: string;
+	body: string;
+	image?: string;
+	image_width: number;
+	image_height: number;
+	button_text?: string;
+} ): Page {
+	return data;
+}
+
+function validateAttributes( attributes: unknown ) {
+	return PageAttributesSchema.parse(attributes);
 }
 
 const rawPages: Record<string, string> = {
@@ -30,7 +51,6 @@ const rawPages: Record<string, string> = {
 	not_found: rawNotFound
 };
 
-export async function getPage( id: string ): Promise<Page> {
-	const raw = rawPages[id] ?? rawStart;
-	return await createChapterFromMarkdown(raw);
+function getRawPage( id: string ): string {
+	return rawPages[id];
 }

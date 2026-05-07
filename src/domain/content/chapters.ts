@@ -2,7 +2,7 @@ import type { Chapter } from "../models/chapter.ts";
 import { resolveImage } from "../images/imageRegistry.ts";
 import { parseMarkdown } from "./parseMarkdown.ts";
 import { type ChapterAttributes, ChapterAttributesSchema } from "../models/chapter_attributes.ts";
-import { resolveChapterText } from "../storyTextRules/textResolver.ts";
+import { resolveTextWithParams } from "./text/textResolver.ts";
 
 export const CHAPTERS_DIRECTORY = "/src/assets/data/chapters";
 
@@ -16,47 +16,65 @@ export function getChapterModulePath(id: string): string {
 }
 
 export async function getChapter(id: string): Promise<Chapter | null> {
-	const path = getChapterModulePath(id);
-	const loader = chapterModules[path];
-	if (!loader) return null;
+	const raw = await getRawChapter(id);
+	if (!raw) {
+		return null;
+	}
+
+	const parsed = parseMarkdown(raw);
+	const attributes = validateAttributes(parsed.attributes);
+	const body = resolveTextWithParams(parsed.body, attributes.parameters);
+	const image = attributes.image
+		? resolveImage(attributes.image)
+		: undefined;
 	
+	return buildChapter({
+		...attributes,
+		body,
+		image
+	});
+}
+
+async function getRawChapter(id: string): Promise<string | null> {
+	const loader = chapterModules[getChapterModulePath(id)];
+	if (!loader) {
+		return null;
+	}
 	const result = await loader();
-	
-	if (!result) return null;
-	
-	const raw =
-		typeof result === "string"
-			? result
-			: (result as any).default;
-	
-	if (typeof raw !== "string") {
-		throw new Error("Markdown loader did not return a string");
+	if (typeof result !== "string") {
+		throw new Error(`Chapter ${id} did not return a string`);
 	}
 	
-	const { attributes, body } = parseChapterFromMarkdown(raw);
-	
-	return await createChapter(attributes, body);
+	return result;
 }
-
-function parseChapterFromMarkdown(raw: string) {
-	const { attributes, body } = parseMarkdown(raw);
-	const validatedAttributes = ChapterAttributesSchema.parse(attributes);
-	const interpolatedBody = resolveChapterText(body, validatedAttributes.parameters);
-	return { attributes: validatedAttributes, body: interpolatedBody };
-}
-
-async function createChapter(
-	attributes: ChapterAttributes,
-	body: string
-): Promise<Chapter> {
+function buildChapter( data: {
+	id: string;
+	title: string;
+	body: string;
+	image?: string;
+	image_width: number;
+	image_height: number;
+	button_text?: string;
+	characters?: string[];
+	themes?: string[];
+} ): Chapter {
 	return {
-		id: attributes.id,
-		title: attributes.title ?? "*       *       *       *       *",
-		body,
-		image: await resolveImage(attributes.image),
-		image_width: attributes.image_width,
-		image_height: attributes.image_height,
-		button_text: attributes.button_text,
-		characters: attributes.characters ?? [],
+		...data,
+		characters: data.characters ?? [],
+		themes: data.themes ?? []
 	};
 }
+
+type ValidatedChapterAttributes = ChapterAttributes & {
+	title: string;
+};
+
+function validateAttributes(attributes: unknown): ValidatedChapterAttributes {
+	const validated = ChapterAttributesSchema.parse(attributes);
+	
+	return {
+		...validated,
+		title: validated.title ?? "*       *       *       *       *"
+	};
+}
+

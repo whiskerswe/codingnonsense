@@ -1,6 +1,6 @@
 ---
 id: about
-image: chess_landscape.webp
+image: chess_landscape
 image_width: 500
 image_height: 342
 title: About Alice

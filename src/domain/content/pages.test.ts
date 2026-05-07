@@ -23,39 +23,42 @@ const notFound = parseExpectedPage(rawNotFound);
 describe("getPage", () => {
 	it("returns the mapped start page", async () => {
 		const page = await getPage("start");
+		if (!page) {
+			throw new Error("Expected page to exist");
+		}
 		expect(page.id).toBe(start.attributes.id);
 		expect(page.title).toBe(start.attributes.title);
 		expect(page.button_text).toBe(start.attributes.button_text);
-		expect(page.image).toBe(await resolveImage(start.attributes.image!));
+		expect(page.image).toBe(resolveImage(start.attributes.image!));
 		expect(page.body).toEqual(start.body);
 	});
 	
 	it("returns the mapped about page", async () => {
 		const page = await getPage("about");
-		
+		if (!page) {
+			throw new Error("Expected page to exist");
+		}
 		expect(page.id).toBe(about.attributes.id);
 		expect(page.title).toBe(about.attributes.title);
 		expect(page.button_text).toBe(about.attributes.button_text);
-		expect(page.image).toBe(await resolveImage(about.attributes.image!));
+		expect(page.image).toBe(resolveImage(about.attributes.image!));
 		expect(page.body).toEqual(about.body);
 	});
 
 	it("returns the mapped not found page", async () => {
 		const page = await getPage("not_found");
-
+		if (!page) {
+			throw new Error("Expected page to exist");
+		}
 		expect(page.id).toBe(notFound.attributes.id);
 		expect(page.title).toBe(notFound.attributes.title);
 		expect(page.button_text).toBe(notFound.attributes.button_text);
-		expect(page.image).toBe(await resolveImage(notFound.attributes.image!));
+		expect(page.image).toBe(resolveImage(notFound.attributes.image!));
 		expect(page.body).toEqual(notFound.body);
 	});
 	
 	it("falls back to start page for unknown ids", async () => {
 		const page = await getPage("unknown-page");
-
-		expect(page.id).toBe(start.attributes.id);
-		expect(page.title).toBe(start.attributes.title);
-		expect(page.button_text).toBe(start.attributes.button_text);
-		expect(page.image).toBe(await resolveImage(start.attributes.image!));
+		expect(page).toBeNull();
 	});
 });

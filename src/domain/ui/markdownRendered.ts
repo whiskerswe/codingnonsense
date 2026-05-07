@@ -1,7 +1,7 @@
 import MarkdownIt from "markdown-it";
 import container from "markdown-it-container";
 import type Token from "markdown-it/lib/token.mjs";
-import { containerStyling, type ContainerName } from "./containerStyling";
+import { containerStyling, type ContainerName } from "./containerStyling.ts";
 
 const md = new MarkdownIt({
 	html: false,

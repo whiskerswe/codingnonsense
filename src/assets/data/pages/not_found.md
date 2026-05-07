@@ -1,6 +1,6 @@
 ---
 id: not_found
-image: hat37.webp
+image: hat37
 image_width: 287
 image_height: 221
 title: 404 error
