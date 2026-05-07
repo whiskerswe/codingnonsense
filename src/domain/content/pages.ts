@@ -7,17 +7,21 @@ import rawAbout from "../../assets/data/pages/about.md?raw";
 import rawNotFound from "../../assets/data/pages/not_found.md?raw";
 import { PageAttributesSchema } from "../models/page_attributes.ts";
 import { resolveTextWithParams } from "./text/textResolver.ts";
+import type { Chapter } from "../models/chapter.ts";
 
 
-export async function getPage( id: string ): Promise<Page> {
+export async function getPage( id: string ):  Promise<Chapter | null>{
 	const raw = getRawPage(id);
+	if (!raw) {
+		return null;
+	}
+	
 	const parsed = parseMarkdown(raw);
 	const attributes = validateAttributes(parsed.attributes);
 	const body = resolveTextWithParams(parsed.body, attributes.parameters);
 	const image = attributes.image
 		? resolveImage(attributes.image)
 		: undefined;
-	console.log(attributes);
 	return buildPage({
 		...attributes,
 		body,
@@ -48,5 +52,5 @@ const rawPages: Record<string, string> = {
 };
 
 function getRawPage( id: string ): string {
-	return rawPages[id] ?? rawStart;
+	return rawPages[id];
 }
