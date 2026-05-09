@@ -2,8 +2,8 @@ import { getBuildTime } from "../app/buildInfo.ts";
 
 export function Footer( props: { onClick: () => void, open: boolean, onClick1: () => void, onClick2: ( e: any ) => void } ) {
 	return <>
-		<footer className="m-3 mt-10 flex gap-4 justify-center text-sm">
-			<span>Build: {getBuildTime()}</span>
+		<footer className="m-3 flex gap-4 justify-center text-sm">
+			<span>{getBuildTime()}</span>
 			<button
 				className="underline cursor-pointer"
 				onClick={props.onClick}

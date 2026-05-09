@@ -14,7 +14,7 @@ export function AliceButton( {onClick, children}: AliceButtonProps ) {
 				className="inline-flex items-center
                    border-t border-l border-r-2 border-b-2
                    border-olive-600
-                   py-1 px-2 shadow-xl
+                   py-1 px-2 mt-2 shadow-xl
                    font-serif font-semibold
                    text-lg text-olive-700"
 			>
