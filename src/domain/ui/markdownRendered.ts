@@ -9,20 +9,48 @@ const md = new MarkdownIt({
 	linkify: true,
 });
 
-(Object.entries(containerStyling) as [ContainerName, string][]).forEach(
-	([name, classes]) => {
+const defaultRender =
+	md.renderer.rules.link_open ||
+	((tokens, idx, options, _env, self) =>
+		self.renderToken(tokens, idx, options));
+
+md.renderer.rules.link_open = function(tokens, idx, options, env, self) {
+	const token = tokens[idx];
+	const href = token.attrGet("href");
+	
+	if (href?.startsWith("http")) {
+		token.attrSet("target", "_blank");
+		token.attrSet("rel", "noopener noreferrer");
+	}
+	
+	return defaultRender(tokens, idx, options, env, self);
+};
+
+(Object.entries(containerStyling) as [ContainerName, string][])
+	.forEach(( [name, classes] ) => {
 		md.use(container, name, {
-			render(tokens: Token[], idx: number) {
+			render( tokens: Token[], idx: number ) {
 				if (tokens[idx].nesting === 1) {
+					if (name === "details") {
+						const title = tokens[idx].info
+							.trim()
+							.slice("details".length)
+							.trim();
+						return `
+              <details class="${classes}">
+                <summary>${title}</summary>
+            `;
+					}
 					return `<div class="${classes}">\n`;
+				}
+				if (name === "details") {
+					return "</details>\n";
 				}
 				return "</div>\n";
 			},
 		});
-	}
-);
+	});
 
-
-export function renderMarkdown(raw: string): string {
+export function renderMarkdown( raw: string ): string {
 	return md.render(raw);
 }
