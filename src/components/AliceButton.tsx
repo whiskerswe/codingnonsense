@@ -14,7 +14,7 @@ export function AliceButton( {onClick, children}: AliceButtonProps ) {
 				className="inline-flex items-center
                    border outline outline-offset-2
                    border-stone-800
-                   m-4 px-2 pb-1 shadow-xl
+                   px-2 pb-1 shadow-xl
                    text-base text-gray-900"
 			>
 				{children}

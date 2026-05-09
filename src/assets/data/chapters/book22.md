@@ -1,6 +1,6 @@
 ---
 id: book22
-image: book22
+image: book22a
 image_width: 650
 image_height: 942
 characters: [cheshire_cat]

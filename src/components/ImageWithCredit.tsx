@@ -18,10 +18,10 @@ export function ImageWithCredit({ image_src, image_width, image_height }: ImageW
 				height={image_height}
 				loading="eager"
 				fetchPriority="high"
-				className="mx-auto my-2 max-h-[400px] w-full h-auto"
+				className="mx-auto max-w-40 md:max-w-90 mt-2 max-h-80 lg:max-h-90 w-full h-auto"
 			/>
 	<button
-		className="mb-2 mr-6 text-xs text-gray-700 italic underline"
+		className="mb-1 text-xs text-gray-700 italic underline"
 		onClick={() => setOpen(true)}
 	>
 		Tenniel
