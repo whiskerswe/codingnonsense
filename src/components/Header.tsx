@@ -42,7 +42,7 @@ export function Header()  {
 				aria-label="Home"
 				className="w-10 h-10 flex items-center justify-center"
 			>
-				<img src="/spades.svg" alt="" aria-hidden="true" className="w-6 h-6" />
+				<img src="/spades.svg" alt="Spades" aria-hidden="true" className="w-6 h-6" />
 			</button>
 			
 			{/* Menu */}
@@ -56,11 +56,11 @@ export function Header()  {
 				</button>
 				
 				{open && (
-					<div className="absolute right-0 mt-2 bg-white text-black shadow-lg rounded-sm min-w-[140px]">
+					<div className="absolute right-0 bg-white text-black shadow-lg rounded-sm min-w-35">
 						<Link
 							to="/about"
 							onClick={() => setOpen(false)}
-							className="block px-4 py-2 hover:bg-pink-100"
+							className="block p-2"
 						>
 							About
 						</Link>

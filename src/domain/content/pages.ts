@@ -31,7 +31,7 @@ export async function getPage( id: string ):  Promise<Chapter | null>{
 
 function buildPage( data: {
 	id: string;
-	title: string;
+	title?: string;
 	body: string;
 	image?: string;
 	image_width: number;

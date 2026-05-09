@@ -1,6 +1,6 @@
 ---
 id: book40
-image: book40
+image: book40a
 image_width: 650
 image_height: 856
 characters: [queen]

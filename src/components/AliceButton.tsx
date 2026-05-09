@@ -12,10 +12,11 @@ export function AliceButton( {onClick, children}: AliceButtonProps ) {
 				type="button"
 				onClick={onClick}
 				className="inline-flex items-center
-                   border outline outline-offset-2
-                   border-stone-800
-                   m-4 px-2 pb-1 shadow-xl
-                   text-base text-gray-900"
+                   border-t border-l border-r-2 border-b-2
+                   border-olive-600
+                   py-1 px-2 mt-2 shadow-xl
+                   font-serif font-semibold
+                   text-lg text-olive-700"
 			>
 				{children}
 			</button>

@@ -49,7 +49,7 @@ async function getRawChapter(id: string): Promise<string | null> {
 }
 function buildChapter( data: {
 	id: string;
-	title: string;
+	title?: string;
 	body: string;
 	image?: string;
 	image_width: number;
@@ -65,16 +65,14 @@ function buildChapter( data: {
 	};
 }
 
-type ValidatedChapterAttributes = ChapterAttributes & {
-	title: string;
-};
+type ValidatedChapterAttributes = ChapterAttributes;
 
 function validateAttributes(attributes: unknown): ValidatedChapterAttributes {
 	const validated = ChapterAttributesSchema.parse(attributes);
 	
 	return {
 		...validated,
-		title: validated.title ?? "*       *       *       *       *"
+		title: validated.title
 	};
 }
 

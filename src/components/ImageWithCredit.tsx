@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 type ImageWithCreditProps = {
 	image_src: string;
@@ -7,7 +6,6 @@ type ImageWithCreditProps = {
 };
 
 export function ImageWithCredit({ image_src, image_width, image_height }: ImageWithCreditProps) {
-	const [open, setOpen] = useState(false);
 	const altText = `Illustration from Alice in Wonderland by Sir John Tenniel (1820-1914)`;
 	
 	return (
@@ -18,32 +16,8 @@ export function ImageWithCredit({ image_src, image_width, image_height }: ImageW
 				height={image_height}
 				loading="eager"
 				fetchPriority="high"
-				className="mx-auto my-2 max-h-[400px] w-full h-auto"
+				className="max-h-60 md:max-h-80 w-auto m-4 object-contain"
 			/>
-	<button
-		className="mb-2 mr-6 text-xs text-gray-700 italic underline"
-		onClick={() => setOpen(true)}
-	>
-		Tenniel
-	</button>
-
-{
-	open && (
-		<div
-			className="fixed inset-0 bg-black/40 flex items-center justify-center"
-					onClick={() => setOpen(false)}
-				>
-					<div
-						className="bg-white p-5 max-w-sm border border-gray-300 text-sm text-center"
-						onClick={(e) => e.stopPropagation()}
-					>
-						<p>
-							Illustration by John Tenniel (1820–1914).
-							Public domain.
-						</p>
-					</div>
-				</div>
-			)}
 		</figure>
 	);
 }

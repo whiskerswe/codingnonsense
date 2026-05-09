@@ -5,13 +5,42 @@ image_width: 500
 image_height: 342
 title: About Alice
 ---
-Alice is a web project that began as an opportunity to try Terraform, which people around me had spoken highly of. With no clear idea of what to build at the outset, a React application became the starting point, providing a flexible foundation during the exploratory phase. Once I decided to base the project on John Tenniel’s illustrations for *Alice’s Adventures in Wonderland* (1865) by Lewis Carroll, the direction became clearer. The project draws extensively on public-domain material: Tenniel’s illustrations have shaped it throughout, and the images used on meta pages such as the start page, About, and 404 are from *Through the Looking-Glass* (1871).
+## Origins
+Alice is a browser-based story inspired by nineteenth-century children’s literature, chance, and constrained writing. 
 
-The text follows a similar approach. The verse on the start page is adapted from Edmund Spenser’s *The Faerie Queene*, and elements of Samuel Taylor Coleridge’s *The Rime of the Ancient Mariner* appear in the chapters. Passages from Lewis Carroll’s original works have, in places, been incorporated and reworked into the narrative, alongside elements from Robert Southey’s *The Story of the Three Bears* (1837).
+The project began as an experiment in interactive storytelling and gradually developed into a larger exploration of structure, repetition, and literary transformation.
 
-Chapters are written so that they can appear in almost any order, and the code is structured to allow small, frequent changes. Work proceeds in short iterations, focusing on what is most useful to improve on a given day. This approach keeps the project engaging and manageable. The connection between [OuLiPo]() and Carroll's background as a mathematician has made this otherwise nonsensical tale feel unexpectedly coherent during development.
 
-This is a work in progress. The aim is to offer a few minutes of quiet distraction. If you have suggestions for how the experience could be improved, feel free to reach out.
+## Literary Sources
+:::details The project draws heavily on public-domain literature.
+
+Lewis Carroll’s Alice’s Adventures in Wonderland (1865) and Through the Looking-Glass (1871) provide the central atmosphere and imagery, while fragments and influences from other works appear throughout the text. Among them are Edmund Spenser’s The Faerie Queene, Samuel Taylor Coleridge’s The Rime of the Ancient Mariner, and Robert Southey’s The Story of the Three Bears (1837).
+
+Passages are adapted, rearranged, or rewritten in order to fit the structure of the narrative.
+
+:::
+
+## Images
+The illustrations used throughout the project are based primarily on the work of John Tenniel. Most images appearing on the site originate from editions of Alice’s Adventures in Wonderland and Through the Looking-Glass that are now in the public domain.
+
+## Structure and Constraints
+:::details The chapters are designed so that they may appear in many different sequences.
+
+Rather than following a single fixed path, the story shifts between fragments, recurring motifs, and interruptions.
+
+This approach is partly influenced by the ideas associated with [OuLiPo](https://en.wikipedia.org/wiki/Oulipo), particularly the use of formal constraints as a creative tool. Carroll’s mathematical background also became an unexpected point of reference during development, giving structure to material that often appears deliberately nonsensical.
+:::
+
+## Development
+:::details The project is developed iteratively through small, frequent changes. 
+
+New chapters, visual adjustments, and structural experiments are added gradually over time, allowing the work to remain flexible while continuing to evolve. The code is structured to allow small, frequent changes. Work proceeds in short iterations, focusing on what is most useful to improve on a given day. This approach keeps the project engaging and manageable.
+:::
+
+## A Work in Progress
+This remains an unfinished project. The aim is simply to offer a few minutes of quiet distraction.
+
+If you have thoughts or suggestions, feel free to get in touch.
 
 [LinkedIn link](https://www.linkedin.com/in/sara-wanerskar/)  
 [GitHub link](https://github.com/whiskerswe/codingnonsense)
