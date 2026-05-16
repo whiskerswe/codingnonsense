@@ -16,9 +16,9 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 		return <div style={{ padding: 20 }}>Loading...</div>;
 	}
 	return (
-		<div className="min-h-screen flex flex-col bg-olive-200">
-		<main className="flex-1 flex flex-col justify-center items-center">
-			<div className="max-w-xl mx-auto flex flex-col items-center bg-olive-50 min-h-screen ">
+		<div className="min-h-screen flex flex-col bg-olive-200 w-full">
+		<main className="flex-none flex flex-col justify-start items-center w-full">
+			<div className="w-full max-w-xl mx-auto flex flex-col items-center bg-olive-50 min-h-screen">
 			{page.image && (
 				<div className="flex justify-center">
 					<ImageWithCredit image_src={page.image} image_width={page.image_width} image_height={page.image_height}/>

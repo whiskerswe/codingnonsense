@@ -16,7 +16,7 @@ export function ImageWithCredit({ image_src, image_width, image_height }: ImageW
 				height={image_height}
 				loading="eager"
 				fetchPriority="high"
-				className="max-h-60 md:max-h-80 w-auto m-4 object-contain"
+				className="mx-auto max-h-60 md:max-h-80  w-full m-4 object-contain"
 			/>
 		</figure>
 	);

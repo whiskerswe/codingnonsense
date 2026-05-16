@@ -18,3 +18,9 @@
 h2 {
 	@apply font-serif font-light leading-tight;
 }
+
+.prose * {
+	max-width: 100%;
+	box-sizing: border-box;
+	overflow-wrap: anywhere;
+}
