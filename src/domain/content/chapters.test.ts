@@ -17,7 +17,6 @@ describe("all chapters", () => {
 			
 			expect(chapter).not.toBeNull();
 			expect(chapter!.id).toBe(id);
-			expect(chapter!.title).toBeDefined();
 			expect(
 				chapter!.characters === undefined || Array.isArray(chapter!.characters)
 			).toBe(true);

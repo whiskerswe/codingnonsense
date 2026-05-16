@@ -3,6 +3,7 @@ import { Header } from "./components/Header.tsx";
 import { HomeContext } from "./app/HomeContext.tsx";
 import { lazy, Suspense } from "react";
 import HomePage from "./pages/HomePage.tsx";
+import EndPage from "./pages/EndPage.tsx";
 
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const StoryPage = lazy(() => import("./pages/StoryPage"));
@@ -25,6 +26,7 @@ function App() {
 							element={<StoryPage key={window.location.pathname} />}
 						/>
 						<Route path="/about" element={<AboutPage />} />
+						<Route path="/end" element={<EndPage />} />
 						<Route path="/not-found" element={<NotFoundPage />} />
 						<Route path="*" element={<NotFoundPage />} />
 					</Routes>

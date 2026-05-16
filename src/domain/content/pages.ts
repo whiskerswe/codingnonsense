@@ -5,6 +5,7 @@ import { resolveImage } from "../images/imageRegistry.ts";
 import rawStart from "../../assets/data/pages/start.md?raw";
 import rawAbout from "../../assets/data/pages/about.md?raw";
 import rawNotFound from "../../assets/data/pages/not_found.md?raw";
+import rawEnd from "../../assets/data/pages/end.md?raw";
 import { PageAttributesSchema } from "../models/page_attributes.ts";
 import { resolveTextWithParams } from "./text/textResolver.ts";
 import type { Chapter } from "../models/chapter.ts";
@@ -34,8 +35,8 @@ function buildPage( data: {
 	title?: string;
 	body: string;
 	image?: string;
-	image_width: number;
-	image_height: number;
+	image_width?: number;
+	image_height?: number;
 	button_text?: string;
 } ): Page {
 	return data;
@@ -48,7 +49,8 @@ function validateAttributes( attributes: unknown ) {
 const rawPages: Record<string, string> = {
 	start: rawStart,
 	about: rawAbout,
-	not_found: rawNotFound
+	not_found: rawNotFound,
+	end: rawEnd,
 };
 
 function getRawPage( id: string ): string {
