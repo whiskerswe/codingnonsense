@@ -21,7 +21,7 @@ export function ContentPage( {page, onButtonClick}: Props ) {
 			<div className="w-full max-w-xl mx-auto flex flex-col items-center bg-olive-50 min-h-screen">
 			{page.image && (
 				<div className="flex justify-center">
-					<ImageWithCredit image_src={page.image} image_width={page.image_width} image_height={page.image_height}/>
+					<ImageWithCredit image_src={page.image} image_width={page.image_width!} image_height={page.image_height!}/>
 				</div>
 			)}
 			<div>
