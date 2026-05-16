@@ -53,7 +53,7 @@ export default function StoryPage() {
 			const nextId = `book${engine.nextChapter()}`;
 			navigate(`/chapter/${nextId}`);
 		} else {
-			navigate("/");
+			navigate("/end");
 		}
 	}
 	
