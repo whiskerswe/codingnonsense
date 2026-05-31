@@ -10,7 +10,7 @@ An experimental interactive storytelling project inspired by *Alice in Wonderlan
 The application presents chapters as pages containing images and sentences,
 with navigation controlled by a small story engine.
 
-The project also explores a lightweight deployment setup using AWS and Terraform.
+The project uses a lightweight deployment setup using AWS and Terraform.
 
 https://www.codingnonsense.art/
 
