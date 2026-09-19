@@ -19,14 +19,14 @@ export default function StoryPage() {
 	
 	useEffect(() => {
 		if (!chapterId) {
-			setChapter(null);
 			return;
 		}
 		
 		let cancelled = false;
-		
+		const id = chapterId;
+
 		async function load() {
-			const found = await getChapter(chapterId!);
+			const found = await getChapter(id);
 			
 			if (!cancelled) {
 				setChapter(found ?? null);

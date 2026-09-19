@@ -24,29 +24,32 @@ export async function getChapter(id: string): Promise<Chapter | null> {
 	const parsed = parseMarkdown(raw);
 	const attributes = validateAttributes(parsed.attributes);
 	const body = resolveTextWithParams(parsed.body, attributes.parameters);
-	const image = attributes.image
-		? resolveImage(attributes.image)
-		: undefined;
-	
+	const image = attributes.image ? resolveImage(attributes.image) : undefined;
+
 	return buildChapter({
 		...attributes,
 		body,
-		image
+		image,
 	});
 }
 
 async function getRawChapter(id: string): Promise<string | null> {
-	const loader = chapterModules[getChapterModulePath(id)];
-	if (!loader) {
+	const path = getChapterModulePath(id);
+
+	if (!Object.hasOwn(chapterModules, path)) {
 		return null;
 	}
+
+	const loader = chapterModules[path];
 	const result = await loader();
-	if (typeof result !== "string") {
+
+	if (typeof result !== 'string') {
 		throw new Error(`Chapter ${id} did not return a string`);
 	}
-	
+
 	return result;
 }
+
 function buildChapter( data: {
 	id: string;
 	title?: string;

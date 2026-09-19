@@ -8,10 +8,9 @@ import rawNotFound from "../../assets/data/pages/not_found.md?raw";
 import rawEnd from "../../assets/data/pages/end.md?raw";
 import { PageAttributesSchema } from "../models/page_attributes.ts";
 import { resolveTextWithParams } from "./text/textResolver.ts";
-import type { Chapter } from "../models/chapter.ts";
 
 
-export async function getPage( id: string ):  Promise<Chapter | null>{
+export async function getPage( id: string ):  Promise<Page | null>{
 	const raw = getRawPage(id);
 	if (!raw) {
 		return null;
@@ -53,6 +52,6 @@ const rawPages: Record<string, string> = {
 	end: rawEnd,
 };
 
-function getRawPage( id: string ): string {
+function getRawPage(id: string): string | undefined {
 	return rawPages[id];
 }
