@@ -2,10 +2,11 @@ import { ContentPage } from "../components/ContentPage";
 import { getPage } from "../domain/content/pages.ts";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import type { Page } from '../domain/models/page.ts';
 
 export default function EndPage() {
 	const navigate = useNavigate();
-	const [page, setPage] = useState<any>(null);
+	const [page, setPage] = useState<Page | null>(null);
 	const [loading, setLoading] = useState(true);
 	
 	function toHomePage() {
